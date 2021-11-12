@@ -1,6 +1,6 @@
 import NextLink from "next/link";
 
-import cn from "public/cn";
+import cn from "./cn";
 
 const Link = (props) => {
   const {

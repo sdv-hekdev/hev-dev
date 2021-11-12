@@ -1,5 +1,4 @@
-import Link from "public/components/Link";
-import Page from "../public/components/Page";
+import Page from "../src/components/Page";
 
 const HomePage = () => {
   return <Page title="HEK.dev" noBack></Page>;

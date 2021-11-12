@@ -1,6 +1,6 @@
 import { Field } from "formik";
 
-import Input from "public/components/Input";
+import Input from "./components/Input";
 
 const InputField = (props) => {
   const { input, label, ...otherProps } = props;

@@ -1,5 +1,5 @@
-import Page from "public/components/Page";
-import RegistrationCard from "public/components/RegistrationCard";
+import Page from "./components/Page";
+import RegistrationCard from "./components/RegistrationCard";
 
 const SignPage = () => {
   return (

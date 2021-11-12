@@ -3,8 +3,8 @@ import { useCallback } from "react";
 import Head from "next/head";
 import { ArrowCircleLeftIcon } from "@heroicons/react/solid";
 
-import Footer from "public/components/Footer";
-import Header from "public/components/Header";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 const BackButton = (props) => {
   const router = useRouter();
