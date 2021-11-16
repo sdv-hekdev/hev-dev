@@ -1,4 +1,4 @@
-const navBarTitle = [
+const NavBarTitle = [
   { name: "Solutions", href: "#" },
   { name: "Pricing", href: "#" },
   { name: "Docs", href: "#" },
@@ -19,7 +19,7 @@ const Header = () => {
               />
             </a>
             <div className="hidden ml-10 space-x-8 lg:block">
-              {navBarTitle.map((link) => (
+              {NavBarTitle.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
@@ -46,7 +46,7 @@ const Header = () => {
           </div>
         </div>
         <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
-          {navBarTitle.map((link) => (
+          {NavBarTitle.map((link) => (
             <a
               key={link.name}
               href={link.href}

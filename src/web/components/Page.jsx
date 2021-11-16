@@ -3,8 +3,8 @@ import { useCallback } from "react";
 import Head from "next/head";
 import { ArrowCircleLeftIcon } from "@heroicons/react/solid";
 
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Header from "web/components/Header";
+import Footer from "web/components/Footer";
 
 const BackButton = (props) => {
   const router = useRouter();
@@ -23,17 +23,19 @@ const Page = (props) => {
   const { children, title, noBack, noFooter, ...otherProps } = props;
 
   return (
-    <main {...otherProps} className="flex flex-col h-full">
-      <Head>{/* <title>hek-dev - {title}</title> */}</Head>
+    <>
+      <Head>
+        <title>hek.dev - {title}</title>
+      </Head>
       <Header>
-        <title>hek-dev - {title}</title>
-
         {noBack ? null : <BackButton />}
         {title}
       </Header>
-      <section>{children}</section>
+      <main {...otherProps}>
+        <section>{children}</section>
+      </main>
       {noFooter ? null : <Footer />}
-    </main>
+    </>
   );
 };
 
