@@ -1,3 +1,7 @@
+import { useRouter } from "next/dist/client/router";
+import { useCallback, useState } from "react";
+import { ArrowCircleLeftIcon, MenuIcon } from "@heroicons/react/outline";
+
 const NavBarTitle = [
   { name: "Solutions", href: "#" },
   { name: "Pricing", href: "#" },
@@ -5,19 +9,43 @@ const NavBarTitle = [
   { name: "Company", href: "#" },
 ];
 
-const Header = () => {
+const BackButton = (props) => {
+  const router = useRouter();
+  const handleClick = useCallback(() => router.back(), [router]);
+
   return (
-    <header className="bg-indigo-600">
+    <ArrowCircleLeftIcon
+      onClick={handleClick}
+      className="text-white  h-7 w-7 mr-2 mt-1"
+      {...props}
+    />
+  );
+};
+
+const BurgerMenu = (props) => {
+  const [openSidebar, setOpenSidebar] = useState(false);
+
+  const handleClick = useCallback(() => setOpenSidebar(true));
+  return (
+    <MenuIcon
+      onClick={handleClick}
+      className="text-white  inset-x-0 left-0 h-7 w-7 mr-2 ml-5 mt-1"
+      {...props}
+    />
+  );
+};
+
+const Header = (props) => {
+  const { noBack, noFooter, ...otherProps } = props;
+
+  return (
+    <header className="absolute inset-x-0 top-0 bg-indigo-600" {...otherProps}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
           <div className="flex items-center">
-            <a href="#">
-              <img
-                className="h-10 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white"
-                alt=""
-              />
-            </a>
+            {noBack ? null : <BackButton />}
+            <BurgerMenu />
+
             <div className="hidden ml-10 space-x-8 lg:block">
               {NavBarTitle.map((link) => (
                 <a
@@ -45,7 +73,7 @@ const Header = () => {
             </a>
           </div>
         </div>
-        <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
+        <div className="w-max py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
           {NavBarTitle.map((link) => (
             <a
               key={link.name}
