@@ -20,7 +20,7 @@ const classNames = (...classes) => {
   return classes.filter(Boolean).join(" ");
 };
 
-export default function Example() {
+const SideBar = () => {
   return (
     <div className="flex-1 flex flex-col min-h-0 bg-indigo-700">
       <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
@@ -83,4 +83,5 @@ export default function Example() {
       </div>
     </div>
   );
-}
+};
+export default SideBar;

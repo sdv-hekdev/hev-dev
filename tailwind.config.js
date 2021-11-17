@@ -4,7 +4,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./src/web/components/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: "media",
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
   },

@@ -1,4 +1,4 @@
-import SocialNetwork from "web/components/SocialNetwork";
+import SocialNetwork from "./SocialNetwork";
 
 const Footer = () => {
   return (
