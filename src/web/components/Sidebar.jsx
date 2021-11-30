@@ -16,6 +16,7 @@ const navigation = [
   { name: "Reports", icon: ChartBarIcon, href: "#", current: false },
 ];
 
+//create a component of classNames
 const classNames = (...classes) => {
   return classes.filter(Boolean).join(" ");
 };
@@ -24,13 +25,7 @@ const SideBar = () => {
   return (
     <div className="flex-1 flex flex-col min-h-0 bg-indigo-700">
       <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-        <div className="flex items-center flex-shrink-0 px-4">
-          <img
-            className="h-8 w-auto"
-            src="https://tailwindui.com/img/logos/workflow-logo-indigo-300-mark-white-text.svg"
-            alt="Workflow"
-          />
-        </div>
+        <div className="flex items-center flex-shrink-0 px-4"></div>
         <nav className="mt-5 flex-1 px-2 space-y-1" aria-label="Sidebar">
           {navigation.map((item) => (
             <a
@@ -68,7 +63,7 @@ const SideBar = () => {
             <div>
               <img
                 className="inline-block h-9 w-9 rounded-full"
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                src=""
                 alt=""
               />
             </div>

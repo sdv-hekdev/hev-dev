@@ -1,7 +1,5 @@
 import NextLink from "next/link";
 
-import cn from "./cn";
-
 const Link = (props) => {
   const {
     as: Component = "a",
@@ -13,14 +11,7 @@ const Link = (props) => {
 
   return (
     <NextLink as={asUrl} {...otherProps}>
-      <Component
-        {...cn(
-          {
-            "text-link hover:text-link-hover active:text-link-active": !noStyle,
-          },
-          props
-        )}
-      >
+      <Component className="text-link hover:text-link-hover active:text-link-active">
         {children}
       </Component>
     </NextLink>

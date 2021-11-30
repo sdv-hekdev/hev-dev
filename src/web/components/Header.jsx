@@ -44,26 +44,25 @@ const Header = (props) => {
   const { noBack, noFooter, ...otherProps } = props;
 
   return (
-    <header className="bg-green-600" {...otherProps}>
-      <nav className="px-4 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="flex items-center justify-between w-full py-6 border-b border-green-500 lg:border-none">
-          <div className="flex justify-between">
+    <header className="bg-indigo-600">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
+        <div className="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
+          <div className="flex items-center">
             <a href="/">
-              <span className="sr-only">Workflow</span>
               <img
                 className="h-10 w-auto"
                 src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white"
                 alt=""
               />
             </a>
-            <div className="hidden ml-10 space-x-8 lg:flex">
-              {navigation.map((item) => (
+            <div className="hidden ml-10 space-x-8 lg:block">
+              {navigation.map((link) => (
                 <a
-                  key={item.name}
-                  href={item.href}
-                  className="flex-1 text-base font-medium text-white hover:text-green-50"
+                  key={link.name}
+                  href={link.href}
+                  className="text-base font-medium text-white hover:text-indigo-50"
                 >
-                  {item.name}
+                  {link.name}
                 </a>
               ))}
             </div>
@@ -71,15 +70,15 @@ const Header = (props) => {
           <div className="ml-10 space-x-4">
             <a
               href="/sign"
-              className="inline-block bg-green-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75"
+              className="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75"
             >
-              Sign in
+              Sign in/up
             </a>
             <a
-              href="/sign"
-              className="inline-block bg-white py-2 px-4 border border-transparent rounded-md text-base font-medium text-green-600 hover:bg-green-50"
+              href="/cart"
+              className="inline-block bg-white py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-600 hover:bg-indigo-50"
             >
-              Sign up
+              Cart
             </a>
           </div>
         </div>
@@ -88,7 +87,7 @@ const Header = (props) => {
             <a
               key={link.name}
               href={link.href}
-              className="text-base font-medium text-white hover:text-green-50"
+              className="text-base font-medium text-white hover:text-indigo-50"
             >
               {link.name}
             </a>

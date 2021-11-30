@@ -17,11 +17,11 @@ const sortOptions = [
   { name: "Price: High to Low", href: "#", current: false },
 ];
 const subCategories = [
-  { name: "Totes", href: "#" },
-  { name: "Backpacks", href: "#" },
-  { name: "Travel Bags", href: "#" },
-  { name: "Hip Bags", href: "#" },
-  { name: "Laptop Sleeves", href: "#" },
+  { name: "1", href: "#" },
+  { name: "2", href: "#" },
+  { name: "3", href: "#" },
+  { name: "4", href: "#" },
+  { name: "5", href: "#" },
 ];
 const filters = [
   {
@@ -40,11 +40,11 @@ const filters = [
     id: "category",
     name: "Category",
     options: [
-      { value: "new-arrivals", label: "New Arrivals", checked: false },
-      { value: "sale", label: "Sale", checked: false },
-      { value: "travel", label: "Travel", checked: true },
-      { value: "organization", label: "Organization", checked: false },
-      { value: "accessories", label: "Accessories", checked: false },
+      { value: "1", label: "1", checked: false },
+      { value: "2", label: "2", checked: false },
+      { value: "3", label: "3", checked: true },
+      { value: "4", label: "4", checked: false },
+      { value: "5", label: "5", checked: false },
     ],
   },
   {
@@ -65,7 +65,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+const Filter = () => {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   return (
@@ -342,7 +342,7 @@ export default function Example() {
 
               {/* Product grid */}
               <div className="lg:col-span-3">
-                {/* Replace with your content */}
+                {/* Replace with content */}
                 <div className="border-4 border-dashed border-gray-200 rounded-lg h-96 lg:h-full" />
                 {/* /End replace */}
               </div>
@@ -352,4 +352,6 @@ export default function Example() {
       </div>
     </div>
   );
-}
+};
+
+export default Filter;

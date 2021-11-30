@@ -1,6 +1,5 @@
-import Page from "web/components/Page";
-import RegistrationCard from "web/components/RegistrationCard";
-
+import Page from "../src/web/components/Page";
+import RegistrationCard from "../src/web/components/RegistrationCard";
 const SignPage = () => {
   return (
     <Page noFooter title="Sign">
