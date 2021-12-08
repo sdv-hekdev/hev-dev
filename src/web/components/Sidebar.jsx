@@ -5,25 +5,23 @@ import {
   HomeIcon,
   InboxIcon,
   UsersIcon,
+  MenuIcon,
 } from "@heroicons/react/outline";
 
-const navigation = [
-  { name: "Dashboard", icon: HomeIcon, href: "#", current: true },
-  { name: "Team", icon: UsersIcon, href: "#", count: 3, current: false },
-  { name: "Projects", icon: FolderIcon, href: "#", count: 4, current: false },
-  { name: "Calendar", icon: CalendarIcon, href: "#", current: false },
-  { name: "Documents", icon: InboxIcon, href: "#", count: 12, current: false },
-  { name: "Reports", icon: ChartBarIcon, href: "#", current: false },
-];
+import cn from "../cn";
 
-//create a component of classNames
-const classNames = (...classes) => {
-  return classes.filter(Boolean).join(" ");
-};
+const navigation = [
+  { name: "item 1", icon: HomeIcon, href: "#", current: true },
+  { name: "item 2", icon: UsersIcon, href: "#", count: 3, current: false },
+  { name: "item 3", icon: FolderIcon, href: "#", count: 4, current: false },
+  { name: "item 4", icon: CalendarIcon, href: "#", current: false },
+  { name: "item 5", icon: InboxIcon, href: "#", count: 12, current: false },
+  { name: "item 6", icon: ChartBarIcon, href: "#", current: false },
+];
 
 const SideBar = () => {
   return (
-    <div className="flex-1 flex flex-col min-h-0 bg-indigo-700">
+    <div className=" flex flex-col min-h-0 bg-indigo-700">
       <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
         <div className="flex items-center flex-shrink-0 px-4"></div>
         <nav className="mt-5 flex-1 px-2 space-y-1" aria-label="Sidebar">
@@ -31,7 +29,7 @@ const SideBar = () => {
             <a
               key={item.name}
               href={item.href}
-              className={classNames(
+              className={cn(
                 item.current
                   ? "bg-indigo-800 text-white"
                   : "text-indigo-100 hover:bg-indigo-600 hover:bg-opacity-75",
@@ -45,7 +43,7 @@ const SideBar = () => {
               <span className="flex-1">{item.name}</span>
               {item.count ? (
                 <span
-                  className={classNames(
+                  className={cn(
                     item.current ? "bg-indigo-600" : "bg-indigo-800",
                     "ml-3 inline-block py-0.5 px-3 text-xs font-medium rounded-full"
                   )}

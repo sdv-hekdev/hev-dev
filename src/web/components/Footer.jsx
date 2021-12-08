@@ -2,9 +2,9 @@ import SocialNetwork from "./SocialNetwork";
 
 const Footer = () => {
   return (
-    <footer className="absolute inset-x-0 bottom-0 bg-white">
+    <footer className="flex bg-gray-100">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
-        <div className="flex justify space-x-6 md:order-2">
+        <div className="flex content-end space-x-6 md:order-2">
           {SocialNetwork.map((item) => (
             <a
               key={item.name}

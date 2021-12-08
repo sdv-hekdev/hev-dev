@@ -9,6 +9,8 @@ import {
   ViewGridIcon,
 } from "@heroicons/react/solid";
 
+import cn from "../cn";
+
 const sortOptions = [
   { name: "Most Popular", href: "#", current: true },
   { name: "Best Rating", href: "#", current: false },
@@ -60,10 +62,6 @@ const filters = [
     ],
   },
 ];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 const Filter = () => {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
@@ -225,7 +223,7 @@ const Filter = () => {
                           {({ active }) => (
                             <a
                               href={option.href}
-                              className={classNames(
+                              className={cn(
                                 option.current
                                   ? "font-medium text-gray-900"
                                   : "text-gray-500",

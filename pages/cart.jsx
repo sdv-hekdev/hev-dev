@@ -8,60 +8,40 @@ import {
 const products = [
   {
     id: 1,
-    name: "Basic Tee",
+    name: "item 1",
     href: "#",
     price: "$32.00",
     color: "Sienna",
     inStock: true,
     size: "Large",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-01.jpg",
-    imageAlt: "Front of men's Basic Tee in sienna.",
+    imageSrc: "",
+    imageAlt: "item 1",
   },
   {
     id: 2,
-    name: "Basic Tee",
+    name: "item 2",
     href: "#",
     price: "$32.00",
     color: "Black",
     inStock: false,
     leadTime: "3–4 weeks",
     size: "Large",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-02.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
+    imageSrc: "",
+    imageAlt: "item 2",
   },
   {
     id: 3,
-    name: "Nomad Tumbler",
+    name: "item 3",
     href: "#",
     price: "$35.00",
     color: "White",
     inStock: true,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-03.jpg",
-    imageAlt: "Insulated bottle with white base and black snap lid.",
+    imageSrc: "",
+    imageAlt: "item 3",
   },
 ];
 
 const CartPage = () => {
-  /*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
-
   return (
     <div className="bg-white">
       <div className="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">

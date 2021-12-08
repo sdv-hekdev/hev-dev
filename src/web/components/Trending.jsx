@@ -2,13 +2,39 @@
 const products = [
   {
     id: 1,
-    name: "Leather Long Wallet",
+    name: "item 1",
     color: "Natural",
     price: "$75",
     href: "#",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/home-page-04-trending-product-02.jpg",
-    imageAlt: "Hand stitched, orange leather long wallet.",
+    imageSrc: "",
+    imageAlt: "item 1",
+  },
+  {
+    id: 2,
+    name: "item 2",
+    color: "Natural",
+    price: "$75",
+    href: "#",
+    imageSrc: "",
+    imageAlt: "item 2",
+  },
+  {
+    id: 3,
+    name: "item 3",
+    color: "Natural",
+    price: "$75",
+    href: "#",
+    imageSrc: "",
+    imageAlt: "item 3",
+  },
+  {
+    id: 4,
+    name: "item 4",
+    color: "Natural",
+    price: "$75",
+    href: "#",
+    imageSrc: "",
+    imageAlt: "item 4",
   },
   // More products...
 ];
@@ -28,11 +54,10 @@ const TrendingItems = () => {
             Shop the collection<span aria-hidden="true"> &rarr;</span>
           </a>
         </div>
-
         <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
           {products.map((product) => (
             <div key={product.id} className="group relative">
-              <div className="w-full h-56 bg-gray-200 rounded-md overflow-hidden group-hover:opacity-75 lg:h-72 xl:h-80">
+              <div className="w-full h-56 bg-green-200 rounded-md overflow-hidden group-hover:opacity-75 lg:h-72 xl:h-14">
                 <img
                   src={product.imageSrc}
                   alt={product.imageAlt}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Disclosure, RadioGroup, Tab } from "@headlessui/react";
 import { StarIcon } from "@heroicons/react/solid";
 import { HeartIcon, MinusSmIcon, PlusSmIcon } from "@heroicons/react/outline";
+import cn from "../src/web/cn";
 
 const product = {
   name: "Zip Tote Basket",
@@ -49,10 +50,6 @@ const product = {
   ],
 };
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const ItemPage = () => {
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
 
@@ -81,7 +78,7 @@ const ItemPage = () => {
                           />
                         </span>
                         <span
-                          className={classNames(
+                          className={cn(
                             selected ? "ring-indigo-500" : "ring-transparent",
                             "absolute inset-0 rounded-md ring-2 ring-offset-2 pointer-events-none"
                           )}
@@ -126,7 +123,7 @@ const ItemPage = () => {
                   {[0, 1, 2, 3, 4].map((rating) => (
                     <StarIcon
                       key={rating}
-                      className={classNames(
+                      className={cn(
                         product.rating > rating
                           ? "text-indigo-500"
                           : "text-gray-300",
@@ -168,7 +165,7 @@ const ItemPage = () => {
                         key={color.name}
                         value={color}
                         className={({ active, checked }) =>
-                          classNames(
+                          cn(
                             color.selectedColor,
                             active && checked ? "ring ring-offset-1" : "",
                             !active && checked ? "ring-2" : "",
@@ -181,7 +178,7 @@ const ItemPage = () => {
                         </RadioGroup.Label>
                         <span
                           aria-hidden="true"
-                          className={classNames(
+                          className={cn(
                             color.bgColor,
                             "h-8 w-8 border border-black border-opacity-10 rounded-full"
                           )}
@@ -226,7 +223,7 @@ const ItemPage = () => {
                         <h3>
                           <Disclosure.Button className="group relative w-full py-6 flex justify-between items-center text-left">
                             <span
-                              className={classNames(
+                              className={cn(
                                 open ? "text-indigo-600" : "text-gray-900",
                                 "text-sm font-medium"
                               )}
