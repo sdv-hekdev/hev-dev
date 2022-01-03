@@ -265,7 +265,11 @@ const LandingPage = () => {
                 <div className="hidden lg:flex-1 lg:flex lg:items-center">
                   <a href="#">
                     <span className="sr-only">Workflow</span>
-                    <img className="h-8 w-auto" src="" alt="hek.dev-logo" />
+                    <img
+                      className="h-8 w-auto"
+                      src="./public/assets/baka-bird.jpg"
+                      alt="hek.dev-logo"
+                    />
                   </a>
                 </div>
 
@@ -405,7 +409,11 @@ const LandingPage = () => {
                 {/* Logo (lg-) */}
                 <a href="#" className="lg:hidden">
                   <span className="sr-only">Workflow</span>
-                  <img src="" alt="hek.dev-logo" className="h-8 w-auto" />
+                  <img
+                    src="./public/assets/baka-bird.jpg"
+                    alt="hek.dev-logo"
+                    className="h-8 w-auto"
+                  />
                 </a>
 
                 <div className="flex-1 flex items-center justify-end">
@@ -474,7 +482,6 @@ const LandingPage = () => {
               </div>
               <div className="absolute inset-0 bg-gray-900 opacity-50" />
             </div>
-            <div className="w-full bg-white h-32 md:h-40 lg:h-48" />
           </div>
 
           <div className="relative max-w-3xl mx-auto pb-96 px-4 text-center sm:pb-0 sm:px-6 lg:px-8">
@@ -511,52 +518,6 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-
-          <section
-            aria-labelledby="collection-heading"
-            className="-mt-96 relative sm:mt-0"
-          >
-            <h2 id="collection-heading" className="sr-only">
-              Collections
-            </h2>
-            <div className="max-w-md mx-auto grid grid-cols-1 gap-y-6 px-4 sm:max-w-7xl sm:px-6 sm:grid-cols-3 sm:gap-y-0 sm:gap-x-6 lg:px-8 lg:gap-x-8">
-              {collections.map((collection) => (
-                <div
-                  key={collection.name}
-                  className="group relative h-96 bg-white rounded-lg shadow-xl sm:h-auto sm:aspect-w-4 sm:aspect-h-5"
-                >
-                  <div>
-                    <div
-                      aria-hidden="true"
-                      className="absolute inset-0 rounded-lg overflow-hidden"
-                    >
-                      <div className="absolute inset-0 overflow-hidden group-hover:opacity-75">
-                        <img
-                          src={collection.imageSrc}
-                          alt={collection.imageAlt}
-                          className="w-full h-full object-center object-cover"
-                        />
-                      </div>
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50" />
-                    </div>
-                    <div className="absolute inset-0 rounded-lg p-6 flex items-end">
-                      <div>
-                        <p aria-hidden="true" className="text-sm text-white">
-                          Shop the collection
-                        </p>
-                        <h3 className="mt-1 font-semibold text-white">
-                          <a href={collection.href}>
-                            <span className="absolute inset-0" />
-                            {collection.name}
-                          </a>
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
         </div>
 
         <section aria-labelledby="trending-heading">
@@ -568,12 +529,6 @@ const LandingPage = () => {
               >
                 Trending Products
               </h2>
-              <a
-                href="#"
-                className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block"
-              >
-                Shop the collection<span aria-hidden="true"> &rarr;</span>
-              </a>
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
