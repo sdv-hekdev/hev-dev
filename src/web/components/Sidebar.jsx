@@ -5,7 +5,6 @@ import {
   HomeIcon,
   InboxIcon,
   UsersIcon,
-  MenuIcon,
 } from "@heroicons/react/outline";
 
 import cn from "../cn";

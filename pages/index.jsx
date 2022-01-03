@@ -4,6 +4,7 @@ import { useState } from "react";
 import Page from "../src/web/components/Page";
 import SideBar from "../src/web/components/Sidebar";
 import TrendingItems from "../src/web/components/Trending";
+import LandingPage from "./landing-page";
 
 const HomePage = () => {
   const [sideBar, setSideBar] = useState(false);
@@ -11,21 +12,7 @@ const HomePage = () => {
     setSideBar(!sideBar);
   };
 
-  return (
-    <Page>
-      <div className="flex">
-        <div>
-          <MenuIcon className="w-8" onClick={handleSideBar} />
-          {sideBar === true ? (
-            <div>
-              <SideBar className="flex" />
-            </div>
-          ) : null}
-        </div>
-        <TrendingItems />
-      </div>
-    </Page>
-  );
+  return <LandingPage />;
 };
 
 export default HomePage;

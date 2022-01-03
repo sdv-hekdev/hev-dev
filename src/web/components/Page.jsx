@@ -7,7 +7,7 @@ const Page = (props) => {
   return (
     <>
       <Header>{title}</Header>
-      <main {...otherProps}>
+      <main {...otherProps} className="h-screen">
         <section>{children}</section>
       </main>
       {noFooter ? null : <Footer />}
