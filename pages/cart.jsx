@@ -1,3 +1,5 @@
+import { useCallback } from "react";
+import { useRouter } from "next/router";
 import {
   CheckIcon,
   ClockIcon,
@@ -5,46 +7,19 @@ import {
   XIcon,
 } from "@heroicons/react/solid";
 
-const products = [
-  {
-    id: 1,
-    name: "item 1",
-    href: "#",
-    price: "$32.00",
-    color: "Sienna",
-    inStock: true,
-    size: "Large",
-    imageSrc: "",
-    imageAlt: "item 1",
-  },
-  {
-    id: 2,
-    name: "item 2",
-    href: "#",
-    price: "$32.00",
-    color: "Black",
-    inStock: false,
-    leadTime: "3–4 weeks",
-    size: "Large",
-    imageSrc: "",
-    imageAlt: "item 2",
-  },
-  {
-    id: 3,
-    name: "item 3",
-    href: "#",
-    price: "$35.00",
-    color: "White",
-    inStock: true,
-    imageSrc: "",
-    imageAlt: "item 3",
-  },
-];
+import products from "../src/web/components/mock/products";
+import Header from "../src/web/components/Header";
+import Footer from "../src/web/components/Footer";
 
 const CartPage = () => {
+  const router = useRouter();
+
+  const handleClick = useCallback(() => router.push("/checkout"), [router]);
+
   return (
     <div className="bg-white">
       <div className="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+        <Header />
         <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
           Shopping Cart
         </h1>
@@ -216,8 +191,9 @@ const CartPage = () => {
 
             <div className="mt-6">
               <button
-                type="submit"
+                type="button"
                 className="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
+                onClick={handleClick}
               >
                 Checkout
               </button>
@@ -225,6 +201,7 @@ const CartPage = () => {
           </section>
         </form>
       </div>
+      <Footer />
     </div>
   );
 };
