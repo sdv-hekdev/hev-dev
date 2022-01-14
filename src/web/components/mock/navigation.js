@@ -146,10 +146,6 @@ const navigation = {
       ],
     },
   ],
-  pages: [
-    { name: "Company", href: "#" },
-    { name: "Stores", href: "#" },
-  ],
-};
+}
 
-export default navigation;
+export default navigation

@@ -1,18 +1,18 @@
-import { Fragment, useState } from "react";
-import { Dialog, Tab, Transition } from "@headlessui/react";
-import { XIcon } from "@heroicons/react/outline";
-import Link from "next/link";
+import { Fragment, useState } from "react"
+import { Dialog, Tab, Transition } from "@headlessui/react"
+import { XIcon } from "@heroicons/react/outline"
+import Link from "next/link"
 
-import cn from "../src/web/cn";
-import Footer from "../src/web/components/Footer";
-import navigation from "../src/web/components/mock/navigation";
-import currencies from "../src/web/components/mock/currencies";
-import Header from "../src/web/components/Header";
-import Trending from "../src/web/components/Trending";
-import Perks from "../src/web/components/Perks";
+import cn from "../src/web/cn"
+import Footer from "../src/web/components/Footer"
+import navigation from "../src/web/components/mock/navigation"
+import currencies from "../src/web/components/mock/currencies"
+import Header from "../src/web/components/Header"
+import Trending from "../src/web/components/Trending"
+import Perks from "../src/web/components/Perks"
 
 const LandingPage = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   return (
     <div className="bg-white">
@@ -131,25 +131,6 @@ const LandingPage = () => {
               </div>
 
               <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-                <div className="flow-root">
-                  <a
-                    href="#"
-                    className="-m-2 p-2 block font-medium text-gray-900"
-                  >
-                    Create an account
-                  </a>
-                </div>
-                <div className="flow-root">
-                  <a
-                    href="#"
-                    className="-m-2 p-2 block font-medium text-gray-900"
-                  >
-                    Sign in
-                  </a>
-                </div>
-              </div>
-
-              <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                 {/* Currency selector */}
                 <form>
                   <div className="inline-block">
@@ -206,7 +187,7 @@ const LandingPage = () => {
               <div className="absolute inset-0 overflow-hidden">
                 <img
                   src="https://tailwindui.com/img/ecommerce-images/home-page-04-hero-full-width.jpg"
-                  alt=""
+                  alt="cover"
                   className="w-full h-full object-center object-cover"
                 />
               </div>
@@ -254,7 +235,7 @@ const LandingPage = () => {
       </main>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default LandingPage;
+export default LandingPage

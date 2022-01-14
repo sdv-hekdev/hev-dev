@@ -1,23 +1,23 @@
-import { useCallback } from "react";
-import { useRouter } from "next/router";
-import { Disclosure } from "@headlessui/react";
-import { LockClosedIcon } from "@heroicons/react/solid";
+import { useCallback } from "react"
+import { useRouter } from "next/router"
+import { Disclosure } from "@headlessui/react"
+import { LockClosedIcon } from "@heroicons/react/solid"
 
-import products from "../src/web/components/mock/products";
+import products from "../src/web/components/mock/products"
 
-const subtotal = "$210.00";
-const discount = { code: "CHEAPSKATE", amount: "$24.00" };
-const taxes = "$23.68";
-const shipping = "$22.00";
-const total = "$341.68";
+const subtotal = "$210.00"
+const discount = { code: "CHEAPSKATE", amount: "$24.00" }
+const taxes = "$23.68"
+const shipping = "$22.00"
+const total = "$341.68"
 
 const CheckoutPage = () => {
-  const router = useRouter();
+  const router = useRouter()
 
   const validatePayment = useCallback(
     () => router.push("/order-details"),
     [router]
-  );
+  )
 
   return (
     <>
@@ -490,7 +490,7 @@ const CheckoutPage = () => {
         </section>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default CheckoutPage;
+export default CheckoutPage

@@ -1,8 +1,8 @@
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "./Header"
+import Footer from "./Footer"
 
 const Page = (props) => {
-  const { children, title, noBack, noFooter, ...otherProps } = props;
+  const { children, title, noBack, noFooter, ...otherProps } = props
 
   return (
     <>
@@ -12,7 +12,7 @@ const Page = (props) => {
       </main>
       {noFooter ? null : <Footer />}
     </>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

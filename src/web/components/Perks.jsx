@@ -1,4 +1,4 @@
-import perks from "./mock/perks";
+import perks from "./mock/perks"
 
 const Perks = () => {
   return (
@@ -37,7 +37,7 @@ const Perks = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Perks;
+export default Perks

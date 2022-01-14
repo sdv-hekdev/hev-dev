@@ -1,4 +1,4 @@
-import currencies from "./mock/currencies";
+import currencies from "./mock/currencies"
 
 const CurrencySelector = () => {
   return (
@@ -37,7 +37,7 @@ const CurrencySelector = () => {
         </div>
       </div>
     </form>
-  );
-};
+  )
+}
 
-export default CurrencySelector;
+export default CurrencySelector

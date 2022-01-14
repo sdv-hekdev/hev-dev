@@ -1,18 +1,23 @@
-import { Fragment } from "react";
-import { Popover, Transition } from "@headlessui/react";
+import { Fragment, useState } from "react"
+import { Popover, Transition } from "@headlessui/react"
 import {
   MenuIcon,
   QuestionMarkCircleIcon,
   SearchIcon,
   ShoppingBagIcon,
-} from "@heroicons/react/outline";
+} from "@heroicons/react/outline"
 
-import cn from "../cn";
-import navigation from "./mock/navigation";
-import CurrencySelector from "./CurrencySelector";
-import CreateAccount from "./CreateAccount";
+import cn from "../cn"
+import navigation from "./mock/navigation"
+import CurrencySelector from "./CurrencySelector"
+import CreateAccount from "./CreateAccount"
 
 const NavBar = () => {
+  const [open, setOpen] = useState(false)
+  const handleToggleMenu = () => {
+    setOpen(!false)
+  }
+
   return (
     <nav aria-label="Top">
       {/* Top navigation */}
@@ -149,10 +154,12 @@ const NavBar = () => {
               <button
                 type="button"
                 className="-ml-2 bg-white p-2 rounded-md text-gray-400"
-                onClick={() => setOpen(true)}
+                onClick={handleToggleMenu}
               >
                 <span className="sr-only">Open menu</span>
-                <MenuIcon className="h-6 w-6" aria-hidden="true" />
+                {open ? (
+                  <MenuIcon className="h-6 w-6" aria-hidden="true" />
+                ) : null}
               </button>
 
               {/* Search */}
@@ -217,7 +224,7 @@ const NavBar = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

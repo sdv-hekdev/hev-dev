@@ -1,6 +1,4 @@
-import Footer from "../src/web/components/Footer";
-import Header from "../src/web/components/Header";
-import products from "../src/web/components/mock/products";
+import products from "../src/web/components/mock/products"
 
 const OrderDetailsPage = () => {
   return (
@@ -145,6 +143,6 @@ const OrderDetailsPage = () => {
         </section>
       </div>
     </main>
-  );
-};
-export default OrderDetailsPage;
+  )
+}
+export default OrderDetailsPage

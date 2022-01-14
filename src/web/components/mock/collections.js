@@ -21,6 +21,6 @@ const collections = [
     imageAlt:
       "Person sitting at a wooden desk with paper note organizer, pencil and tablet.",
   },
-];
+]
 
-export default collections;
+export default collections

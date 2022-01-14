@@ -1,15 +1,15 @@
-import { Fragment, useState } from "react";
-import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
-import { XIcon } from "@heroicons/react/outline";
+import { Fragment, useState } from "react"
+import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react"
+import { XIcon } from "@heroicons/react/outline"
 import {
   ChevronDownIcon,
   FilterIcon,
   MinusSmIcon,
   PlusSmIcon,
   ViewGridIcon,
-} from "@heroicons/react/solid";
+} from "@heroicons/react/solid"
 
-import cn from "../cn";
+import cn from "../cn"
 
 const sortOptions = [
   { name: "Most Popular", href: "#", current: true },
@@ -17,14 +17,14 @@ const sortOptions = [
   { name: "Newest", href: "#", current: false },
   { name: "Price: Low to High", href: "#", current: false },
   { name: "Price: High to Low", href: "#", current: false },
-];
+]
 const subCategories = [
   { name: "1", href: "#" },
   { name: "2", href: "#" },
   { name: "3", href: "#" },
   { name: "4", href: "#" },
   { name: "5", href: "#" },
-];
+]
 const filters = [
   {
     id: "color",
@@ -61,10 +61,10 @@ const filters = [
       { value: "40l", label: "40L", checked: true },
     ],
   },
-];
+]
 
 const Filter = () => {
-  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
   return (
     <div className="bg-white">
@@ -349,7 +349,7 @@ const Filter = () => {
         </main>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Filter;
+export default Filter

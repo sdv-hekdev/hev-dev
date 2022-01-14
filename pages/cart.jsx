@@ -1,20 +1,20 @@
-import { useCallback } from "react";
-import { useRouter } from "next/router";
+import { useCallback } from "react"
+import { useRouter } from "next/router"
 import {
   CheckIcon,
   ClockIcon,
   QuestionMarkCircleIcon,
   XIcon,
-} from "@heroicons/react/solid";
+} from "@heroicons/react/solid"
 
-import products from "../src/web/components/mock/products";
-import Header from "../src/web/components/Header";
-import Footer from "../src/web/components/Footer";
+import products from "../src/web/components/mock/products"
+import Header from "../src/web/components/Header"
+import Footer from "../src/web/components/Footer"
 
 const CartPage = () => {
-  const router = useRouter();
+  const router = useRouter()
 
-  const handleClick = useCallback(() => router.push("/checkout"), [router]);
+  const handleClick = useCallback(() => router.push("/checkout"), [router])
 
   return (
     <div className="bg-white">
@@ -203,7 +203,7 @@ const CartPage = () => {
       </div>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default CartPage;
+export default CartPage

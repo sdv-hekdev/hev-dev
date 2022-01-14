@@ -1,4 +1,4 @@
-import { LockClosedIcon } from "@heroicons/react/solid";
+import { LockClosedIcon } from "@heroicons/react/solid"
 
 const RegistrationCard = () => {
   return (
@@ -88,7 +88,7 @@ const RegistrationCard = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default RegistrationCard;
+export default RegistrationCard

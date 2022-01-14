@@ -1,7 +1,7 @@
-import { StarIcon } from "@heroicons/react/solid";
+import { StarIcon } from "@heroicons/react/solid"
 
-import cn from "../src/web/cn";
-import products from "../src/web/components/mock/products";
+import cn from "../src/web/cn"
+import products from "../src/web/components/mock/products"
 
 const ShoppingPage = () => {
   return (
@@ -58,7 +58,7 @@ const ShoppingPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ShoppingPage;
+export default ShoppingPage

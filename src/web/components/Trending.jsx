@@ -1,4 +1,4 @@
-import trendingProducts from "./mock/trendingProducts";
+import trendingProducts from "./mock/trendingProducts"
 
 const Trending = () => {
   return (
@@ -47,7 +47,7 @@ const Trending = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Trending;
+export default Trending

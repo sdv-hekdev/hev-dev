@@ -14,7 +14,7 @@ const CreateAccount = () => {
         Create an account
       </a>
     </div>
-  );
-};
+  )
+}
 
-export default CreateAccount;
+export default CreateAccount

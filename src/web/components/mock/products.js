@@ -32,5 +32,5 @@ const products = [
     imageSrc: "",
     imageAlt: "item 3",
   },
-];
-export default products;
+]
+export default products

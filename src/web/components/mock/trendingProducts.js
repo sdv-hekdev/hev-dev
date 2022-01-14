@@ -35,6 +35,6 @@ const trendingProducts = [
     imageSrc: "",
     imageAlt: "item 4",
   },
-];
+]
 
-export default trendingProducts;
+export default trendingProducts

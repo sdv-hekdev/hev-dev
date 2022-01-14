@@ -47,6 +47,6 @@ const SocialNetwork = [
       </svg>
     ),
   },
-];
+]
 
-export default SocialNetwork;
+export default SocialNetwork

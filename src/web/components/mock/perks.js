@@ -27,6 +27,6 @@ const perks = [
     description:
       "We’ve pledged 1% of sales to the preservation and restoration of the natural environment.",
   },
-];
+]
 
-export default perks;
+export default perks

@@ -1,3 +1,3 @@
-const currencies = ["CAD", "USD", "AUD", "EUR", "GBP"];
+const currencies = ["CAD", "USD", "AUD", "EUR", "GBP"]
 
-export default currencies;
+export default currencies
