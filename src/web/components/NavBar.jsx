@@ -1,5 +1,6 @@
 import { Fragment, useState } from "react"
 import { Popover, Transition } from "@headlessui/react"
+import Link from "next/link"
 import {
   MenuIcon,
   QuestionMarkCircleIcon,
@@ -9,11 +10,11 @@ import {
 
 import cn from "../cn"
 import navigation from "./mock/navigation"
-import CurrencySelector from "./CurrencySelector"
 import CreateAccount from "./CreateAccount"
 
 const NavBar = () => {
   const [open, setOpen] = useState(false)
+
   const handleToggleMenu = () => {
     setOpen(!false)
   }
@@ -21,23 +22,26 @@ const NavBar = () => {
   return (
     <nav aria-label="Top">
       {/* Top navigation */}
-      <div className="bg-gray-900">
-        <div className="max-w-7xl mx-auto h-10 px-4 flex items-center justify-between sm:px-6 lg:px-8">
-          <CurrencySelector />
-          <CreateAccount />
-        </div>
+      <div className="bg-gray-900 py-1 px-2">
+        <CreateAccount />
       </div>
 
       {/* Secondary navigation */}
       <div className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="h-16 flex items-center justify-between">
             {/* Logo (lg+) */}
             <div className="hidden lg:flex-1 lg:flex lg:items-center">
-              <a href="#">
-                <span className="sr-only">Workflow</span>
-                <img className="h-8 w-auto" src="" alt="logo" />
-              </a>
+              <Link href="/">
+                <a>
+                  <span className="sr-only">Workflow</span>
+                  <img
+                    className="h-14 w-auto"
+                    src="/assets/baka-bird.jpg"
+                    alt="logo-lg"
+                  />
+                </a>
+              </Link>
             </div>
 
             <div className="hidden h-full lg:flex">
@@ -78,7 +82,6 @@ const NavBar = () => {
                             leaveTo="opacity-0"
                           >
                             <Popover.Panel className="absolute z-10 top-full inset-x-0 bg-white text-sm text-gray-500">
-                              {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                               <div
                                 className="absolute inset-0 top-1/2 bg-white shadow"
                                 aria-hidden="true"
@@ -135,16 +138,6 @@ const NavBar = () => {
                       )}
                     </Popover>
                   ))}
-
-                  {navigation.pages.map((page) => (
-                    <a
-                      key={page.name}
-                      href={page.href}
-                      className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                    >
-                      {page.name}
-                    </a>
-                  ))}
                 </div>
               </Popover.Group>
             </div>
@@ -173,10 +166,16 @@ const NavBar = () => {
             </div>
 
             {/* Logo (lg-) */}
-            <a href="#" className="lg:hidden">
-              <span className="sr-only">Workflow</span>
-              <img className="h-8 w-auto" src="" alt="logo" />
-            </a>
+            <Link href="/">
+              <a className="lg:hidden">
+                <span className="sr-only">Workflow</span>
+                <img
+                  className="h-14 w-quto"
+                  src="/assets/baka-bird.jpg"
+                  alt="logo-md"
+                />
+              </a>
+            </Link>
 
             <div className="flex-1 flex items-center justify-end">
               <a
@@ -207,16 +206,18 @@ const NavBar = () => {
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-8">
-                  <a href="/cart" className="group -m-2 p-2 flex items-center">
-                    <ShoppingBagIcon
-                      className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
-                      aria-hidden="true"
-                    />
-                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                      0
-                    </span>
-                    <span className="sr-only">items in cart, view bag</span>
-                  </a>
+                  <Link href="/cart">
+                    <a className="group -m-2 p-2 flex items-center">
+                      <ShoppingBagIcon
+                        className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                        aria-hidden="true"
+                      />
+                      <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
+                        0
+                      </span>
+                      <span className="sr-only">items in cart, view bag</span>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>

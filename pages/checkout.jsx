@@ -2,6 +2,7 @@ import { useCallback } from "react"
 import { useRouter } from "next/router"
 import { Disclosure } from "@headlessui/react"
 import { LockClosedIcon } from "@heroicons/react/solid"
+import Link from "next/link"
 
 import products from "../src/web/components/mock/products"
 
@@ -252,10 +253,12 @@ const CheckoutPage = () => {
         >
           <div className="max-w-lg mx-auto">
             <div className="hidden pt-10 pb-16 lg:flex">
-              <a href="/">
-                <span className="sr-only">Workflow</span>
-                <img src="" alt="logo" className="h-8 w-auto" />
-              </a>
+              <Link href="/">
+                <a>
+                  <span className="sr-only">Workflow</span>
+                  <img src="" alt="logo" className="h-8 w-auto" />
+                </a>
+              </Link>
             </div>
 
             <button

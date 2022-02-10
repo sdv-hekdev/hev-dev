@@ -1,4 +1,4 @@
-const SocialNetwork = [
+const socialNetwork = [
   {
     name: "Facebook",
     href: "#",
@@ -36,7 +36,7 @@ const SocialNetwork = [
   },
   {
     name: "GitHub",
-    href: "#",
+    href: "https://github.com/sdv-hekdev/hev-dev",
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -49,4 +49,4 @@ const SocialNetwork = [
   },
 ]
 
-export default SocialNetwork
+export default socialNetwork

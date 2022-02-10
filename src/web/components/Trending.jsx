@@ -3,7 +3,7 @@ import trendingProducts from "./mock/trendingProducts"
 const Trending = () => {
   return (
     <section aria-labelledby="trending-heading">
-      <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 sm:py-32 lg:pt-32 lg:px-8">
+      <div className="max-w-7xl mx-auto my-2 px-4 sm:px-6 sm:py-3 lg:pt-3 lg:px-8">
         <div className="md:flex md:items-center md:justify-between">
           <h2
             id="favorites-heading"
@@ -20,7 +20,7 @@ const Trending = () => {
                 <img
                   src={product.imageSrc}
                   alt={product.imageAlt}
-                  className="w-full h-full object-center object-cover"
+                  className="w-full h-1 object-center object-cover"
                 />
               </div>
               <h3 className="mt-4 text-sm text-gray-700">

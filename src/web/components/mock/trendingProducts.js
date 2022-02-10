@@ -1,39 +1,44 @@
+import getRandomPrice from "../helper/getRandomPrice"
+
+import armchair from "../../../../public/assets/chairs/armchair-1.jpg"
+import couch from "../../../../public/assets/couchs/couch-2.jpg"
+
 const trendingProducts = [
   {
     id: 1,
-    name: "item 1",
-    color: "Natural",
-    price: "$75",
-    href: "#",
-    imageSrc: "",
-    imageAlt: "item 1",
+    name: "Armchair",
+    color: "yellow",
+    price: getRandomPrice(100, 20),
+    href: "/assets/chairs/armchairs-1.jpg",
+    imageSrc: armchair,
+    imageAlt: "yellow-armchair-1",
   },
   {
     id: 2,
-    name: "item 2",
-    color: "Natural",
-    price: "$75",
-    href: "#",
-    imageSrc: "",
-    imageAlt: "item 2",
+    name: "Couch",
+    color: "green",
+    price: getRandomPrice(100, 1),
+    href: "/assets/couchs/couch-2.jpg",
+    imageSrc: { couch },
+    imageAlt: "green-couch-2",
   },
   {
     id: 3,
-    name: "item 3",
-    color: "Natural",
-    price: "$75",
-    href: "#",
+    name: "Cupboard",
+    color: "turquoise",
+    price: getRandomPrice(100, 1),
+    href: "/assets/cupboards/cupboard-3.jpg",
     imageSrc: "",
-    imageAlt: "item 3",
+    imageAlt: "turquoise-cupboard-3",
   },
   {
     id: 4,
-    name: "item 4",
-    color: "Natural",
-    price: "$75",
-    href: "#",
+    name: "Lamp",
+    color: "white",
+    price: getRandomPrice(100, 1),
+    href: "/assets/lamps/lamp-4.jpg",
     imageSrc: "",
-    imageAlt: "item 4",
+    imageAlt: "white-lamp-2",
   },
 ]
 

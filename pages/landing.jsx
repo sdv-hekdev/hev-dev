@@ -5,11 +5,10 @@ import Link from "next/link"
 
 import cn from "../src/web/cn"
 import Footer from "../src/web/components/Footer"
-import navigation from "../src/web/components/mock/navigation"
-import currencies from "../src/web/components/mock/currencies"
 import Header from "../src/web/components/Header"
 import Trending from "../src/web/components/Trending"
-import Perks from "../src/web/components/Perks"
+import navigation from "../src/web/components/mock/navigation"
+import currencies from "../src/web/components/mock/currencies"
 
 const LandingPage = () => {
   const [open, setOpen] = useState(false)
@@ -118,19 +117,6 @@ const LandingPage = () => {
               </Tab.Group>
 
               <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-                {navigation.pages.map((page) => (
-                  <div key={page.name} className="flow-root">
-                    <a
-                      href={page.href}
-                      className="-m-2 p-2 block font-medium text-gray-900"
-                    >
-                      {page.name}
-                    </a>
-                  </div>
-                ))}
-              </div>
-
-              <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                 {/* Currency selector */}
                 <form>
                   <div className="inline-block">
@@ -183,15 +169,14 @@ const LandingPage = () => {
             aria-hidden="true"
             className="hidden absolute inset-0 sm:flex sm:flex-col"
           >
-            <div className="flex-1 relative w-full bg-gray-800">
+            <div className="flex-1 relative w-full bg-gray-600">
               <div className="absolute inset-0 overflow-hidden">
                 <img
-                  src="https://tailwindui.com/img/ecommerce-images/home-page-04-hero-full-width.jpg"
+                  src="/assets/landing-page-cover.png"
                   alt="cover"
                   className="w-full h-full object-center object-cover"
                 />
               </div>
-              <div className="absolute inset-0 bg-gray-900 opacity-50" />
             </div>
           </div>
 
@@ -204,25 +189,20 @@ const LandingPage = () => {
               <div className="flex-1 relative w-full bg-gray-800">
                 <div className="absolute inset-0 overflow-hidden">
                   <img
-                    src="https://tailwindui.com/img/ecommerce-images/home-page-04-hero-full-width.jpg"
+                    src=""
                     alt=""
                     className="w-full h-full object-center object-cover"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gray-900 opacity-50" />
               </div>
-              <div className="w-full bg-white h-48" />
             </div>
             <div className="relative py-32">
               <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
-                Mid-Season Sale
+                HEK.dev
               </h1>
               <div className="mt-4 sm:mt-6">
                 <Link href="/shopping">
-                  <a
-                    href="/shopping"
-                    className="inline-block bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700"
-                  >
+                  <a className="inline-block bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">
                     Shop Collection
                   </a>
                 </Link>
@@ -231,7 +211,6 @@ const LandingPage = () => {
           </div>
         </div>
         <Trending />
-        <Perks />
       </main>
       <Footer />
     </div>

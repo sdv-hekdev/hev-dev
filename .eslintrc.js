@@ -72,6 +72,7 @@ module.exports = {
     "react/no-unescaped-entities": ["error", { forbid: [">", "}"] }],
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
+    "@next/next/no-img-element": "off",
   },
   settings: { react: { version: "detect" } },
 }

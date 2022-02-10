@@ -1,20 +1,22 @@
+import getRandomPrice from "../helper/getRandomPrice"
+
 const products = [
   {
     id: 1,
     name: "item 1",
     href: "#",
-    price: "$32.00",
+    price: `${getRandomPrice(100, 20)} $`,
     color: "Sienna",
     inStock: true,
     size: "Large",
-    imageSrc: "",
+    imageSrc: "/public/assets/chairs/armchair-1.jpg",
     imageAlt: "item 1",
   },
   {
     id: 2,
     name: "item 2",
     href: "#",
-    price: "$32.00",
+    price: `${getRandomPrice(100, 20)} $`,
     color: "Black",
     inStock: false,
     leadTime: "3-4 weeks",
@@ -26,7 +28,7 @@ const products = [
     id: 3,
     name: "item 3",
     href: "#",
-    price: "$35.00",
+    price: `${getRandomPrice(100, 20)} $`,
     color: "White",
     inStock: true,
     imageSrc: "",
