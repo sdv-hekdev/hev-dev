@@ -3,28 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "lint": "eslint \"**/*.js\" \"**/*.jsx\" && next lint",
-    "start": "env `cat .env.local` next dev",
-    "dev": "next dev",
-    "build": "next build"
+    "lint": "next lint",
+    "build": "next build",
+    "start": "env `cat .env.local` next dev"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
+    "@tailwindcss/aspect-ratio": "^0.3.0",
     "@tailwindcss/forms": "^0.3.4",
-    "@tailwindcss/line-clamp": "^0.2.2",
-    "eslint": "^8.1.0",
-    "formik": "^2.2.9",
-    "next": "12.0.2",
-    "nodemon": "^2.0.14",
-    "prettier": "^2.4.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "uuid": "^8.3.2",
-    "yup": "^0.32.11"
+    "@tailwindcss/typography": "^0.4.1",
+    "next": "latest",
+    "npm": "^8.1.4",
+    "postcss-import": "^14.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.3.11",
-    "tailwindcss": "^2.2.19"
+    "autoprefixer": "^10.2.6",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^12.0.10",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "postcss": "^8.4.4",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^2.2.4"
   }
 }

@@ -1,8 +1,7 @@
-import Link from "public/components/Link";
-import Page from "../public/components/Page";
+import LandingPage from "./landing"
 
 const HomePage = () => {
-  return <Page title="HEK.dev" noBack></Page>;
-};
+  return <LandingPage />
+}
 
-export default HomePage;
+export default HomePage

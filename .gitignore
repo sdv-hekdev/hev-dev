@@ -7,7 +7,6 @@
 
 # testing
 /coverage
-.jest-test-results.json
 
 # next.js
 /.next/
@@ -28,13 +27,9 @@ yarn-error.log*
 # local env files
 .env
 .env.local
-.env.local.test
 .env.development.local
 .env.test.local
 .env.production.local
 
 # vercel
 .vercel
-
-#storybook
-/storybook-static
