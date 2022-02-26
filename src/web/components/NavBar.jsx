@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react"
 import { Popover, Transition } from "@headlessui/react"
 import Link from "next/link"
+import Image from "next/image"
 import {
   MenuIcon,
   QuestionMarkCircleIcon,
@@ -108,9 +109,11 @@ const NavBar = () => {
                                         className="group relative"
                                       >
                                         <div className="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
-                                          <img
+                                          <Image
                                             src={item.imageSrc}
                                             alt={item.imageAlt}
+                                            width={100}
+                                            height={100}
                                             className="object-center object-cover"
                                           />
                                         </div>

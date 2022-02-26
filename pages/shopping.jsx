@@ -1,4 +1,5 @@
 import { StarIcon } from "@heroicons/react/solid"
+import Image from "next/image"
 
 import cn from "../src/web/cn"
 import products from "../src/web/components/mock/products"
@@ -16,9 +17,11 @@ const ShoppingPage = () => {
               className="group relative p-4 border-r border-b border-gray-200 sm:p-6"
             >
               <div className="rounded-lg overflow-hidden bg-gray-200 aspect-w-1 aspect-h-1 group-hover:opacity-75">
-                <img
+                <Image
                   src={product.imageSrc}
                   alt={product.imageAlt}
+                  width={100}
+                  height={100}
                   className="w-full h-full object-center object-cover"
                 />
               </div>

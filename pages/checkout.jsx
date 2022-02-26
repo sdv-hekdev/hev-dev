@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { Disclosure } from "@headlessui/react"
 import { LockClosedIcon } from "@heroicons/react/solid"
 import Link from "next/link"
+import Image from "next/image"
 
 import products from "../src/web/components/mock/products"
 
@@ -55,9 +56,11 @@ const CheckoutPage = () => {
                   >
                     {products.map((product) => (
                       <li key={product.id} className="flex py-6 space-x-6">
-                        <img
+                        <Image
                           src={product.imageSrc}
                           alt={product.imageAlt}
+                          width={100}
+                          height={100}
                           className="flex-none w-40 h-40 object-center object-cover bg-gray-200 rounded-md"
                         />
                         <div className="flex flex-col justify-between space-y-4">
@@ -159,9 +162,11 @@ const CheckoutPage = () => {
           >
             {products.map((product) => (
               <li key={product.id} className="flex py-6 space-x-6">
-                <img
+                <Image
                   src={product.imageSrc}
                   alt={product.imageAlt}
+                  width={200}
+                  heigth={200}
                   className="flex-none w-40 h-40 object-center object-cover bg-gray-200 rounded-md"
                 />
                 <div className="flex flex-col justify-between space-y-4">
@@ -256,7 +261,12 @@ const CheckoutPage = () => {
               <Link href="/">
                 <a>
                   <span className="sr-only">Workflow</span>
-                  <img src="" alt="logo" className="h-8 w-auto" />
+                  <Image
+                    src="/assets/baka-bird.jpg"
+                    alt="logo"
+                    className="h-8 w-auto"
+                    layout="fill"
+                  />
                 </a>
               </Link>
             </div>

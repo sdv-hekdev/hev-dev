@@ -1,4 +1,5 @@
 import perks from "./mock/perks"
+import Image from "image/next"
 
 const Perks = () => {
   return (
@@ -19,10 +20,12 @@ const Perks = () => {
             >
               <div className="md:flex-shrink-0">
                 <div className="flow-root">
-                  <img
-                    className="-my-1 h-24 w-auto mx-auto"
+                  <Image
                     src={perk.imageUrl}
-                    alt=""
+                    alt={perk.perkAlt}
+                    width={100}
+                    height={100}
+                    className="-my-1 h-24 w-auto mx-auto"
                   />
                 </div>
               </div>

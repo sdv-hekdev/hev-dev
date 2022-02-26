@@ -1,5 +1,6 @@
 import { useCallback } from "react"
 import { useRouter } from "next/router"
+import Image from "next/image"
 import {
   CheckIcon,
   ClockIcon,
@@ -36,9 +37,11 @@ const CartPage = () => {
               {products.map((product, productIdx) => (
                 <li key={product.id} className="flex py-6 sm:py-10">
                   <div className="flex-shrink-0">
-                    <img
+                    <Image
                       src={product.imageSrc}
                       alt={product.imageAlt}
+                      width={50}
+                      height={50}
                       className="w-24 h-24 rounded-md object-center object-cover sm:w-48 sm:h-48"
                     />
                   </div>

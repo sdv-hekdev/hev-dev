@@ -28,7 +28,7 @@ const trendingProducts = [
     color: "turquoise",
     price: getRandomPrice(100, 1),
     href: "/assets/cupboards/cupboard-3.jpg",
-    imageSrc: "",
+    imageSrc: "/assets/cupboards/cupboard-3.jpg",
     imageAlt: "turquoise-cupboard-3",
   },
   {
@@ -37,7 +37,7 @@ const trendingProducts = [
     color: "white",
     price: getRandomPrice(100, 1),
     href: "/assets/lamps/lamp-4.jpg",
-    imageSrc: "",
+    imageSrc: "/assets/lamps/lamp-4.jpg",
     imageAlt: "white-lamp-2",
   },
 ]

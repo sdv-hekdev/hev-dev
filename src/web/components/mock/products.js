@@ -21,7 +21,7 @@ const products = [
     inStock: false,
     leadTime: "3-4 weeks",
     size: "Large",
-    imageSrc: "",
+    imageSrc: "/public/assets/chairs/armchair-1.jpg",
     imageAlt: "item 2",
   },
   {
@@ -31,7 +31,7 @@ const products = [
     price: `${getRandomPrice(100, 20)} $`,
     color: "White",
     inStock: true,
-    imageSrc: "",
+    imageSrc: "/public/assets/chairs/armchair-1.jpg",
     imageAlt: "item 3",
   },
 ]

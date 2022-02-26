@@ -3,6 +3,7 @@ const perks = [
     name: "Free returns",
     imageUrl:
       "https://tailwindui.com/img/ecommerce/icons/icon-returns-light.svg",
+    perkAlt: "returns",
     description:
       "Not what you expected? Place it back in the parcel and attach the pre-paid postage stamp.",
   },
@@ -10,6 +11,7 @@ const perks = [
     name: "Same day delivery",
     imageUrl:
       "https://tailwindui.com/img/ecommerce/icons/icon-calendar-light.svg",
+    perkAlt: "delivery",
     description:
       "We offer a delivery service that has never been done before. Checkout today and receive your products within hours.",
   },
@@ -17,6 +19,7 @@ const perks = [
     name: "All year discount",
     imageUrl:
       "https://tailwindui.com/img/ecommerce/icons/icon-gift-card-light.svg",
+    perkAlt: "discount",
     description:
       'Looking for a deal? You can use the code "ALLYEAR" at checkout and get money off all year round.',
   },
@@ -24,8 +27,9 @@ const perks = [
     name: "For the planet",
     imageUrl:
       "https://tailwindui.com/img/ecommerce/icons/icon-planet-light.svg",
+    perkAlt: "ecology",
     description:
-      "We’ve pledged 1% of sales to the preservation and restoration of the natural environment.",
+      "We've pledged 1% of sales to the preservation and restoration of the natural environment.",
   },
 ]
 
