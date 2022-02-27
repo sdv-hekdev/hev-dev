@@ -22,9 +22,8 @@ const Trending = () => {
                 <Image
                   src={product.imageSrc}
                   alt={product.imageAlt}
-                  width={100}
-                  height={100}
-                  className="w-full h-1 object-center object-cover"
+                  layout="fill"
+                  className="w-full h-full object-center object-cover"
                 />
               </div>
               <h3 className="mt-4 text-sm text-gray-700">

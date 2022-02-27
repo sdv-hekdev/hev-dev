@@ -11,7 +11,7 @@ const variants = {
 }
 
 const Button = (props) => {
-  const { variant, ...otherProps } = props
+  const { variants, ...otherProps } = props
 
   return <button type="button" variant={variants} {...otherProps}></button>
 }

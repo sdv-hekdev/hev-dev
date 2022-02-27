@@ -1,10 +1,8 @@
 module.exports = {
-  mode: "jit",
-  purge: [
+  content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
-    "./src/web/components/**/*.{js,ts,jsx,tsx}",
+    "./src/web/components/**/*.{js,jsx}",
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
     screens: {
@@ -14,9 +12,6 @@ module.exports = {
       xl: "1280px",
       "2xl": "1536px",
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [
     require("@tailwindcss/forms"),
