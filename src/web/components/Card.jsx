@@ -1,3 +1,5 @@
+import Button from "@/web/components/Button"
+
 const Card = (props) => {
   const { price, name, color, src, alt, grade } = props
 
@@ -7,8 +9,11 @@ const Card = (props) => {
       <div className="my-2 mx-2 flex flex-col">
         <div className="text-lg font-bold uppercase">{name}</div>
         <div>{price}$</div>
-        <div>{color}</div>
-        <div className="mx-2 self-end">{grade}</div>
+        <div className="flex justify-between">
+          <div>{color}</div>
+          <div className="mx-2 self-end">{grade}</div>
+        </div>
+        <Button title="Add to cart" className="mt-5" />
       </div>
     </div>
   )

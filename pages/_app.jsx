@@ -1,12 +1,7 @@
-import Page from "../src/web/components/Page"
-import "../src/web/styles/tailwind.css"
+import "@/web/styles/tailwind.css"
 
 const App = ({ Component, pageProps }) => {
-  return (
-    <Page>
-      <Component {...pageProps} />
-    </Page>
-  )
+  return <Component {...pageProps} />
 }
 
 export default App
