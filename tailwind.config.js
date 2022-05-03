@@ -1,3 +1,7 @@
+const forms = require("@tailwindcss/forms")
+const typography = require("@tailwindcss/typography")
+const aspectRatio = require("@tailwindcss/aspect-ratio")
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -13,9 +17,5 @@ module.exports = {
       "2xl": "1536px",
     },
   },
-  plugins: [
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/aspect-ratio"),
-  ],
+  plugins: [forms, typography, aspectRatio],
 }

@@ -9,7 +9,7 @@ const products = [
     color: "Sienna",
     inStock: true,
     size: "Large",
-    imageSrc: "/public/assets/chairs/armchair-1.jpg",
+    imageSrc: "/assets/chairs/armchair-1.jpg",
     imageAlt: "item 1",
   },
   {
@@ -21,7 +21,7 @@ const products = [
     inStock: false,
     leadTime: "3-4 weeks",
     size: "Large",
-    imageSrc: "/public/assets/chairs/armchair-1.jpg",
+    imageSrc: "/assets/chairs/armchair-2.jpg",
     imageAlt: "item 2",
   },
   {
@@ -31,7 +31,7 @@ const products = [
     price: `${getRandomPrice(100, 20)} $`,
     color: "White",
     inStock: true,
-    imageSrc: "/public/assets/chairs/armchair-1.jpg",
+    imageSrc: "/assets/chairs/armchair-3.jpg",
     imageAlt: "item 3",
   },
 ]

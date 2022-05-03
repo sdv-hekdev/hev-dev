@@ -1,6 +1,5 @@
 import { useCallback } from "react"
 import { useRouter } from "next/router"
-import Image from "next/image"
 import {
   CheckIcon,
   ClockIcon,
@@ -9,8 +8,6 @@ import {
 } from "@heroicons/react/solid"
 
 import products from "../src/web/components/mock/products"
-import Header from "../src/web/components/Header"
-import Footer from "../src/web/components/Footer"
 
 const CartPage = () => {
   const router = useRouter()
@@ -20,7 +17,6 @@ const CartPage = () => {
   return (
     <div className="bg-white">
       <div className="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-        <Header />
         <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
           Shopping Cart
         </h1>
@@ -37,11 +33,9 @@ const CartPage = () => {
               {products.map((product, productIdx) => (
                 <li key={product.id} className="flex py-6 sm:py-10">
                   <div className="flex-shrink-0">
-                    <Image
+                    <img
                       src={product.imageSrc}
                       alt={product.imageAlt}
-                      width={50}
-                      height={50}
                       className="w-24 h-24 rounded-md object-center object-cover sm:w-48 sm:h-48"
                     />
                   </div>
@@ -204,7 +198,6 @@ const CartPage = () => {
           </section>
         </form>
       </div>
-      <Footer />
     </div>
   )
 }
