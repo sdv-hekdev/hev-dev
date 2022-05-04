@@ -7,10 +7,7 @@ const Trending = () => {
   return (
     <section>
       <div className="mx-auto my-2 max-w-7xl px-4 sm:px-6 sm:py-3 lg:px-8 lg:pt-3">
-        <h2
-          id="trending-products"
-          className="mb-1 text-2xl font-extrabold text-gray-900"
-        >
+        <h2 className="mb-1 text-2xl font-extrabold text-gray-900">
           Trending Products
         </h2>
         <div className="flex flex-wrap justify-center gap-5">

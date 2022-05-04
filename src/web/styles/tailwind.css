@@ -5,5 +5,5 @@
 html,
 body,
 #__next {
-  @apply min-h-full;
+  @apply h-full;
 }

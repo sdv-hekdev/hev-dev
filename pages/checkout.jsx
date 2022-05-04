@@ -5,6 +5,7 @@ import { LockClosedIcon } from "@heroicons/react/solid"
 import Link from "next/link"
 
 import products from "../src/web/components/mock/products"
+import Page from "@/web/components/Page"
 
 const subtotal = "$210.00"
 const discount = { code: "CHEAPSKATE", amount: "$24.00" }
@@ -21,15 +22,15 @@ const CheckoutPage = () => {
   )
 
   return (
-    <>
-      <main className="lg:min-h-full lg:overflow-hidden lg:flex lg:flex-row-reverse">
+    <Page title="Checkout">
+      <main className="lg:flex lg:min-h-full lg:flex-row-reverse lg:overflow-hidden">
         <h1 className="sr-only">Checkout</h1>
         {/* Mobile order summary */}
         <section
           aria-labelledby="order-heading"
           className="bg-gray-50 px-4 py-6 sm:px-6 lg:hidden"
         >
-          <Disclosure as="div" className="max-w-lg mx-auto">
+          <Disclosure as="div" className="mx-auto max-w-lg">
             {({ open }) => (
               <>
                 <div className="flex items-center justify-between">
@@ -54,14 +55,14 @@ const CheckoutPage = () => {
                     className="divide-y divide-gray-200 border-b border-gray-200"
                   >
                     {products.map((product) => (
-                      <li key={product.id} className="flex py-6 space-x-6">
+                      <li key={product.id} className="flex space-x-6 py-6">
                         <img
                           src={product.imageSrc}
                           alt={product.imageAlt}
-                          className="flex-none w-40 h-40 object-center object-cover bg-gray-200 rounded-md"
+                          className="h-40 w-40 flex-none rounded-md bg-gray-200 object-cover object-center"
                         />
                         <div className="flex flex-col justify-between space-y-4">
-                          <div className="text-sm font-medium space-y-1">
+                          <div className="space-y-1 text-sm font-medium">
                             <h3 className="text-gray-900">{product.name}</h3>
                             <p className="text-gray-900">{product.price}</p>
                             <p className="text-gray-500">{product.color}</p>
@@ -95,23 +96,23 @@ const CheckoutPage = () => {
                     >
                       Discount code
                     </label>
-                    <div className="flex space-x-4 mt-1">
+                    <div className="mt-1 flex space-x-4">
                       <input
                         type="text"
                         id="discount-code-mobile"
                         name="discount-code-mobile"
-                        className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                       />
                       <button
                         type="submit"
-                        className="bg-gray-200 text-sm font-medium text-gray-600 rounded-md px-4 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
+                        className="rounded-md bg-gray-200 px-4 text-sm font-medium text-gray-600 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
                       >
                         Apply
                       </button>
                     </div>
                   </form>
 
-                  <dl className="text-sm font-medium text-gray-500 mt-10 space-y-6">
+                  <dl className="mt-10 space-y-6 text-sm font-medium text-gray-500">
                     <div className="flex justify-between">
                       <dt>Subtotal</dt>
                       <dd className="text-gray-900">{subtotal}</dd>
@@ -119,7 +120,7 @@ const CheckoutPage = () => {
                     <div className="flex justify-between">
                       <dt className="flex">
                         Discount
-                        <span className="ml-2 rounded-full bg-gray-200 text-xs text-gray-600 py-0.5 px-2 tracking-wide">
+                        <span className="ml-2 rounded-full bg-gray-200 py-0.5 px-2 text-xs tracking-wide text-gray-600">
                           {discount.code}
                         </span>
                       </dt>
@@ -136,7 +137,7 @@ const CheckoutPage = () => {
                   </dl>
                 </Disclosure.Panel>
 
-                <p className="flex items-center justify-between text-sm font-medium text-gray-900 border-t border-gray-200 pt-6 mt-6">
+                <p className="mt-6 flex items-center justify-between border-t border-gray-200 pt-6 text-sm font-medium text-gray-900">
                   <span className="text-base">Total</span>
                   <span className="text-base">{total}</span>
                 </p>
@@ -147,7 +148,7 @@ const CheckoutPage = () => {
         {/* Order summary */}
         <section
           aria-labelledby="summary-heading"
-          className="hidden bg-gray-50 w-full max-w-md flex-col lg:flex"
+          className="hidden w-full max-w-md flex-col bg-gray-50 lg:flex"
         >
           <h2 id="summary-heading" className="sr-only">
             Order summary
@@ -155,17 +156,17 @@ const CheckoutPage = () => {
 
           <ul
             role="list"
-            className="flex-auto overflow-y-auto divide-y divide-gray-200 px-6"
+            className="flex-auto divide-y divide-gray-200 overflow-y-auto px-6"
           >
             {products.map((product) => (
-              <li key={product.id} className="flex py-6 space-x-6">
+              <li key={product.id} className="flex space-x-6 py-6">
                 <img
                   src={product.imageSrc}
                   alt={product.imageAlt}
-                  className="flex-none w-40 h-40 object-center object-cover bg-gray-200 rounded-md"
+                  className="h-40 w-40 flex-none rounded-md bg-gray-200 object-cover object-center"
                 />
                 <div className="flex flex-col justify-between space-y-4">
-                  <div className="text-sm font-medium space-y-1">
+                  <div className="space-y-1 text-sm font-medium">
                     <h3 className="text-gray-900">{product.name}</h3>
                     <p className="text-gray-900">{product.price}</p>
                     <p className="text-gray-500">{product.color}</p>
@@ -192,7 +193,7 @@ const CheckoutPage = () => {
             ))}
           </ul>
 
-          <div className="sticky bottom-0 flex-none bg-gray-50 border-t border-gray-200 p-6">
+          <div className="sticky bottom-0 flex-none border-t border-gray-200 bg-gray-50 p-6">
             <form>
               <label
                 htmlFor="discount-code"
@@ -200,23 +201,23 @@ const CheckoutPage = () => {
               >
                 Discount code
               </label>
-              <div className="flex space-x-4 mt-1">
+              <div className="mt-1 flex space-x-4">
                 <input
                   type="text"
                   id="discount-code"
                   name="discount-code"
-                  className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                 />
                 <button
                   type="submit"
-                  className="bg-gray-200 text-sm font-medium text-gray-600 rounded-md px-4 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
+                  className="rounded-md bg-gray-200 px-4 text-sm font-medium text-gray-600 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
                 >
                   Apply
                 </button>
               </div>
             </form>
 
-            <dl className="text-sm font-medium text-gray-500 mt-10 space-y-6">
+            <dl className="mt-10 space-y-6 text-sm font-medium text-gray-500">
               <div className="flex justify-between">
                 <dt>Subtotal</dt>
                 <dd className="text-gray-900">{subtotal}</dd>
@@ -224,7 +225,7 @@ const CheckoutPage = () => {
               <div className="flex justify-between">
                 <dt className="flex">
                   Discount
-                  <span className="ml-2 rounded-full bg-gray-200 text-xs text-gray-600 py-0.5 px-2 tracking-wide">
+                  <span className="ml-2 rounded-full bg-gray-200 py-0.5 px-2 text-xs tracking-wide text-gray-600">
                     {discount.code}
                   </span>
                 </dt>
@@ -238,7 +239,7 @@ const CheckoutPage = () => {
                 <dt>Shipping</dt>
                 <dd className="text-gray-900">{shipping}</dd>
               </div>
-              <div className="flex items-center justify-between border-t border-gray-200 text-gray-900 pt-6">
+              <div className="flex items-center justify-between border-t border-gray-200 pt-6 text-gray-900">
                 <dt className="text-base">Total</dt>
                 <dd className="text-base">{total}</dd>
               </div>
@@ -251,7 +252,7 @@ const CheckoutPage = () => {
           aria-labelledby="payment-heading"
           className="flex-auto overflow-y-auto px-4 pt-12 pb-16 sm:px-6 sm:pt-16 lg:px-8 lg:pt-0 lg:pb-24"
         >
-          <div className="max-w-lg mx-auto">
+          <div className="mx-auto max-w-lg">
             <div className="hidden pt-10 pb-16 lg:flex">
               <Link href="/">
                 <a>
@@ -268,7 +269,7 @@ const CheckoutPage = () => {
 
             <button
               type="button"
-              className="w-full flex items-center justify-center bg-black border border-transparent text-white rounded-md py-2 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+              className="flex w-full items-center justify-center rounded-md border border-transparent bg-black py-2 text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
             >
               <span className="sr-only">Pay with Apple Pay</span>
               <svg
@@ -289,7 +290,7 @@ const CheckoutPage = () => {
                 <div className="w-full border-t border-gray-200" />
               </div>
               <div className="relative flex justify-center">
-                <span className="px-4 bg-white text-sm font-medium text-gray-500">
+                <span className="bg-white px-4 text-sm font-medium text-gray-500">
                   or
                 </span>
               </div>
@@ -310,7 +311,7 @@ const CheckoutPage = () => {
                       id="email-address"
                       name="email-address"
                       autoComplete="email"
-                      className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
                 </div>
@@ -328,7 +329,7 @@ const CheckoutPage = () => {
                       id="name-on-card"
                       name="name-on-card"
                       autoComplete="cc-name"
-                      className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
                 </div>
@@ -346,7 +347,7 @@ const CheckoutPage = () => {
                       id="card-number"
                       name="card-number"
                       autoComplete="cc-number"
-                      className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
                 </div>
@@ -364,7 +365,7 @@ const CheckoutPage = () => {
                       name="expiration-date"
                       id="expiration-date"
                       autoComplete="cc-exp"
-                      className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
                 </div>
@@ -382,7 +383,7 @@ const CheckoutPage = () => {
                       name="cvc"
                       id="cvc"
                       autoComplete="csc"
-                      className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
                 </div>
@@ -400,7 +401,7 @@ const CheckoutPage = () => {
                       id="address"
                       name="address"
                       autoComplete="street-address"
-                      className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
                 </div>
@@ -418,7 +419,7 @@ const CheckoutPage = () => {
                       id="city"
                       name="city"
                       autoComplete="address-level2"
-                      className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
                 </div>
@@ -436,7 +437,7 @@ const CheckoutPage = () => {
                       id="region"
                       name="region"
                       autoComplete="address-level1"
-                      className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
                 </div>
@@ -454,20 +455,20 @@ const CheckoutPage = () => {
                       id="postal-code"
                       name="postal-code"
                       autoComplete="postal-code"
-                      className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
                 </div>
               </div>
 
               <div className="mt-6 flex space-x-2">
-                <div className="flex items-center h-5">
+                <div className="flex h-5 items-center">
                   <input
                     id="same-as-shipping"
                     name="same-as-shipping"
                     type="checkbox"
                     defaultChecked
-                    className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                   />
                 </div>
                 <label
@@ -480,15 +481,15 @@ const CheckoutPage = () => {
 
               <button
                 type="submit"
-                className="w-full mt-6 bg-emerald-600 border border-transparent rounded-md shadow-sm py-2 px-4 text-sm font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="mt-6 w-full rounded-md border border-transparent bg-emerald-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 onClick={validatePayment}
               >
                 Pay {total}
               </button>
 
-              <p className="flex justify-center text-sm font-medium text-gray-500 mt-6">
+              <p className="mt-6 flex justify-center text-sm font-medium text-gray-500">
                 <LockClosedIcon
-                  className="w-5 h-5 text-gray-400 mr-1.5"
+                  className="mr-1.5 h-5 w-5 text-gray-400"
                   aria-hidden="true"
                 />
                 Payment details stored in plain text
@@ -497,7 +498,7 @@ const CheckoutPage = () => {
           </div>
         </section>
       </main>
-    </>
+    </Page>
   )
 }
 
