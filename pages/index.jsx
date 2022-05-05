@@ -20,7 +20,7 @@ const LandingPage = () => {
 
         <div className="mx-3 hidden py-8 text-sm lg:flex">
           <Link href="/shopping">
-            <a className="font-medium text-indigo-600 hover:text-indigo-400">
+            <a className="font-medium  text-lg text-indigo-600 hover:text-indigo-400">
               Shop the collection<span>&rarr;</span>
             </a>
           </Link>

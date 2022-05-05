@@ -1,7 +1,7 @@
 const navigation = {
   categories: [
     {
-      name: "Table",
+      name: "Chairs",
       clothing: [
         [
           { name: "Tops", href: "#" },
@@ -21,7 +21,7 @@ const navigation = {
       ],
     },
     {
-      name: "Bed",
+      name: "Couchs",
       clothing: [
         [
           { name: "Dress Shirts", href: "#" },
@@ -41,7 +41,7 @@ const navigation = {
       ],
     },
     {
-      name: "Cupboard",
+      name: "Furnitures",
       clothing: [
         [
           { name: "Dress Shirts", href: "#" },
@@ -60,6 +60,9 @@ const navigation = {
         ],
       ],
     },
+    { name: "Lamps" },
+    { name: "Sets" },
+    { name: "Tables" },
   ],
 }
 export default navigation

@@ -2,10 +2,9 @@ import { useCallback } from "react"
 import { useRouter } from "next/router"
 import { Disclosure } from "@headlessui/react"
 import { LockClosedIcon } from "@heroicons/react/solid"
-import Link from "next/link"
 
-import products from "../src/web/components/mock/products"
 import Page from "@/web/components/Page"
+import products from "@/web/components/mock/products"
 
 const subtotal = "$210.00"
 const discount = { code: "CHEAPSKATE", amount: "$24.00" }
@@ -250,23 +249,9 @@ const CheckoutPage = () => {
         {/* Checkout form */}
         <section
           aria-labelledby="payment-heading"
-          className="flex-auto overflow-y-auto px-4 pt-12 pb-16 sm:px-6 sm:pt-16 lg:px-8 lg:pt-0 lg:pb-24"
+          className="flex-auto overflow-y-auto px-4 pt-12 pb-16 lg:my-12 sm:px-6 sm:pt-16 lg:px-8 lg:pt-0 lg:pb-24"
         >
           <div className="mx-auto max-w-lg">
-            <div className="hidden pt-10 pb-16 lg:flex">
-              <Link href="/">
-                <a>
-                  <span className="sr-only">Workflow</span>
-                  <img
-                    src="/assets/baka-bird.jpg"
-                    alt="logo"
-                    className="h-8 w-auto"
-                    layout="fill"
-                  />
-                </a>
-              </Link>
-            </div>
-
             <button
               type="button"
               className="flex w-full items-center justify-center rounded-md border border-transparent bg-black py-2 text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
