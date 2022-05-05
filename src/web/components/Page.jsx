@@ -14,7 +14,7 @@ const Page = (props) => {
 
       {noFooter ? null : (
         <footer className=" bottom-0 w-full bg-gray-100">
-          <div className="§px-4 mx-auto max-w-7xl py-5 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
             <div className="flex justify-center space-x-6  md:order-2">
               {socialNetwork.map((item) => (
                 <a
