@@ -10,9 +10,9 @@ const NavStore = () => {
 
   return (
     <div>
-      <ul className="flex space-x-5 text-lg text-gray-500 border-b border-gray-300">
+      <ul className="flex space-x-5 text-lg">
         {navigation.categories.map(({ id, name }) => (
-          <li key={id} onClick={handleClick}>
+          <li key={id} onClick={handleClick} className="focus:ring-2">
             {name}
           </li>
         ))}

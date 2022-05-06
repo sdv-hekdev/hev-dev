@@ -37,6 +37,33 @@ const trendingProducts = [
     imageSrc: "/assets/lamps/lamp-4.jpg",
     imageAlt: "white-lamp-2",
   },
+  {
+    id: 5,
+    name: "Lamp",
+    color: "white",
+    price: getRandomPrice(100, 1),
+    href: "/assets/lamps/lamp-5.jpg",
+    imageSrc: "/assets/lamps/lamp-5.jpg",
+    imageAlt: "white-lamp-2",
+  },
+  {
+    id: 6,
+    name: "Lamp",
+    color: "white",
+    price: getRandomPrice(100, 1),
+    href: "/assets/lamps/lamp-6.jpg",
+    imageSrc: "/assets/lamps/lamp-6.jpg",
+    imageAlt: "white-lamp-2",
+  },
+  {
+    id: 7,
+    name: "Lamp",
+    color: "white",
+    price: getRandomPrice(100, 1),
+    href: "/assets/lamps/lamp-7.jpg",
+    imageSrc: "/assets/lamps/lamp-7.jpg",
+    imageAlt: "white-lamp-2",
+  },
 ]
 
 export default trendingProducts
