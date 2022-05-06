@@ -1,10 +1,12 @@
+const forms = require("@tailwindcss/forms")
+const typography = require("@tailwindcss/typography")
+const aspectRatio = require("@tailwindcss/aspect-ratio")
+
 module.exports = {
-  mode: "jit",
-  purge: [
+  content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
-    "./src/web/components/**/*.{js,ts,jsx,tsx}",
+    "./src/web/components/**/*.{js,jsx}",
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
     screens: {
@@ -15,12 +17,5 @@ module.exports = {
       "2xl": "1536px",
     },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/aspect-ratio"),
-  ],
+  plugins: [forms, typography, aspectRatio],
 }
