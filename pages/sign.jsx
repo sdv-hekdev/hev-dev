@@ -3,7 +3,7 @@ import RegistrationCard from "@/web/components/RegistrationCard"
 
 const SignPage = () => {
   return (
-    <Page title="Let's sign" s>
+    <Page title="Let's sign">
       <RegistrationCard />
     </Page>
   )

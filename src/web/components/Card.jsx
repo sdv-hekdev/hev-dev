@@ -13,7 +13,7 @@ const Card = (props) => {
           <div>{color}</div>
           <div className="mx-2 self-end">{grade}</div>
         </div>
-        <Button title="Add to cart" className="mt-5" />
+        <Button type="submit" title="Add to cart" className="mt-5" />
       </div>
     </div>
   )

@@ -11,8 +11,8 @@ const NavStore = () => {
   return (
     <div>
       <ul className="flex space-x-5 text-lg">
-        {navigation.categories.map(({ id, name }) => (
-          <li key={id} onClick={handleClick} className="focus:ring-2">
+        {navigation.categories.map(({ name }) => (
+          <li key={name} onClick={handleClick} className="focus:ring-2">
             {name}
           </li>
         ))}

@@ -27,7 +27,7 @@ const BackButton = (props) => {
 }
 
 const Header = (props) => {
-  const { title, counter } = props
+  const { title, counter, noMenu } = props
   const [open, setOpen] = useState(false)
 
   const handleClick = useCallback(() => setOpen(!open), [open])
@@ -41,25 +41,25 @@ const Header = (props) => {
           {title}
         </h1>
         <Link href="/sign" passHref>
-          <UserCircleIcon className="h-8 w-8 text-white" />
+          <a>
+            <UserCircleIcon className="h-8 w-8 text-white" />
+          </a>
         </Link>
       </div>
 
       <div className="flex items-center justify-between">
-        <Link href="/">
-          <a className="flex-grow-1">
-            <img
-              className="mx-2 h-20 w-20"
-              src="/assets/baka-bird.jpg"
-              alt="logo-md"
-            />
-          </a>
+        <Link href="/" passHref>
+          <img
+            className="mx-2 h-20 w-20"
+            src="/assets/baka-bird.jpg"
+            alt="logo-md"
+          />
         </Link>
 
         {open === true ? (
           <MenuIcon className="h-8 w-8 text-gray-400" onClick={handleClick} />
         ) : (
-          <NavStore />
+          <div>{noMenu ? null : <NavStore />}</div>
         )}
 
         <div className="flex items-center">
@@ -75,7 +75,7 @@ const Header = (props) => {
 
           <Link href="/cart">
             <a className="flex items-center mx-2">
-              <ShoppingBagIcon className="h-8 w-8 text-gray-400" o />
+              <ShoppingBagIcon className="h-8 w-8 text-gray-400" />
               <span className="text-lg font-medium text-gray-700">
                 {counter} 0
               </span>
