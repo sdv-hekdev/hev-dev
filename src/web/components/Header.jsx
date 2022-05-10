@@ -6,14 +6,17 @@ import {
   UserCircleIcon,
   XIcon,
 } from "@heroicons/react/outline"
-import { useRouter } from "next/router"
-import { useCallback, useState } from "react"
+import { useCallback, useState, useContext } from "react"
 import Link from "next/link"
+
 import Input from "@/web/components/Input"
 import NavStore from "@/web/components/NavStore"
+import { AppContext } from "@/web/context/AppContext"
 
 const BackButton = (props) => {
-  const router = useRouter()
+  const {
+    context: { router },
+  } = useContext(AppContext)
 
   const handleClick = useCallback(() => router.back(), [router])
 
@@ -48,21 +51,23 @@ const Header = (props) => {
       </div>
 
       <div className="flex items-center justify-between">
-        <Link href="/" passHref>
-          <img
-            className="mx-2 h-20 w-20"
-            src="/assets/baka-bird.jpg"
-            alt="logo-md"
-          />
-        </Link>
+        <div className="flex items-center justify-center">
+          <Link href="/" passHref>
+            <img
+              className="mx-2 h-20 w-20"
+              src="/assets/baka-bird.jpg"
+              alt="logo-md"
+            />
+          </Link>
 
-        {open === true ? (
-          <MenuIcon className="h-8 w-8 text-gray-400" onClick={handleClick} />
-        ) : (
-          <div>{noMenu ? null : <NavStore />}</div>
-        )}
+          {open === true ? (
+            <MenuIcon className="h-8 w-8 text-gray-400" onClick={handleClick} />
+          ) : (
+            <div>{noMenu ? null : <NavStore />}</div>
+          )}
+        </div>
 
-        <div className="flex items-center">
+        <div className="flex items-center flex-shrink-1">
           {open === false ? null : <Input />}
           {open === false ? (
             <SearchIcon

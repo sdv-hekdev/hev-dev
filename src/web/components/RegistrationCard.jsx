@@ -2,7 +2,7 @@ import { useCallback, useState } from "react"
 import { Formik } from "formik"
 import Link from "next/link"
 
-import { credentialSchema } from "@/web/validator/validator"
+import { credentialSchema } from "@/back/validator/validator"
 import FormField from "@/web/components/FormField"
 import Button from "@/web/components/Button"
 
@@ -12,7 +12,7 @@ const RegistrationCard = () => {
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null)
 
-  const handleFormSubmit = useCallback(() => {}, [])
+  const handleFormSubmit = useCallback(async () => {}, [])
 
   return (
     <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">

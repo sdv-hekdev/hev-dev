@@ -7,7 +7,7 @@ const Page = (props) => {
   return (
     <div className="flex h-full flex-col">
       <main className="flex-grow scroll-auto" {...otherProps}>
-        <Header title={title}>HEK.dev - {title}</Header>
+        <Header title={title}>{title}</Header>
 
         <section>{children}</section>
       </main>
