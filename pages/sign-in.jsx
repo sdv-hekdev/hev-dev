@@ -87,7 +87,7 @@ const SignInPage = () => {
                   type="submit"
                   disabled={!isValid || isSubmitting}
                   title="Sign-in"
-                  variant="sign"
+                  variant="primary"
                   className="w-full"
                 />
                 <Link href="/sign-up" passHref>

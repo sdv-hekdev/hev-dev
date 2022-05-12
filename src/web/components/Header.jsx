@@ -47,7 +47,7 @@ const Header = (props) => {
 
   return (
     <>
-      <div className="flex w-full items-center justify-between bg-emerald-600 py-1 px-4">
+      <div className="flex w-full items-center justify-between bg-emerald-600 py-2 px-4">
         {noBack ? null : <BackButton />}
         <h1 className="font-light text-white text-2xl lg:text-center">
           {title}
@@ -57,12 +57,7 @@ const Header = (props) => {
          items-center justify-end space-x-2"
         >
           {!user ? null : (
-            <Button
-              title="Sign out"
-              variant="signOut"
-              className=""
-              onClick={signOut}
-            />
+            <Button title="Sign out" variant="danger" onClick={signOut} />
           )}
           {user ? (
             <Link href="/profile" passHref>

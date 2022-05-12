@@ -13,7 +13,12 @@ const Card = (props) => {
           <div>{color}</div>
           <div className="mx-2 self-end">{grade}</div>
         </div>
-        <Button type="submit" title="Add to cart" className="my-3" />
+        <Button
+          type="submit"
+          title="Add to cart"
+          className="my-3"
+          variant="primary"
+        />
       </div>
     </div>
   )
