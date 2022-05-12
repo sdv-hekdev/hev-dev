@@ -11,7 +11,6 @@ import { AppContext } from "@/web/context/AppContext"
 const initialValues = { email: "toto@toto.fr", password: "12345678" }
 
 const SignInPage = () => {
-  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null)
   const {
     context: { signIn, router },
@@ -50,7 +49,7 @@ const SignInPage = () => {
                 <FormField
                   name="email"
                   type="text"
-                  label="E-mail"
+                  label="Email"
                   placeholder="Enter your email address"
                 />
                 <FormField
@@ -88,7 +87,8 @@ const SignInPage = () => {
                   type="submit"
                   disabled={!isValid || isSubmitting}
                   title="Sign-in"
-                  variant="sign "
+                  variant="sign"
+                  className="w-full"
                 />
                 <Link href="/sign-up" passHref>
                   <a className="block text-center text-sm font-medium text-emerald-600 hover:text-emerald-500 active:text-blue-500">

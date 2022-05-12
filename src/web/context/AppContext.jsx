@@ -31,10 +31,13 @@ export const AppContextProvider = (props) => {
     return () => unsubscribe()
   }, [])
 
-  const signIn = async (email, password) =>
-    signInWithEmailAndPassword(auth, email, password)
+  const signIn = async (email, password) => {
+    setUser(user)
+    await signInWithEmailAndPassword(auth, email, password)
+  }
 
   const signUp = async (email, password) => {
+    setUser(user)
     await createUserWithEmailAndPassword(auth, email, password)
   }
 

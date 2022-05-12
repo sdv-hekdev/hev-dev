@@ -13,7 +13,7 @@ const initialValues = { email: "toto@toto.fr", password: "12345678" }
 const SignUpPage = () => {
   const [error, setError] = useState(null)
   const {
-    context: { signUp, router, user, setUser },
+    context: { signUp, router },
   } = useContext(AppContext)
 
   // console.log("tototototot", signUp())
@@ -22,14 +22,13 @@ const SignUpPage = () => {
     async ({ email, password }) => {
       try {
         await signUp(email, password)
-        setUser(user)
 
         router.push("/")
       } catch (err) {
         setError(error)
       }
     },
-    [signUp, router, error, setUser, user]
+    [signUp, router, error]
   )
 
   return (
@@ -67,7 +66,7 @@ const SignUpPage = () => {
                   disabled={!isValid || isSubmitting}
                   title="Create an account"
                   variant="sign"
-                  className="mt-4"
+                  className="mt-4 w-full"
                 />
                 <Link href="/sign-in" passHref>
                   <a className="block text-center text-sm font-medium text-emerald-600 hover:text-emerald-500 active:text-blue-500">
