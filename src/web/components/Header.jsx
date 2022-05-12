@@ -33,7 +33,7 @@ const BackButton = (props) => {
 const Header = (props) => {
   const { title, counter, noBack, noMenu } = props
   const {
-    context: { logout, router },
+    context: { logout, router, user },
   } = useContext(AppContext)
   const [open, setOpen] = useState(false)
 
@@ -56,17 +56,27 @@ const Header = (props) => {
           className="flex
          items-center justify-end space-x-2"
         >
-          <Button
-            title="Sign out"
-            variant="signOut"
-            className=""
-            onClick={signOut}
-          />
-          <Link href="/sign-up" passHref>
-            <a>
-              <UserCircleIcon className="h-8 w-8 text-white" />
-            </a>
-          </Link>
+          {!user ? null : (
+            <Button
+              title="Sign out"
+              variant="signOut"
+              className=""
+              onClick={signOut}
+            />
+          )}
+          {user ? (
+            <Link href="/profile" passHref>
+              <a>
+                <UserCircleIcon className="h-8 w-8 text-white" />
+              </a>
+            </Link>
+          ) : (
+            <Link href="/sign-up" passHref>
+              <a>
+                <UserCircleIcon className="h-8 w-8 text-white" />
+              </a>
+            </Link>
+          )}
         </div>
       </div>
 
@@ -74,7 +84,7 @@ const Header = (props) => {
         <div className="flex items-center">
           <Link href="/" passHref>
             <img
-              className="mx-2 h-20 w-20 order-2 md:order-1"
+              className="mx-2 h-20 w-20"
               src="/assets/baka-bird.jpg"
               alt="logo-md"
             />
