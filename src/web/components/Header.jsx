@@ -43,7 +43,7 @@ const Header = (props) => {
         <h1 className="flex-grow-1 flex text-lg font-light text-white md:text-2xl">
           {title}
         </h1>
-        <Link href="/sign" passHref>
+        <Link href="/sign-up" passHref>
           <a>
             <UserCircleIcon className="h-8 w-8 text-white" />
           </a>
