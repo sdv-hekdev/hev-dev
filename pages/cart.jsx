@@ -7,8 +7,8 @@ import {
   XIcon,
 } from "@heroicons/react/solid"
 
-import products from "../src/web/components/mock/products"
 import Page from "@/web/components/Page"
+import products from "@/mock/products"
 
 const CartPage = () => {
   const router = useRouter()

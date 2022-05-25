@@ -1,7 +1,8 @@
 import { useCallback, useState } from "react"
 import { MenuIcon } from "@heroicons/react/outline"
 
-import navigation from "@/web/components/mock/navigation"
+import navigation from "mock/navigation"
+import Link from "next/link"
 
 const Navbar = () => {
   const [open, setOpen] = useState()
@@ -17,7 +18,9 @@ const Navbar = () => {
         <ul className="flex space-x-3 text-sm">
           {navigation.categories.map(({ name }) => (
             <li key={name} onClick={handleClick} className="focus:ring-2">
-              {name}
+              <Link href={name} passHref>
+                {name}
+              </Link>
             </li>
           ))}
         </ul>

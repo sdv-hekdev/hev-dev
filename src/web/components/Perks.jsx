@@ -1,4 +1,4 @@
-import perks from "./mock/perks"
+import perks from "../../../mock/perks"
 import Image from "image/next"
 
 const Perks = () => {

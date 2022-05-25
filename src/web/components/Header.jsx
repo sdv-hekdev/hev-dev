@@ -46,7 +46,7 @@ const Header = (props) => {
   }, [logout, router])
 
   return (
-    <>
+    <div className="bg-white sticky top-0">
       <div className="flex w-full items-center justify-between bg-emerald-600 py-2 px-4">
         {noBack ? null : <BackButton />}
         <h1 className="font-light text-white text-2xl lg:text-center">
@@ -100,7 +100,7 @@ const Header = (props) => {
           )}
         </div>
 
-        <div className="flex items-center justify-end w-1/2">
+        <div className="flex items-center justify-end w-1/2 mx-6">
           {open === false ? null : <Input />}
           {open === false ? (
             <SearchIcon
@@ -115,13 +115,13 @@ const Header = (props) => {
             <a className="flex items-center mx-2">
               <ShoppingBagIcon className="h-8 w-8 text-gray-400" />
               <span className="text-lg font-medium text-gray-700">
-                {counter} 0
+                {counter} 99
               </span>
             </a>
           </Link>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

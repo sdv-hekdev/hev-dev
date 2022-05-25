@@ -1,4 +1,4 @@
-import getRandomPrice from "../helper/getRandomPrice"
+import getRandomPrice from "../src/web/helper/getRandomPrice"
 
 const trendingProducts = [
   {
@@ -49,7 +49,7 @@ const trendingProducts = [
   {
     id: 6,
     name: "Lamp",
-    color: "white",
+    color: "copper",
     price: getRandomPrice(100, 1),
     href: "/assets/lamps/lamp-6.jpg",
     imageSrc: "/assets/lamps/lamp-6.jpg",
@@ -58,7 +58,7 @@ const trendingProducts = [
   {
     id: 7,
     name: "Lamp",
-    color: "white",
+    color: "straw",
     price: getRandomPrice(100, 1),
     href: "/assets/lamps/lamp-7.jpg",
     imageSrc: "/assets/lamps/lamp-7.jpg",

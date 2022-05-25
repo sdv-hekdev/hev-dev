@@ -16,8 +16,6 @@ const SignUpPage = () => {
     context: { signUp, router },
   } = useContext(AppContext)
 
-  // console.log("tototototot", signUp())
-
   const handleFormSubmit = useCallback(
     async ({ email, password }) => {
       try {

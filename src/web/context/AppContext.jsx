@@ -1,6 +1,7 @@
 import { auth } from "@/back/config/firebase"
 import {
   createUserWithEmailAndPassword,
+  deleteUser,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
@@ -21,7 +22,6 @@ export const AppContextProvider = (props) => {
         setUser({
           uid: user.uid,
           email: user.email,
-          displayName: user.displayName,
         })
       } else {
         setUser(null)
@@ -46,7 +46,13 @@ export const AppContextProvider = (props) => {
     await signOut(auth)
   }
 
-  const context = { router, signIn, logout, signUp, user }
+  const deleteAccount = async () => {
+    const currentUser = auth.currentUser
+
+    await deleteUser(currentUser)
+  }
+
+  const context = { router, signIn, signUp, logout, deleteAccount, user }
 
   return <AppContext.Provider {...otherProps} value={{ context }} />
 }

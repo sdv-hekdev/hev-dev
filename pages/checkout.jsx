@@ -4,7 +4,7 @@ import { Disclosure } from "@headlessui/react"
 import { LockClosedIcon } from "@heroicons/react/solid"
 
 import Page from "@/web/components/Page"
-import products from "@/web/components/mock/products"
+import products from "@/mock/products"
 
 const subtotal = "$210.00"
 const discount = { code: "CHEAPSKATE", amount: "$24.00" }
