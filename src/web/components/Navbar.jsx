@@ -18,7 +18,7 @@ const Navbar = () => {
         <ul className="flex space-x-3 text-sm">
           {navigation.categories.map(({ name }) => (
             <li key={name} onClick={handleClick} className="focus:ring-2">
-              <Link href={name} passHref>
+              <Link href="/" passHref>
                 {name}
               </Link>
             </li>

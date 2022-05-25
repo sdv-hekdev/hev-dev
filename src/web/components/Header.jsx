@@ -46,8 +46,8 @@ const Header = (props) => {
   }, [logout, router])
 
   return (
-    <div className="bg-white sticky top-0">
-      <div className="flex w-full items-center justify-between bg-emerald-600 py-2 px-4">
+    <div className="bg-white top-0">
+      <div className="flex w-full items-center justify-between bg-emerald-600 py-4 px-4">
         {noBack ? null : <BackButton />}
         <h1 className="font-light text-white text-2xl lg:text-center">
           {title}

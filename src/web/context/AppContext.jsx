@@ -16,6 +16,8 @@ export const AppContextProvider = (props) => {
   const router = useRouter()
   const [user, setUser] = useState(null)
 
+  const currentUser = auth.currentUser
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -47,12 +49,28 @@ export const AppContextProvider = (props) => {
   }
 
   const deleteAccount = async () => {
-    const currentUser = auth.currentUser
-
     await deleteUser(currentUser)
   }
 
-  const context = { router, signIn, signUp, logout, deleteAccount, user }
+  const updateEmail = async (newEmail) => {
+    await updateEmail(currentUser, newEmail)
+  }
+
+  const updatePassword = async (newPassword) => {
+    await updatePassword(currentUser, newPassword)
+  }
+
+  const context = {
+    router,
+    user,
+    currentUser,
+    signIn,
+    signUp,
+    logout,
+    deleteAccount,
+    updateEmail,
+    updatePassword,
+  }
 
   return <AppContext.Provider {...otherProps} value={{ context }} />
 }
