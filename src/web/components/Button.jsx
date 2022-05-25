@@ -1,17 +1,20 @@
-import cn from "@/web/cn"
+import classNames from "classnames"
 
 const btn =
-  "relative flex w-full justify-center rounded-md border border-transparent bg-emerald-600 py-2 px-4 text-sm font-medium text-white hover:bg-emerald-500 active:bg-emerald-700 "
+  "relative flex my-2 justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium text-white"
 
 const variants = {
-  signin: `${btn}`,
+  primary: "bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700",
+  danger: "bg-red-500 hover:bg-red-500 active:bg-red-700",
 }
-
 const Button = (props) => {
-  const { title, variant, className = "btn" } = props
+  const { className, title, variant, ...otherProps } = props
 
   return (
-    <button {...props} className={cn(btn, className, variants[variant])}>
+    <button
+      {...otherProps}
+      className={classNames(btn, className, variants[variant])}
+    >
       {title}
     </button>
   )

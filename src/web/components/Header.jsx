@@ -10,8 +10,9 @@ import { useCallback, useState, useContext } from "react"
 import Link from "next/link"
 
 import Input from "@/web/components/Input"
-import NavStore from "@/web/components/NavStore"
+import Navbar from "@/web/components/Navbar"
 import { AppContext } from "@/web/context/AppContext"
+import Button from "@/web/components/Button"
 
 const BackButton = (props) => {
   const {
@@ -30,28 +31,52 @@ const BackButton = (props) => {
 }
 
 const Header = (props) => {
-  const { title, counter, noMenu } = props
+  const { title, counter, noBack, noMenu } = props
+  const {
+    context: { logout, router, user },
+  } = useContext(AppContext)
   const [open, setOpen] = useState(false)
 
   const handleClick = useCallback(() => setOpen(!open), [open])
 
+  const signOut = useCallback(() => {
+    logout()
+
+    router.push("/")
+  }, [logout, router])
+
   return (
     <>
       <div className="flex w-full items-center justify-between bg-emerald-600 py-2 px-4">
-        <BackButton />
-
-        <h1 className="flex-grow-1 flex text-lg font-light text-white md:text-2xl">
+        {noBack ? null : <BackButton />}
+        <h1 className="font-light text-white text-2xl lg:text-center">
           {title}
         </h1>
-        <Link href="/sign" passHref>
-          <a>
-            <UserCircleIcon className="h-8 w-8 text-white" />
-          </a>
-        </Link>
+        <div
+          className="flex
+         items-center justify-end space-x-2"
+        >
+          {!user ? null : (
+            <Button title="Sign out" variant="danger" onClick={signOut} />
+          )}
+          {user ? (
+            <Link href="/profile" passHref>
+              <a>
+                <UserCircleIcon className="h-8 w-8 text-white" />
+              </a>
+            </Link>
+          ) : (
+            <Link href="/sign-up" passHref>
+              <a>
+                <UserCircleIcon className="h-8 w-8 text-white" />
+              </a>
+            </Link>
+          )}
+        </div>
       </div>
 
       <div className="flex items-center justify-between">
-        <div className="flex items-center justify-center">
+        <div className="flex items-center">
           <Link href="/" passHref>
             <img
               className="mx-2 h-20 w-20"
@@ -59,15 +84,23 @@ const Header = (props) => {
               alt="logo-md"
             />
           </Link>
-
-          {open === true ? (
-            <MenuIcon className="h-8 w-8 text-gray-400" onClick={handleClick} />
-          ) : (
-            <div>{noMenu ? null : <NavStore />}</div>
+          {noMenu ? null : (
+            <div>
+              {open ? (
+                <MenuIcon
+                  className="flex h-8 w-8 text-gray-400"
+                  onClick={handleClick}
+                />
+              ) : (
+                <div>
+                  <Navbar />
+                </div>
+              )}
+            </div>
           )}
         </div>
 
-        <div className="flex items-center flex-shrink-1">
+        <div className="flex items-center justify-end w-1/2">
           {open === false ? null : <Input />}
           {open === false ? (
             <SearchIcon

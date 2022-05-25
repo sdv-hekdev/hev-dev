@@ -2,7 +2,7 @@ const navigation = {
   categories: [
     {
       name: "Chairs",
-      clothing: [
+      furniture: [
         [
           { name: "Tops", href: "#" },
           { name: "Dresses", href: "#" },
@@ -22,7 +22,7 @@ const navigation = {
     },
     {
       name: "Couchs",
-      clothing: [
+      furniture: [
         [
           { name: "Dress Shirts", href: "#" },
           { name: "Pants", href: "#" },
@@ -42,7 +42,7 @@ const navigation = {
     },
     {
       name: "Furnitures",
-      clothing: [
+      furniture: [
         [
           { name: "Dress Shirts", href: "#" },
           { name: "Pants", href: "#" },

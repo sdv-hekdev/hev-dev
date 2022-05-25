@@ -1,51 +1,52 @@
 import { auth } from "@/back/config/firebase"
 import {
-  onAuthStateChanged,
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth"
 import { useRouter } from "next/router"
-import { createContext, useContext, useEffect, useState } from "react"
+import { createContext, useState, useEffect } from "react"
 
 export const AppContext = createContext()
-export const useAuth = () => useContext(AppContext)
 
 export const AppContextProvider = (props) => {
+  const { ...otherProps } = props
   const router = useRouter()
-  const [user, setUser] = useState()
-  const [loading, setLoading] = useState(true)
+  const [user, setUser] = useState(null)
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
-      if (firebaseUser) {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
         setUser({
-          uid: firebaseUser.uid,
-          email: firebaseUser.email,
-          displayName: firebaseUser.displayName,
+          uid: user.uid,
+          email: user.email,
+          displayName: user.displayName,
         })
       } else {
         setUser(null)
       }
-
-      setLoading(false)
     })
 
-    return () => unsubscribe
+    return () => unsubscribe()
   }, [])
 
-  const signIn = async (email, password) =>
+  const signIn = async (email, password) => {
+    setUser(user)
     await signInWithEmailAndPassword(auth, email, password)
+  }
 
-  const signUp = async (email, password) =>
+  const signUp = async (email, password) => {
+    setUser(user)
     await createUserWithEmailAndPassword(auth, email, password)
+  }
 
   const logout = async () => {
     setUser(null)
     await signOut(auth)
   }
 
-  const context = { router, signIn, logout, signUp, user, loading }
+  const context = { router, signIn, logout, signUp, user }
 
-  return <AppContext.Provider {...props} value={{ context }} />
+  return <AppContext.Provider {...otherProps} value={{ context }} />
 }
