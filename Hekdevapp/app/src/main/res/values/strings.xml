@@ -1,95 +1,138 @@
 <resources>
-    <string name="app_name">Hekdev app</string>
-    <string name="app_menu_accueil">Accueil</string>
+    <string name="app_name">HekDev-Ecommerce</string>
+    <string name="title_activity_login">Page de connexion</string>
+    <string name="content_description">image</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_firstName">Nom</string>
+    <string name="prompt_name">Prénom</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_password_confirm">Confirmer le Password</string>
+    <string name="no_account">Vous n\'avez pas de compte ?</string>
+    <string name="yes_account">Vous avez déja un compte ?</string>
+    <string name="register">M\'inscrire</string>
+    <string name="sign_in">Se connecter</string>
+    <string name="action_sign_in">Connexion</string>
+    <string name="action_send_mail">Envoyer</string>
+    <string name="action_sign_up">Créer mon compte</string>
+    <string name="action_sign_in_short">Connexion</string>
+    <string name="forget_pwd">Mot de passe oublié</string>
+    <string name="welcome">"Bienvenue !"</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="terms_license">J\'accepte les termes et license ...</string>
+    <string name="err_name">Renseignez votre prénom.</string>
+    <string name="err_firstName">Renseignez votre nom.</string>
+    <string name="err_email">Renseignez votre email.</string>
+    <string name="err_email_pwd_login">Email ou mot de passe incorrecte.</string>
+    <string name="err_email_login">L\'email doit être renseigné.</string>
+    <string name="err_password_login">Le mot de passe doit contenir au moins 6 caractères.</string>
+    <string name="err_password">Votre mot de passe doit contenir au moins 6 caractères.</string>
+    <string name="err_passwordConfirm">Confirmez votre mot de passe.</string>
+    <string name="err_missmatch">Mot de passe différent.</string>
+    <string name="terms_valid">Veuillez accepter les condition d\'utilisations.</string>
+    <string name="registery_success">Vous êtes bien inscris. </string>
+    <string name="add_product_success">Vous avez bien ajouté l\article. </string>
+    <string name="loading">Chargement en cours&#8230; </string>
+    <string name="title_forgot_password">Mot de passe oublié ? </string>
+    <string name="text_forgot_password">Renseigner l\'email affecté à votre compte , nous allons vous envoyer un mail pour réinitialiser votre mot de passe. </string>
+    <string name="title_activity_nav">Hek DEV</string>
+    <string name="title_home">Products</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="click_back_to_exit">Click a second time to quit.</string>
+    <string name="title_commande">Orders</string>
+    <string name="title_settings">Settings</string>
+    <string name="action_settings">Settings</string>
+    <string name="lbl_edit">Modifier</string>
+    <string name="lbl_addresses">Adresses</string>
+    <string name="btn_lbl_logout">Deconnexion</string>
+    <string name="title_complete_profile">Profil complété</string>
+    <string name="title_edit_profile">Modification du profil</string>
+    <string name="title_product">Ajouter un produit</string>
+    <string name="title_add_product">Ajouter un article</string>
+    <string name="et_hint_product_title">Nom de l\'article</string>
+    <string name="et_hint_product_price">Prix de l\'article</string>
+    <string name="et_hint_product_description">Description de l\'article</string>
+    <string name="et_hint_product_quantity">Quantité de l\'article</string>
+    <string name="btn_lbl_submit">Ajouter l\'article</string>
+    <string name="err_message_product_title">Renseigner le titre</string>
+    <string name="err_message_product_image">Renseigner l\'image</string>
+    <string name="err_message_product_description">Renseigner la description</string>
+    <string name="err_message_product_price">Renseigner le prix</string>
+    <string name="err_message_product_quantite">Renseigner la quantite</string>
+    <string name="no_products_added_yet">Aucun produit n\'est disponible pour le moment.</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_product_menu">Products</string>
+    <string name="no_dashboard_item_found">Not loaded yet</string>
+    <string name="logo">myLogo</string>
+    <string name="product_delete_success_message">Your product is deleted successfully.</string>
+    <string name="delete_dialog_title">Delete</string>
+    <string name="delete_dialog_message">Are you sure you want to delete the product?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="title_product_details">PRODUCT DETAILS</string>
+    <string name="lbl_product_description">Product Description</string>
+    <string name="lbl_product_details_stock_quantity">Stock Quantity</string>
+    <string name="btn_lbl_add_to_cart">Add to cart</string>
+    <string name="success_message_item_added_to_cart">Product added to cart</string>
+    <string name="btn_lbl_go_to_cart">Go to cart</string>
+    <string name="title_my_cart">MY CART</string>
+    <string name="no_cart_item_found">No item found in cart!</string>
+    <string name="lbl_subtotal">Subtotal</string>
+    <string name="lbl_shipping_charge">Shipping Charge</string>
+    <string name="lbl_total_amount">Total Amount</string>
+    <string name="btn_lbl_checkout">Checkout</string>
+    <string name="action_cart">My Cart</string>
+    <string name="title_card">Cart</string>
+    <string name="lbl_out_of_stock">OUT OF STOCK</string>
+    <string name="msg_item_removed_successfully">Item removed successfully.</string>
+    <string name="msg_for_available_stock">Available stock is %1$s!. You can not add more than stock quantity.</string>
+    <string name="title_address_list">ADDRESS LIST</string>
+    <string name="no_address_found">No Address Found!</string>
+    <string name="lbL_add_address">Add Address</string>
+    <string name="title_add_address">ADD ADDRESS</string>
+    <string name="hint_full_name">Full name</string>
+    <string name="hint_phone_number">Phone number</string>
+    <string name="hint_address">Address</string>
+    <string name="hint_zip_code">ZipCode</string>
+    <string name="hint_additional_note">Additional note</string>
+    <string name="hint_other_details">Other details</string>
+    <string name="lbl_home">HOME</string>
+    <string name="lbl_office">OFFICE</string>
+    <string name="lbl_other">OTHER</string>
+    <string name="err_msg_please_enter_full_name">Please enter full name.</string>
+    <string name="err_msg_please_enter_phone_number">Please enter phone number.</string>
+    <string name="err_msg_please_enter_address">Please enter address.</string>
+    <string name="err_msg_please_enter_zip_code">Please enter zip-code.</string>
+    <string name="err_msg_please_enter_other_details">Please enter other details.</string>
+    <string name="err_your_address_added_successfully">Your address is added successfully.</string>
+    <string name="title_edit_address">EDIT ADDRESS</string>
+    <string name="btn_lbl_update">UPDATE</string>
+    <string name="msg_your_address_updated_successfully">Your address is updated successfully.</string>
+    <string name="err_your_address_deleted_successfully">Your address is deleted successfully.</string>
+    <string name="title_select_address">SELECT ADDRESS</string>
+    <string name="btn_lbl_submit_address">Add the address</string>
+    <string name="title_checkout">CHECKOUT</string>
+    <string name="checkout_lbl_product_items">Product Items</string>
+    <string name="checkout_lbl_selected_address">Selected Address</string>
+    <string name="checkout_lbl_items_receipt">Items Receipt</string>
+    <string name="lbl_payment_mode">Payment Mode</string>
+    <string name="lbl_cash_on_delivery">Cash On Delivery</string>
+    <string name="btn_lbl_place_order">PLACE ORDER</string>
+    <string name="no_orders_placed_yet">No orders placed yet!</string>
 
-    <!-- Page d'accueil -->
-    <string name="home_page_titre"> Accueil </string>
-    <string name="home_page_desc"> Description de l\'entreprise </string>
+    <string name="title_my_order_details">MY ORDER DETAILS</string>
+    <string name="order_details_lbl">Order Details</string>
+    <string name="order_details_lbl_order_id">Order ID</string>
+    <string name="order_details_lbl_order_date">Order Date</string>
+    <string name="order_details_lbl_order_status">Order Status</string>
+    <string name="order_status_pending">Pending</string>
+    <string name="order_details_lbl_shipping_address">Shipping Address</string>
 
-    <!-- Page de connexion -->
-    <string name="connexion_page_titre"> Se connecter</string>
-    <string name="connexion_page_guest"> Se connecter en tant qu\'invité</string>
-    <string name="connexion_page_fb"> Facebook</string>
-    <string name="connexion_page_mail_input"> Email@mail.com</string>
-    <string name="connexion_page_mail"> Email </string>
-    <string name="connexion_page_app_titre"> HekDev</string>
-    <string name="connexion_page_submit"> Sign In</string>
-    <string name="connexion_page_mdp"> Mot de passe oublié </string>
-    <string name="connexion_page_inscrire"> S\'inscrire </string>
+    <string name="order_status_in_process">In Process</string>
+    <string name="order_status_delivered">Delivered</string>
 
-    <!-- Page d'inscription' -->
-    <string name="inscription_page_titre"> "S'inscrire"</string>
-    <string name="inscription_page_mail"> Email </string>
-    <string name="inscription_page_mail_input"> Email@mail.com</string>
+    <string name="title_sold_products">Sold Products</string>
+    <string name="no_products_sold_out_yet">No products sold out yet!</string>
 
-    <!-- Page de recherche -->
-    <string name="rechercher_page_titre"> Rechercher </string>
-    <string name="rechercher_page_filtre"> Filtre </string>
-
-    <!-- Page d'article -->
-    <string name="article_page_titre"> Nom </string>
-    <string name="article_page_description"> La description </string>
-    <string name="article_page_submit"> Ajouter au panier </string>
-    <string name="article_page_quantite"> Quantitée </string>
-    <string name="article_page_prix"> Prix € </string>
-
-    <!-- Page de filtre -->
-    <string name="filtre_page_titre"> Filtrer</string>
-    <string name="filtre_page_trier"> Trier </string>
-    <string name="filtre_page_prix_c"> Prix Croissant </string>
-    <string name="filtre_page_prix_d"> Prix Décroissant </string>
-    <string name="filtre_page_couleur"> Couleur </string>
-    <string name="filtre_page_prix"> Prix </string>
-
-    <!-- Page de favoris -->
-    <string name="favoris_page_titre"> Favoris </string>
-    <string name="favoris_page_article_nom"> "Nom" </string>
-    <string name="favoris_page_article_description"> "Description" </string>
-
-    <!-- Page du panier -->
-    <string name="panier_page_titre"> Panier </string>
-    <string name="panier_page_total"> Total </string>
-
-    <!-- Page de connexion -->
-    <string name="livraison_page_titre"> Livraison </string>
-    <string name="livraison_page_adressee"> Adresse de livraison </string>
-    <string name="livraison_page_nom"> "Nom" </string>
-
-    <!-- Page de paiement -->
-    <string name="paiement_page_titre"> Paiement </string>
-    <string name="paiement_page_info"> Mode de Paiement </string>
-    <string name="paiement_page_titulaire_input"> Titulaire de la carte </string>
-    <string name="paiement_page_numero_input"> Numéro de la carte </string>
-    <string name="paiement_page_date_input"> Date de validité </string>
-    <string name="paiement_page_cryptogramme_input"> Cryptogramme </string>
-
-
-    <!-- Page de commandes user -->
-    <string name="commandes_user_page_titre"> Mes commandes</string>
-    <string name="commandes_user_page_numero"> Numéro </string>
-    <string name="commandes_user_page_date"> Date </string>
-
-    <!-- Page de détails commande (popup) -->
-    <string name="commandes_details_page_titre"> Se connecter</string>
-    <string name="commandes_details_page_numero"> Numéro </string>
-    <string name="commandes_details_page_date"> Date </string>
-    <string name="commandes_details_page_facture"> Télécharger ma facture </string>
-    <string name="commandes_details_page_livraison"> Livraison </string>
-    <string name="commandes_details_page_adresse"> Adresse </string>
-    <string name="commandes_details_page_details"> Détail de votre commande </string>
-    <string name="commandes_details_page_description"> "Description" </string>
-    <string name="commandes_details_page_nom_article"> "Nom" </string>
-    <string name="commandes_details_page_quantite_article"> "Quantite" </string>
-
-
-    <!-- Page dashboard -->
-    <string name="menu_page_nom"> " Nom User "</string>
-    <string name="menu_page_mail"> " Mail User "</string>
-    <string name="menu_page_co_dc">  Connexion / Deconnexion </string>
-    <string name="menu_page_accueil"> Accueil </string>
-    <string name="menu_page_recherche"> Recherche </string>
-    <string name="menu_page_profil"> Profil </string>
-    <string name="menu_page_panier"> Panier</string>
-    <string name="menu_page_favoris"> Favoris</string>
-    <string name="menu_page_commandes"> Mes commandes </string>
+    <string name="title_sold_product_details">SOLD PRODUCT DETAILS</string>
+    <string name="rate">RATE</string>
 </resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1004225497182",
+    "project_id": "hekdev-ecommerce",
+    "storage_bucket": "hekdev-ecommerce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004225497182:android:61ef7a25d501a128fc8ccf",
+        "android_client_info": {
+          "package_name": "hekdev.compagny.hekdev_ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1004225497182-gv0qle6hb3a3v0e3b8auqds705922vgg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hekdev.compagny.hekdev_ecommerce",
+            "certificate_hash": "6a6b4b8335805fe479519d648637699e1604aa30"
+          }
+        },
+        {
+          "client_id": "1004225497182-lk6t7p6qbbt1iqo7s6fgeih277tg7tb0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEWNDhiDTO9I9iIGjRhnofHCAXG59K1jo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1004225497182-lk6t7p6qbbt1iqo7s6fgeih277tg7tb0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

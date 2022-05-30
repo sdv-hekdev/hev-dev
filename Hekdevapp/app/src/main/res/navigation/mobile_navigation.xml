@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_dashboard">
+
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="hekdev.compagny.hekdev_ecommerce.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_product"
+        android:name="hekdev.compagny.hekdev_ecommerce.ui.products.ProductFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_product" />
+
+
+    <fragment
+        android:id="@+id/navigation_commande"
+        android:name="hekdev.compagny.hekdev_ecommerce.ui.notifications.OrdersFragment"
+        android:label="@string/title_commande"
+        tools:layout="@layout/fragment_orders" />
+</navigation>
