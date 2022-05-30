@@ -27,7 +27,7 @@ const SignInPage = () => {
 
         router.push("/")
       } catch (err) {
-        //TO DO HANDLE ERROR
+        //TO DO
         setError("Something went wrong")
       }
     },
@@ -60,12 +60,14 @@ const SignInPage = () => {
                   type="text"
                   label="Email"
                   placeholder="Enter your email address"
+                  autoComplete="email"
                 />
                 <FormField
                   name="password"
                   type="password"
                   label="Password"
                   placeholder="Enter your password"
+                  autoComplete="password"
                 />
                 <div className="flex items-center justify-between my-4">
                   <div className="flex items-center">
@@ -74,6 +76,7 @@ const SignInPage = () => {
                       name="remember-me"
                       type="checkbox"
                       className="h-4 w-4 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500"
+                      autoComplete="remember-me"
                     />
                     <label
                       htmlFor="remember-me"

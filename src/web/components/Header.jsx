@@ -47,7 +47,7 @@ const Header = (props) => {
 
   return (
     <div className="bg-white top-0">
-      <div className="flex w-full items-center justify-between bg-emerald-600 py-4 px-4">
+      <div className="flex w-full items-center justify-between bg-emerald-600 py-2 px-4">
         {noBack ? null : <BackButton />}
         <h1 className="font-light text-white text-2xl lg:text-center">
           {title}
@@ -79,8 +79,8 @@ const Header = (props) => {
         <div className="flex items-center">
           <Link href="/" passHref>
             <img
-              className="mx-2 h-20 w-20"
-              src="/assets/baka-bird.jpg"
+              className="h-20 w-25"
+              src="/assets/logo-header.png"
               alt="logo-md"
             />
           </Link>
@@ -92,9 +92,9 @@ const Header = (props) => {
                   onClick={handleClick}
                 />
               ) : (
-                <div>
+                <>
                   <Navbar />
-                </div>
+                </>
               )}
             </div>
           )}

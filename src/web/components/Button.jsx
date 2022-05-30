@@ -1,7 +1,7 @@
 import classNames from "classnames"
 
 const btn =
-  "relative flex my-2 justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium text-white"
+  "relative flex uppercase justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium text-white"
 
 const variants = {
   primary: "bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700",

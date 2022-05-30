@@ -1,13 +1,16 @@
-import { auth } from "@/back/config/firebase"
+import { useRouter } from "next/router"
+import { createContext, useState, useEffect } from "react"
 import {
   createUserWithEmailAndPassword,
   deleteUser,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  updateEmail,
+  updatePassword,
 } from "firebase/auth"
-import { useRouter } from "next/router"
-import { createContext, useState, useEffect } from "react"
+
+import { auth } from "@/back/config/firebase"
 
 export const AppContext = createContext()
 
@@ -52,12 +55,12 @@ export const AppContextProvider = (props) => {
     await deleteUser(currentUser)
   }
 
-  const updateEmail = async (newEmail) => {
-    await updateEmail(currentUser, newEmail)
+  const updateCurrentEmail = async (email) => {
+    await updateEmail(currentUser, email)
   }
 
-  const updatePassword = async (newPassword) => {
-    await updatePassword(currentUser, newPassword)
+  const updateCurrentPassword = async (password) => {
+    updatePassword(currentUser, password)
   }
 
   const context = {
@@ -68,8 +71,8 @@ export const AppContextProvider = (props) => {
     signUp,
     logout,
     deleteAccount,
-    updateEmail,
-    updatePassword,
+    updateCurrentEmail,
+    updateCurrentPassword,
   }
 
   return <AppContext.Provider {...otherProps} value={{ context }} />

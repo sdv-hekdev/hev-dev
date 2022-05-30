@@ -4,7 +4,7 @@ import Button from "@/web/components/Button"
 import { AppContext } from "@/web/context/AppContext"
 import Page from "@/web/components/Page"
 
-const DeleteAccount = () => {
+const DeleteAccountPage = () => {
   const [error, setError] = useState(null)
   const {
     context: { deleteAccount, router },
@@ -33,4 +33,4 @@ const DeleteAccount = () => {
   )
 }
 
-export default DeleteAccount
+export default DeleteAccountPage

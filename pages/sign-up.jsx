@@ -21,6 +21,10 @@ const SignUpPage = () => {
       try {
         await signUp(email, password)
 
+        if (email) {
+          throw new Error("Email already used")
+        }
+
         router.push("/")
       } catch (err) {
         setError(error)
@@ -52,12 +56,14 @@ const SignUpPage = () => {
                   type="text"
                   label="Email"
                   placeholder="Enter your email address"
+                  autoComplete="email"
                 />
                 <FormField
                   name="password"
                   type="password"
                   label="Password"
                   placeholder="Enter your password"
+                  autoComplete="password"
                 />
                 <Button
                   type="submit"
