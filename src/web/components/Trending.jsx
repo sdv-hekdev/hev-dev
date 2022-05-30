@@ -12,7 +12,7 @@ const Trending = () => {
         </h2>
         <div className="flex flex-wrap justify-center gap-5 ">
           {trendingProducts.map(
-            ({ id, imageAlt, imageSrc, name, price, color }) => (
+            ({ id, imageAlt, imageSrc, name, price, color, rate }) => (
               <Link key={id} href="/product-page" passHref>
                 <Card
                   src={imageSrc}
@@ -20,7 +20,7 @@ const Trending = () => {
                   name={name}
                   price={price}
                   color={color}
-                  grade="⭐️⭐️⭐️⭐️⭐️"
+                  rate={rate}
                 />
               </Link>
             )

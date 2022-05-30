@@ -69,7 +69,6 @@ const SignUpPage = () => {
                   type="submit"
                   disabled={!isValid || isSubmitting}
                   title="Create an account"
-                  variant="primary"
                   className="mt-4 w-full"
                 />
                 <Link href="/sign-in" passHref>

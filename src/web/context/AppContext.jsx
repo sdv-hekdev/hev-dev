@@ -19,6 +19,7 @@ export const AppContextProvider = (props) => {
   const router = useRouter()
   const [user, setUser] = useState(null)
 
+  // const stripePromise = loadStripe(process.env.STRIPE_PUBLISHAPE_KEY)
   const currentUser = auth.currentUser
 
   useEffect(() => {
@@ -73,6 +74,7 @@ export const AppContextProvider = (props) => {
     deleteAccount,
     updateCurrentEmail,
     updateCurrentPassword,
+    // stripePromise,
   }
 
   return <AppContext.Provider {...otherProps} value={{ context }} />

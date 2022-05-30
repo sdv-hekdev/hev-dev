@@ -49,7 +49,6 @@ const UpdateEmailPage = () => {
               type="submit"
               title="Submit"
               disabled={isValid || isSubmitting}
-              variant="primary"
             />
           </form>
         )}

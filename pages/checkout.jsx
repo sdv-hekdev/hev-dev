@@ -24,11 +24,9 @@ const CheckoutPage = () => {
     <Page title="Checkout">
       <main className="lg:flex lg:min-h-full lg:flex-row-reverse lg:overflow-hidden">
         <h1 className="sr-only">Checkout</h1>
+
         {/* Mobile order summary */}
-        <section
-          aria-labelledby="order-heading"
-          className="bg-gray-50 px-4 py-6 sm:px-6 lg:hidden"
-        >
+        <section className="bg-gray-50 px-4 py-6 sm:px-6 lg:hidden">
           <Disclosure as="div" className="mx-auto max-w-lg">
             {({ open }) => (
               <>
@@ -144,11 +142,9 @@ const CheckoutPage = () => {
             )}
           </Disclosure>
         </section>
+
         {/* Order summary */}
-        <section
-          aria-labelledby="summary-heading"
-          className="hidden w-full max-w-md flex-col bg-gray-50 lg:flex"
-        >
+        <section className="hidden w-full max-w-md flex-col bg-gray-50 lg:flex">
           <h2 id="summary-heading" className="sr-only">
             Order summary
           </h2>
@@ -247,10 +243,7 @@ const CheckoutPage = () => {
         </section>
 
         {/* Checkout form */}
-        <section
-          aria-labelledby="payment-heading"
-          className="flex-auto overflow-y-auto px-4 pt-12 pb-16 lg:my-12 sm:px-6 sm:pt-16 lg:px-8 lg:pt-0 lg:pb-24"
-        >
+        <section className="flex-auto overflow-y-auto px-4 pt-12 pb-16 lg:my-12 sm:px-6 sm:pt-16 lg:px-8 lg:pt-0 lg:pb-24">
           <div className="mx-auto max-w-lg">
             <button
               type="button"
@@ -268,10 +261,7 @@ const CheckoutPage = () => {
             </button>
 
             <div className="relative mt-8">
-              <div
-                className="absolute inset-0 flex items-center"
-                aria-hidden="true"
-              >
+              <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-gray-200" />
               </div>
               <div className="relative flex justify-center">
@@ -473,10 +463,7 @@ const CheckoutPage = () => {
               </button>
 
               <p className="mt-6 flex justify-center text-sm font-medium text-gray-500">
-                <LockClosedIcon
-                  className="mr-1.5 h-5 w-5 text-gray-400"
-                  aria-hidden="true"
-                />
+                <LockClosedIcon className="mr-1.5 h-5 w-5 text-gray-400" />
                 Payment details stored in plain text
               </p>
             </form>

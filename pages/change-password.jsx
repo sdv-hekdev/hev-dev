@@ -52,7 +52,6 @@ const ChangePasswordPage = () => {
               type="submit"
               disabled={!isValid || isSubmitting}
               title="update password"
-              variant="primary"
               className="w-full uppercase lg:w-1/3"
             />
           </form>
