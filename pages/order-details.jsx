@@ -1,7 +1,6 @@
+import products from "@/mock/products"
 import Page from "@/web/components/Page"
 import Image from "next/image"
-
-import products from "../src/web/components/mock/products"
 
 const OrderDetailsPage = () => {
   return (

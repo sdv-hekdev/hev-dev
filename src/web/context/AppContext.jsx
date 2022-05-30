@@ -1,12 +1,16 @@
-import { auth } from "@/back/config/firebase"
+import { useRouter } from "next/router"
+import { createContext, useState, useEffect } from "react"
 import {
   createUserWithEmailAndPassword,
+  deleteUser,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  updateEmail,
+  updatePassword,
 } from "firebase/auth"
-import { useRouter } from "next/router"
-import { createContext, useState, useEffect } from "react"
+
+import { auth } from "@/back/config/firebase"
 
 export const AppContext = createContext()
 
@@ -15,13 +19,15 @@ export const AppContextProvider = (props) => {
   const router = useRouter()
   const [user, setUser] = useState(null)
 
+  // const stripePromise = loadStripe(process.env.STRIPE_PUBLISHAPE_KEY)
+  const currentUser = auth.currentUser
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser({
           uid: user.uid,
           email: user.email,
-          displayName: user.displayName,
         })
       } else {
         setUser(null)
@@ -46,7 +52,30 @@ export const AppContextProvider = (props) => {
     await signOut(auth)
   }
 
-  const context = { router, signIn, logout, signUp, user }
+  const deleteAccount = async () => {
+    await deleteUser(currentUser)
+  }
+
+  const updateCurrentEmail = async (email) => {
+    await updateEmail(currentUser, email)
+  }
+
+  const updateCurrentPassword = async (password) => {
+    updatePassword(currentUser, password)
+  }
+
+  const context = {
+    router,
+    user,
+    currentUser,
+    signIn,
+    signUp,
+    logout,
+    deleteAccount,
+    updateCurrentEmail,
+    updateCurrentPassword,
+    // stripePromise,
+  }
 
   return <AppContext.Provider {...otherProps} value={{ context }} />
 }

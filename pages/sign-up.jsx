@@ -16,12 +16,14 @@ const SignUpPage = () => {
     context: { signUp, router },
   } = useContext(AppContext)
 
-  // console.log("tototototot", signUp())
-
   const handleFormSubmit = useCallback(
     async ({ email, password }) => {
       try {
         await signUp(email, password)
+
+        if (email) {
+          throw new Error("Email already used")
+        }
 
         router.push("/")
       } catch (err) {
@@ -54,18 +56,19 @@ const SignUpPage = () => {
                   type="text"
                   label="Email"
                   placeholder="Enter your email address"
+                  autoComplete="email"
                 />
                 <FormField
                   name="password"
                   type="password"
                   label="Password"
                   placeholder="Enter your password"
+                  autoComplete="password"
                 />
                 <Button
                   type="submit"
                   disabled={!isValid || isSubmitting}
                   title="Create an account"
-                  variant="primary"
                   className="mt-4 w-full"
                 />
                 <Link href="/sign-in" passHref>

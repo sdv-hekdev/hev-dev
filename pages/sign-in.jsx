@@ -21,12 +21,17 @@ const SignInPage = () => {
       try {
         await signIn(email, password)
 
+        if (!email) {
+          throw new Error("User not found")
+        }
+
         router.push("/")
       } catch (err) {
-        setError(error)
+        //TO DO
+        setError("Something went wrong")
       }
     },
-    [signIn, error, router]
+    [signIn, router]
   )
 
   return (
@@ -45,18 +50,24 @@ const SignInPage = () => {
           >
             {({ handleSubmit, isValid, isSubmitting }) => (
               <form onSubmit={handleSubmit}>
-                {error ? <p>{error}</p> : null}
+                {error ? (
+                  <p className="bg-red-600 px-4 py-2 font-bold text-white rounded-md">
+                    {error}
+                  </p>
+                ) : null}
                 <FormField
                   name="email"
                   type="text"
                   label="Email"
                   placeholder="Enter your email address"
+                  autoComplete="email"
                 />
                 <FormField
                   name="password"
                   type="password"
                   label="Password"
                   placeholder="Enter your password"
+                  autoComplete="password"
                 />
                 <div className="flex items-center justify-between my-4">
                   <div className="flex items-center">
@@ -65,6 +76,7 @@ const SignInPage = () => {
                       name="remember-me"
                       type="checkbox"
                       className="h-4 w-4 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500"
+                      autoComplete="remember-me"
                     />
                     <label
                       htmlFor="remember-me"
@@ -87,7 +99,6 @@ const SignInPage = () => {
                   type="submit"
                   disabled={!isValid || isSubmitting}
                   title="Sign-in"
-                  variant="primary"
                   className="w-full"
                 />
                 <Link href="/sign-up" passHref>

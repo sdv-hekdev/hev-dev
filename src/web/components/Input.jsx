@@ -7,11 +7,7 @@ const Input = (props) => {
   const { className, ...otherProps } = props
 
   return (
-    <input
-      {...otherProps}
-      className={classNames(defaultInput, className)}
-      autoComplete="current-password"
-    />
+    <input {...otherProps} className={classNames(defaultInput, className)} />
   )
 }
 

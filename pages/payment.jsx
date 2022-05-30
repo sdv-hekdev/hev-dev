@@ -1,4 +1,4 @@
-const { default: Page } = require("@/web/components/Page")
+import Page from "@/web/components/Page"
 
 const PaymentPage = () => {
   return <Page title="Payment" />
