@@ -1,7 +1,7 @@
 import classNames from "classnames"
 
 const defaultInput =
-  "rounded w-full border border-gray-300 px-1 hover:bg-gray-200"
+  "rounded w-full border-2 border-gray-300 px-2 hover:bg-gray-200"
 
 const Input = (props) => {
   const { className, ...otherProps } = props

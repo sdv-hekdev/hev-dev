@@ -13,7 +13,7 @@ const Trending = () => {
         <div className="flex flex-wrap justify-center gap-5 ">
           {trendingProducts.map(
             ({ id, imageAlt, imageSrc, name, price, color, rate }) => (
-              <Link key={id} href="/product-page" passHref>
+              <Link key={id} href="/product" passHref>
                 <Card
                   src={imageSrc}
                   alt={imageAlt}

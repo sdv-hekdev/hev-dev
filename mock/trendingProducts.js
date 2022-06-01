@@ -1,4 +1,4 @@
-import getRandomPrice from "../src/web/helper/getRandomPrice"
+import getRandomNumber from "../src/web/helper/getRandomNumber"
 
 const trendingProducts = [
   {
@@ -6,7 +6,7 @@ const trendingProducts = [
     name: "Armchair",
     color: "yellow",
     rate: "⭐️⭐️⭐️⭐️⭐️",
-    price: getRandomPrice(100, 20),
+    price: getRandomNumber(100, 20),
     href: "/assets/chairs/armchair-1.jpg",
     imageSrc: "/assets/chairs/armchair-1.jpg",
     imageAlt: "yellow-armchair-1",
@@ -16,7 +16,7 @@ const trendingProducts = [
     name: "Couch",
     color: "green",
     rate: "⭐️⭐️⭐️⭐️⭐️",
-    price: getRandomPrice(100, 20),
+    price: getRandomNumber(100, 20),
     href: "/assets/couchs/couch-2.jpg",
     imageSrc: "/assets/couchs/couch-2.jpg",
     imageAlt: "green-couch-2",
@@ -26,7 +26,7 @@ const trendingProducts = [
     name: "Cupboard",
     color: "turquoise",
     rate: "⭐️⭐️⭐️⭐️⭐️",
-    price: getRandomPrice(100, 20),
+    price: getRandomNumber(100, 20),
     href: "/assets/cupboards/cupboard-3.jpg",
     imageSrc: "/assets/cupboards/cupboard-3.jpg",
     imageAlt: "turquoise-cupboard-3",
@@ -36,7 +36,7 @@ const trendingProducts = [
     name: "Lamp",
     color: "white",
     rate: "⭐️⭐️⭐️⭐️⭐️",
-    price: getRandomPrice(100, 20),
+    price: getRandomNumber(100, 20),
     href: "/assets/lamps/lamp-4.jpg",
     imageSrc: "/assets/lamps/lamp-4.jpg",
     imageAlt: "white-lamp-2",
@@ -46,7 +46,7 @@ const trendingProducts = [
     name: "Lamp",
     color: "white",
     rate: "⭐️⭐️⭐️⭐️⭐️",
-    price: getRandomPrice(100, 20),
+    price: getRandomNumber(100, 20),
     href: "/assets/lamps/lamp-5.jpg",
     imageSrc: "/assets/lamps/lamp-5.jpg",
     imageAlt: "white-lamp-2",
@@ -56,7 +56,7 @@ const trendingProducts = [
     name: "Lamp",
     color: "copper",
     rate: "⭐️⭐️⭐️⭐️⭐️",
-    price: getRandomPrice(100, 20),
+    price: getRandomNumber(100, 20),
     href: "/assets/lamps/lamp-6.jpg",
     imageSrc: "/assets/lamps/lamp-6.jpg",
     imageAlt: "white-lamp-2",
@@ -66,7 +66,7 @@ const trendingProducts = [
     name: "Lamp",
     color: "straw",
     rate: "⭐️⭐️⭐️⭐️⭐️",
-    price: getRandomPrice(100, 20),
+    price: getRandomNumber(100, 20),
     href: "/assets/lamps/lamp-7.jpg",
     imageSrc: "/assets/lamps/lamp-7.jpg",
     imageAlt: "white-lamp-2",

@@ -16,7 +16,7 @@ const CartPage = () => {
   const handleClick = useCallback(() => router.push("/checkout"), [router])
 
   return (
-    <Page title="Cart">
+    <Page title="Check your cart!">
       <div className="bg-white">
         <div className="mx-auto max-w-2xl px-4 pt-16 pb-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
@@ -105,7 +105,7 @@ const CartPage = () => {
                       <p className="mt-4 flex space-x-2 text-sm text-gray-700">
                         {product.inStock ? (
                           <CheckIcon
-                            className="h-5 w-5 flex-shrink-0 text-green-500"
+                            className="h-5 w-5 flex-shrink-0 text-emerald-500"
                             aria-hidden="true"
                           />
                         ) : (

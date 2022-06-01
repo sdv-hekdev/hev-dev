@@ -47,7 +47,7 @@ const Header = (props) => {
 
   return (
     <div className="bg-white top-0">
-      <div className="flex w-full items-center justify-between bg-emerald-600 py-2 px-4">
+      <div className="flex w-full items-center justify-between bg-gradient-to-r from-emerald-600 to-emerald-900 py-2 px-4">
         {noBack ? null : <BackButton />}
         <h1 className="font-light text-white text-2xl lg:text-center">
           {title}
@@ -79,7 +79,7 @@ const Header = (props) => {
         <div className="flex items-center">
           <Link href="/" passHref>
             <img
-              className="h-20 w-25"
+              className="h-20 w-25 cursor-pointer"
               src="/assets/logo-header.png"
               alt="logo-md"
             />
@@ -100,7 +100,7 @@ const Header = (props) => {
           )}
         </div>
 
-        <div className="flex items-center justify-end w-1/2 mx-6">
+        <div className="flex items-center justify-end w-1/3 mx-6">
           {open === false ? null : <Input />}
           {open === false ? (
             <SearchIcon

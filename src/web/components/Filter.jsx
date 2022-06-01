@@ -105,14 +105,14 @@ const Filter = () => {
                     className="-mr-2 w-10 h-10 bg-white p-2 rounded-md flex items-center justify-center text-gray-400"
                     onClick={() => setMobileFiltersOpen(false)}
                   >
-                    <span className="sr-only">Close menu</span>
+                    <span>Close menu</span>
                     <XIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                 </div>
 
                 {/* Filters */}
                 <form className="mt-4 border-t border-gray-200">
-                  <h3 className="sr-only">Categories</h3>
+                  <h3>Categories</h3>
                   <ul
                     role="list"
                     className="font-medium text-gray-900 px-2 py-3"
@@ -245,7 +245,7 @@ const Filter = () => {
                 type="button"
                 className="p-2 -m-2 ml-5 sm:ml-7 text-gray-400 hover:text-gray-500"
               >
-                <span className="sr-only">View grid</span>
+                <span>View grid</span>
                 <ViewGridIcon className="w-5 h-5" aria-hidden="true" />
               </button>
               <button
@@ -253,21 +253,19 @@ const Filter = () => {
                 className="p-2 -m-2 ml-4 sm:ml-6 text-gray-400 hover:text-gray-500 lg:hidden"
                 onClick={() => setMobileFiltersOpen(true)}
               >
-                <span className="sr-only">Filters</span>
+                <span>Filters</span>
                 <FilterIcon className="w-5 h-5" aria-hidden="true" />
               </button>
             </div>
           </div>
 
           <section aria-labelledby="products-heading" className="pt-6 pb-24">
-            <h2 id="products-heading" className="sr-only">
-              Products
-            </h2>
+            <h2 id="products-heading">Products</h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-8 gap-y-10">
               {/* Filters */}
               <form className="hidden lg:block">
-                <h3 className="sr-only">Categories</h3>
+                <h3>Categories</h3>
                 <ul
                   role="list"
                   className="text-sm font-medium text-gray-900 space-y-4 pb-6 border-b border-gray-200"

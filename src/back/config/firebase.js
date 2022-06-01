@@ -5,6 +5,8 @@ import { getFirestore } from "firebase/firestore"
 const firebaseConfig = {
   apiKey: "AIzaSyCqZrdNaKAgJBgb5hcEcCKGXzmNiAEu8IM",
   authDomain: "hekdev-ecommerce.firebaseapp.com",
+  databaseURL:
+    "https://hekdev-ecommerce-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "hekdev-ecommerce",
   storageBucket: "hekdev-ecommerce.appspot.com",
   messagingSenderId: "1004225497182",

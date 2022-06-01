@@ -15,6 +15,7 @@ import { auth } from "@/back/config/firebase"
 export const AppContext = createContext()
 
 export const AppContextProvider = (props) => {
+  const [error, setError] = useState(null)
   const { ...otherProps } = props
   const router = useRouter()
   const [user, setUser] = useState(null)
@@ -74,7 +75,8 @@ export const AppContextProvider = (props) => {
     deleteAccount,
     updateCurrentEmail,
     updateCurrentPassword,
-    // stripePromise,
+    error,
+    setError,
   }
 
   return <AppContext.Provider {...otherProps} value={{ context }} />

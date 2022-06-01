@@ -5,6 +5,7 @@ import { LockClosedIcon } from "@heroicons/react/solid"
 
 import Page from "@/web/components/Page"
 import products from "@/mock/products"
+import Button from "@/web/components/Button"
 
 const subtotal = "$210.00"
 const discount = { code: "CHEAPSKATE", amount: "$24.00" }
@@ -21,10 +22,8 @@ const CheckoutPage = () => {
   )
 
   return (
-    <Page title="Checkout">
+    <Page title="It's time to pay!">
       <main className="lg:flex lg:min-h-full lg:flex-row-reverse lg:overflow-hidden">
-        <h1 className="sr-only">Checkout</h1>
-
         {/* Mobile order summary */}
         <section className="bg-gray-50 px-4 py-6 sm:px-6 lg:hidden">
           <Disclosure as="div" className="mx-auto max-w-lg">
@@ -145,9 +144,7 @@ const CheckoutPage = () => {
 
         {/* Order summary */}
         <section className="hidden w-full max-w-md flex-col bg-gray-50 lg:flex">
-          <h2 id="summary-heading" className="sr-only">
-            Order summary
-          </h2>
+          <h2 id="summary-heading">Order summary</h2>
 
           <ul
             role="list"
@@ -249,7 +246,6 @@ const CheckoutPage = () => {
               type="button"
               className="flex w-full items-center justify-center rounded-md border border-transparent bg-black py-2 text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
             >
-              <span className="sr-only">Pay with Apple Pay</span>
               <svg
                 className="h-5 w-auto"
                 fill="currentColor"
@@ -435,7 +431,6 @@ const CheckoutPage = () => {
                   </div>
                 </div>
               </div>
-
               <div className="mt-6 flex space-x-2">
                 <div className="flex h-5 items-center">
                   <input
@@ -453,15 +448,13 @@ const CheckoutPage = () => {
                   Billing address is the same as shipping address
                 </label>
               </div>
-
-              <button
-                type="submit"
-                className="mt-6 w-full rounded-md border border-transparent bg-emerald-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              <Button
+                title="Pay"
                 onClick={validatePayment}
+                className="w-full my-1"
               >
-                Pay {total}
-              </button>
-
+                {total}
+              </Button>
               <p className="mt-6 flex justify-center text-sm font-medium text-gray-500">
                 <LockClosedIcon className="mr-1.5 h-5 w-5 text-gray-400" />
                 Payment details stored in plain text

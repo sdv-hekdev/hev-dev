@@ -6,14 +6,13 @@ import products from "@/mock/products"
 
 const ShoppingPage = () => {
   return (
-    <Page title="Shopping">
+    <Page title="What do you need?">
       <div className="grid grid-cols-2 border-l border-gray-200 sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
         {products.map(
           ({
             id,
             imageSrc,
             imageAlt,
-            href,
             name,
             rating,
             reviewCount,
@@ -33,13 +32,13 @@ const ShoppingPage = () => {
               </div>
               <div className="pt-10 pb-4 text-center">
                 <h3 className="text-sm font-medium text-gray-900">
-                  <a href={href}>
+                  <a href="product">
                     <span aria-hidden="true" className="absolute inset-0" />
                     {name}
                   </a>
                 </h3>
                 <div className="mt-3 flex flex-col items-center">
-                  <p className="sr-only">{rating} out of 5 stars</p>
+                  <p>{rating} out of 5 stars</p>
                   <div className="flex items-center">
                     {[0, 1, 2, 3, 4].map((rating) => (
                       <StarIcon
@@ -58,9 +57,15 @@ const ShoppingPage = () => {
                 <p className="mt-4 text-base font-medium text-gray-900">
                   {price}
                 </p>
-                <p className="mt-4 text-base font-medium text-gray-900">
-                  {inStock}
-                </p>
+                {inStock ? (
+                  <p className="mt-4 text-base font-medium text-emerald-600">
+                    available
+                  </p>
+                ) : (
+                  <p className="mt-4 text-base font-medium text-red-600">
+                    sold out
+                  </p>
+                )}
               </div>
             </div>
           )

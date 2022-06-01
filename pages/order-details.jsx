@@ -1,11 +1,12 @@
 import products from "@/mock/products"
 import Page from "@/web/components/Page"
+import getRandomNumber from "@/web/helper/getRandomNumber"
 import Image from "next/image"
 
 const OrderDetailsPage = () => {
   return (
     <Page title="Order details">
-      <main className="bg-white px-4 pt-16 pb-24 sm:px-6 sm:pt-24 lg:px-8 lg:py-32">
+      <main className="bg-white p-4 pt lg:px-8">
         <div className="mx-auto max-w-3xl">
           <div className="max-w-xl">
             <h1 className="text-sm font-semibold uppercase tracking-wide text-indigo-600">
@@ -28,11 +29,7 @@ const OrderDetailsPage = () => {
             aria-labelledby="order-heading"
             className="mt-10 border-t border-gray-200"
           >
-            <h2 id="order-heading" className="sr-only">
-              Your order
-            </h2>
-
-            <h3 className="sr-only">Items</h3>
+            <h3>Items</h3>
             {products.map((product) => (
               <div
                 key="{product.id}"
@@ -59,7 +56,7 @@ const OrderDetailsPage = () => {
                       <div className="flex">
                         <dt className="font-medium text-gray-900">Quantity</dt>
                         <dd className="ml-2 text-gray-700">
-                          {product.quantity}
+                          {getRandomNumber(1, 3)}
                         </dd>
                       </div>
                       <div className="flex pl-4 sm:pl-6">
@@ -72,10 +69,10 @@ const OrderDetailsPage = () => {
               </div>
             ))}
 
-            <div className="sm:ml-40 sm:pl-6">
-              <h3 className="sr-only">Your information</h3>
+            <div className=" my-1 sm:ml-40 sm:pl-6">
+              <h3>Your information</h3>
 
-              <h4 className="sr-only">Addresses</h4>
+              <h4>Addresses</h4>
               <dl className="grid grid-cols-2 gap-x-6 py-10 text-sm">
                 <div>
                   <dt className="font-medium text-gray-900">
@@ -83,9 +80,11 @@ const OrderDetailsPage = () => {
                   </dt>
                   <dd className="mt-2 text-gray-700">
                     <address className="not-italic">
-                      <span className="block">Kristin Watson</span>
-                      <span className="block">7363 Cynthia Pass</span>
-                      <span className="block">Toronto, ON N3Y 4H8</span>
+                      <span className="block">Sup de Vinci</span>
+                      <span className="block">
+                        6-12 Avenue Léonard de Vinci
+                      </span>
+                      <span className="block">92400 Courbevoie</span>
                     </address>
                   </dd>
                 </div>
@@ -93,15 +92,17 @@ const OrderDetailsPage = () => {
                   <dt className="font-medium text-gray-900">Billing address</dt>
                   <dd className="mt-2 text-gray-700">
                     <address className="not-italic">
-                      <span className="block">Kristin Watson</span>
-                      <span className="block">7363 Cynthia Pass</span>
-                      <span className="block">Toronto, ON N3Y 4H8</span>
+                      <span className="block">Sup de Vinci</span>
+                      <span className="block">
+                        6-12 Avenue Léonard de Vinci
+                      </span>
+                      <span className="block">92400 Courbevoie</span>
                     </address>
                   </dd>
                 </div>
               </dl>
 
-              <h4 className="sr-only">Payment</h4>
+              <h4>Payment</h4>
               <dl className="grid grid-cols-2 gap-x-6 border-t border-gray-200 py-10 text-sm">
                 <div>
                   <dt className="font-medium text-gray-900">Payment method</dt>
@@ -110,7 +111,7 @@ const OrderDetailsPage = () => {
                     <p>Mastercard</p>
                     <p>
                       <span aria-hidden="true">•••• </span>
-                      <span className="sr-only">Ending in </span>1545
+                      <span>Ending in </span>1545
                     </p>
                   </dd>
                 </div>
@@ -123,7 +124,7 @@ const OrderDetailsPage = () => {
                 </div>
               </dl>
 
-              <h3 className="sr-only">Summary</h3>
+              <h3>Summary</h3>
 
               <dl className="space-y-6 border-t border-gray-200 pt-10 text-sm">
                 <div className="flex justify-between">

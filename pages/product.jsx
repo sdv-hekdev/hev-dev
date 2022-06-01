@@ -1,6 +1,6 @@
 import Button from "@/web/components/Button"
 import Page from "@/web/components/Page"
-import getRandomPrice from "@/web/helper/getRandomPrice"
+import getRandomNumber from "@/web/helper/getRandomNumber"
 
 const ProductPage = () => {
   return (
@@ -29,14 +29,17 @@ const ProductPage = () => {
             perferendis ea soluta distinctio, possimus recusandae nisi? Possimus
             nesciunt quibusdam nihil eligendi doloremque libero.
           </p>
-          <p className="mt-5 font-bold">Price: {getRandomPrice(20, 100)} $</p>
-          <p> rate: ⭐️⭐️⭐️⭐️⭐️</p>
-          <div className="flex justify-between">
-            <Button title="Add to cart" className="my-5 w-full md:w-1/5" />
+          <p className="mt-5 font-bold">Price: {getRandomNumber(20, 100)} $</p>
+          <p> rate: ⭐️⭐️⭐️⭐️⭐️ ({getRandomNumber(1, 1000)})</p>
+          <div className="flex flex-col mt-2 md:flex-row justify-between">
+            <Button
+              title="Add to cart"
+              className="my-1 w-full md:w-1/4 md:my-5"
+            />
             <Button
               title="Add to favorite"
               variant="info"
-              className="my-5 w-full md:w-1/5"
+              className="w-full md:w-1/4 md:my-5"
             />
           </div>
         </div>
