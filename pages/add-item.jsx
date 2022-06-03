@@ -4,7 +4,7 @@ import { Formik } from "formik"
 import Page from "@/web/components/Page"
 import FormField from "@/web/components/FormField"
 import Button from "@/web/components/Button"
-import { credentialSchema } from "@/back/validator/validator"
+import { credentialSchema } from "@/validator/validator"
 
 const initialValues = { label: "" }
 
