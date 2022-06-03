@@ -1,6 +1,8 @@
+// import { useContext } from "react"
 import Link from "next/link"
 
 import Page from "@/web/components/Page"
+// import { AppContext } from "@/web/context/AppContext"
 
 const ProfilePage = () => {
   return (
@@ -28,6 +30,11 @@ const ProfilePage = () => {
           </Link>
         </li>
       </ul>
+      <Link href="/add-item">
+        <a className="rounded-md bg-emerald-600 mx-2 py-4 px-4 text-center text-lg font-light text-white hover:bg-emerald-500 active:bg-emerald-700">
+          Add item
+        </a>
+      </Link>
     </Page>
   )
 }

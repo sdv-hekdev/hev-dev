@@ -27,7 +27,7 @@ const ChangePasswordPage = () => {
   }, [updateCurrentPassword, setError, router])
 
   return (
-    <Page title="Did you forget your password?">
+    <Page title="Did you forget your password">
       {error ? (
         <p className="bg-red-500 px-4 py-2 mb-3 font-bold text-white rounded-md">
           {error}

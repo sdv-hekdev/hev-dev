@@ -1,68 +1,65 @@
 import { useRouter } from "next/router"
-import { createContext, useState, useEffect } from "react"
-import {
-  createUserWithEmailAndPassword,
-  deleteUser,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signOut,
-  updateEmail,
-  updatePassword,
-} from "firebase/auth"
-
-import { auth } from "@/back/config/firebase"
+import { createContext, useState } from "react"
 
 export const AppContext = createContext()
 
 export const AppContextProvider = (props) => {
-  const [error, setError] = useState(null)
   const { ...otherProps } = props
   const router = useRouter()
+  const [error, setError] = useState(null)
   const [user, setUser] = useState(null)
 
-  // const stripePromise = loadStripe(process.env.STRIPE_PUBLISHAPE_KEY)
-  const currentUser = auth.currentUser
+  const addItem = async () => {}
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser({
-          uid: user.uid,
-          email: user.email,
-        })
-      } else {
-        setUser(null)
-      }
-    })
-
-    return () => unsubscribe()
-  }, [])
-
-  const signIn = async (email, password) => {
-    setUser(user)
-    await signInWithEmailAndPassword(auth, email, password)
+  const signIn = async () => {
+    try {
+      setUser(user)
+      console.log("WELCOME BACK")
+    } catch (e) {
+      console.log(e)
+    }
   }
 
-  const signUp = async (email, password) => {
-    setUser(user)
-    await createUserWithEmailAndPassword(auth, email, password)
+  const signUp = async () => {
+    try {
+      setUser(user)
+      console.log("WELCOME")
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   const logout = async () => {
-    setUser(null)
-    await signOut(auth)
+    try {
+      setUser(null)
+      console.log("DISCONNECTED")
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   const deleteAccount = async () => {
-    await deleteUser(currentUser)
+    try {
+      console.log("ACCOUNT_DELETED")
+    } catch (e) {
+      console.log(e)
+    }
   }
 
-  const updateCurrentEmail = async (email) => {
-    await updateEmail(currentUser, email)
+  const updateCurrentEmail = async () => {
+    try {
+      console.log("EMAIL UPDATED")
+    } catch (e) {
+      setError(e)
+    }
   }
 
-  const updateCurrentPassword = async (password) => {
-    updatePassword(currentUser, password)
+  const updateCurrentPassword = async () => {
+    try {
+      console.log("PASSWORD UPDATED")
+    } catch (e) {
+      setError(e)
+    }
   }
 
   const context = {
@@ -77,6 +74,7 @@ export const AppContextProvider = (props) => {
     updateCurrentPassword,
     error,
     setError,
+    addItem,
   }
 
   return <AppContext.Provider {...otherProps} value={{ context }} />

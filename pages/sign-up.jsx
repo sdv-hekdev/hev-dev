@@ -7,6 +7,7 @@ import { AppContext } from "@/web/context/AppContext"
 import FormField from "@/web/components/FormField"
 import Button from "@/web/components/Button"
 import Page from "@/web/components/Page"
+import BannerMessage from "@/web/components/Error"
 
 const initialValues = { email: "toto@toto.fr", password: "12345678" }
 
@@ -26,11 +27,12 @@ const SignUpPage = () => {
         }
 
         router.push("/")
-      } catch (err) {
-        setError(error)
+      } catch (e) {
+        console.log(e.message)
+        setError("Something went wrong")
       }
     },
-    [signUp, router, error]
+    [signUp, router, setError]
   )
 
   return (
@@ -50,7 +52,7 @@ const SignUpPage = () => {
           >
             {({ handleSubmit, isValid, isSubmitting }) => (
               <form onSubmit={handleSubmit}>
-                {error ? <p>{error}</p> : null}
+                {error ? <BannerMessage message={error} /> : null}
                 <FormField
                   name="email"
                   type="text"

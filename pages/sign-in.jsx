@@ -26,9 +26,8 @@ const SignInPage = () => {
         }
 
         router.push("/")
-      } catch (err) {
-        //TO DO
-        setError("Something went wrong")
+      } catch (e) {
+        console.log("ERROR")
       }
     },
     [signIn, router]

@@ -1,27 +1,24 @@
 import { useState, useContext, useCallback } from "react"
 
 import Page from "@/web/components/Page"
-import { AppContext } from "@/web/context/AppContext"
+// import { AppContext } from "@/web/context/AppContext"
 import { Formik } from "formik"
 import { credentialSchema } from "@/back/validator/validator"
 import FormField from "@/web/components/FormField"
 import Button from "@/web/components/Button"
+import BannerMessage from "@/web/components/Error"
 
 const initialValues = { email: "" }
 
 const UpdateEmailPage = () => {
   const [error, setError] = useState(null)
-  const {
-    context: { updateCurrentEmail },
-  } = useContext(AppContext)
+  // const {
+  //   context: { updateCurrentEmail },
+  // } = useContext(AppContext)
 
   const handleFormSubmit = useCallback(async () => {
-    try {
-      await updateCurrentEmail()
-    } catch (err) {
-      setError("Something went wrong")
-    }
-  }, [updateCurrentEmail])
+    console.log("toto")
+  }, [])
 
   return (
     <Page title="update your email">
@@ -33,11 +30,8 @@ const UpdateEmailPage = () => {
       >
         {({ handleSubmit, isValid, isSubmitting }) => (
           <form onSubmit={handleSubmit}>
-            {error ? (
-              <p className="bg-red-600 px-4 py-2 font-bold text-white rounded-md">
-                {error}
-              </p>
-            ) : null}
+            {error ? <BannerMessage message={error} /> : null}
+
             <FormField
               name="email"
               type="text"

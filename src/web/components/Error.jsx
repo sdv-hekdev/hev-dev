@@ -1,4 +1,4 @@
-const Error = (props) => {
+const BannerMessage = (props) => {
   const { message } = props
 
   return (
@@ -8,4 +8,4 @@ const Error = (props) => {
   )
 }
 
-export default Error
+export default BannerMessage
