@@ -31,7 +31,7 @@ module.exports = {
     "padded-blocks": ["error", "never"],
     "space-before-blocks": "error",
     "padding-line-between-statements": [
-      "error",
+      "warn",
       {
         blankLine: "always",
         prev: "*",

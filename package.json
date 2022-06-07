@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "serve": "nodemon ./src/back/server.js",
+    "serve": "nodemon ./src/db/server.js",
     "lint": "next lint",
     "build": "next build",
     "start": "next start"
@@ -23,6 +23,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.1.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.1",
     "@tailwindcss/typography": "^0.5.2",
@@ -37,6 +38,7 @@
     "express": "^4.18.1",
     "knex": "^2.1.0",
     "nodemon": "^2.0.16",
+    "objection": "^3.0.1",
     "pg": "^8.7.3",
     "postcss": "^8.4.7",
     "prettier": "^2.5.1",

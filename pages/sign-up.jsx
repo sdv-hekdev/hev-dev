@@ -2,7 +2,7 @@ import { useCallback, useState, useContext } from "react"
 import { Formik } from "formik"
 import Link from "next/link"
 
-import { credentialSchema } from "@/validator/validator"
+import { credentialSchema } from "@/db/validator/validator"
 import { AppContext } from "@/web/context/AppContext"
 import FormField from "@/web/components/FormField"
 import Button from "@/web/components/Button"

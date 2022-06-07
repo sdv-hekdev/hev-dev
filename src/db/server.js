@@ -1,11 +1,14 @@
 const express = require("express")
-// const knex = require("knex")
 const cors = require("cors")
-
+const knex = require("knex")
 const config = require("./config.js")
+const { Model } = require("objection")
+
+const db = knex(config.db)
 const app = express()
-// const db = knex(config.db)
 const PORT = config.port
+
+Model.knex(db)
 
 app.use(
   cors({

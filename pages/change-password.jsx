@@ -5,7 +5,7 @@ import FormField from "@/web/components/FormField"
 import Page from "@/web/components/Page"
 import Button from "@/web/components/Button"
 import { AppContext } from "@/web/context/AppContext"
-import { credentialSchema } from "@/validator/validator"
+import { credentialSchema } from "@/db/validator/validator"
 
 const message = "Type your new password"
 const initialValues = { password: "87654321" }
