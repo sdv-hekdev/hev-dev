@@ -8,11 +8,11 @@ const config = {
       database: process.env.DB_DATABASE,
       user: process.env.DB_USER,
     },
-  },
-  migrations: {
-    directory: "./src/db/migrations",
-    tableName: "knex_migrations",
-    stub: "./src/db/migrations.stub",
+    migrations: {
+      directory: "./src/db/migrations",
+      tableName: "knex_migrations",
+      stub: "./src/db/migrations.stub",
+    },
   },
   cors: {
     origin: process.env.WEB_APP_ORIGIN,

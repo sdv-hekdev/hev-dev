@@ -1,1 +1,3 @@
-module.exports = require("./src/db/config.js")
+const { db } = require("./src/db/config.js")
+
+module.exports = db
