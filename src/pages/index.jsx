@@ -1,7 +1,6 @@
-import Link from "next/link"
-
 import Page from "@/web/components/Page"
 import Trending from "@/web/components/Trending"
+import Link from "next/link"
 
 const LandingPage = () => {
   return (

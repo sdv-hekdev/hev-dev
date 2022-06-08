@@ -1,6 +1,6 @@
-import products from "@/mock/products"
 import Page from "@/web/components/Page"
 import getRandomNumber from "@/web/helper/getRandomNumber"
+import products from "@/mock/products"
 import Image from "next/image"
 
 const OrderDetailsPage = () => {

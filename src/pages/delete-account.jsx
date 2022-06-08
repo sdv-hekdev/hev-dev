@@ -1,8 +1,8 @@
 import { useContext, useCallback, useState } from "react"
 
-import Button from "@/web/components/Button"
 import { AppContext } from "@/web/context/AppContext"
 import Page from "@/web/components/Page"
+import Button from "@/web/components/Button"
 
 const DeleteAccountPage = () => {
   const [error, setError] = useState(null)

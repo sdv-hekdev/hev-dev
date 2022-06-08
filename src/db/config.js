@@ -14,10 +14,22 @@ const config = {
       stub: "./src/db/migrations.stub",
     },
   },
-  cors: {
-    origin: process.env.WEB_APP_ORIGIN,
+  security: {
+    session: {
+      jwtSecret: process.env.JWT_SECRET,
+      expiresIn: "2 days",
+    },
+    password: {
+      iteration: 100000,
+      digest: "sha512",
+      keylen: 256,
+    },
   },
-  session: { expiresIn: "2 days" },
+  services: {
+    webApp: {
+      baseUrl: process.env.WEB_APP_BASE_URL,
+    },
+  },
 }
 
 module.exports = config

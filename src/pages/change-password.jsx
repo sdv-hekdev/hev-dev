@@ -1,14 +1,13 @@
 import { useCallback, useContext, useState } from "react"
 import { Formik } from "formik"
-
-import FormField from "@/web/components/FormField"
-import Page from "@/web/components/Page"
-import Button from "@/web/components/Button"
 import { AppContext } from "@/web/context/AppContext"
-import { credentialSchema } from "@/db/validator/validator"
+import FormField from "@/web/components/FormField"
+import Button from "@/web/components/Button"
+import Page from "@/web/components/Page"
 
 const message = "Type your new password"
 const initialValues = { password: "87654321" }
+const credentialSchema = ""
 
 const ChangePasswordPage = () => {
   const [error, setError] = useState(null)

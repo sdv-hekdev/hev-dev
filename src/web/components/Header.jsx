@@ -1,3 +1,4 @@
+import { useCallback, useState, useContext } from "react"
 import {
   ArrowCircleLeftIcon,
   MenuIcon,
@@ -6,20 +7,15 @@ import {
   UserCircleIcon,
   XIcon,
 } from "@heroicons/react/outline"
-import { useCallback, useState, useContext } from "react"
 import Link from "next/link"
 
-import Input from "@/web/components/Input"
-import Navbar from "@/web/components/Navbar"
-import { AppContext } from "@/web/context/AppContext"
 import Button from "@/web/components/Button"
+import Navbar from "@/web/components/Navbar"
+import Input from "@/web/components/Input"
+import { AppContext } from "@/web/context/AppContext"
 
 const BackButton = (props) => {
-  const {
-    context: { router },
-  } = useContext(AppContext)
-
-  const handleClick = useCallback(() => router.back(), [router])
+  const handleClick = useCallback(() => {}, [])
 
   return (
     <ArrowCircleLeftIcon
@@ -33,17 +29,14 @@ const BackButton = (props) => {
 const Header = (props) => {
   const { title, counter, noBack, noMenu } = props
   const {
-    context: { logout, router, user },
+    context: { user },
   } = useContext(AppContext)
+
   const [open, setOpen] = useState(false)
 
   const handleClick = useCallback(() => setOpen(!open), [open])
 
-  const signOut = useCallback(() => {
-    logout()
-
-    router.push("/")
-  }, [logout, router])
+  const signOut = useCallback(() => {}, [])
 
   return (
     <div className="bg-white top-0">

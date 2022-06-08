@@ -1,4 +1,4 @@
-import getRandomNumber from "../src/web/helper/getRandomNumber"
+import getRandomNumber from "../web/helper/getRandomNumber"
 
 const products = [
   {

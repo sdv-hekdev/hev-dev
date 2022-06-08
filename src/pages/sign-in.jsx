@@ -1,12 +1,10 @@
 import { useCallback, useState, useContext } from "react"
 import { Formik } from "formik"
 import Link from "next/link"
-
-import { credentialSchema } from "@/db/validator/validator"
+import { AppContext } from "@/web/context/AppContext"
+import Page from "@/web/components/Page"
 import FormField from "@/web/components/FormField"
 import Button from "@/web/components/Button"
-import Page from "@/web/components/Page"
-import { AppContext } from "@/web/context/AppContext"
 
 const initialValues = { email: "toto@toto.fr", password: "12345678" }
 

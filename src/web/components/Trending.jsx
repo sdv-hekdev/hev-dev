@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 import Card from "@/web/components/Card"
-import trendingProducts from "mock/trendingProducts"
+import trendingProducts from "@/mock/trendingProducts"
 
 const Trending = () => {
   return (

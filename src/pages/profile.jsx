@@ -1,8 +1,5 @@
-// import { useContext } from "react"
-import Link from "next/link"
-
 import Page from "@/web/components/Page"
-// import { AppContext } from "@/web/context/AppContext"
+import Link from "next/link"
 
 const ProfilePage = () => {
   return (

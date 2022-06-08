@@ -2,10 +2,9 @@ import { useCallback } from "react"
 import { useRouter } from "next/router"
 import { Disclosure } from "@headlessui/react"
 import { LockClosedIcon } from "@heroicons/react/solid"
-
 import Page from "@/web/components/Page"
-import products from "@/mock/products"
 import Button from "@/web/components/Button"
+import products from "@/mock/products"
 
 const subtotal = "$210.00"
 const discount = { code: "CHEAPSKATE", amount: "$24.00" }

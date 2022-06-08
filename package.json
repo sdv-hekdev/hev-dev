@@ -12,6 +12,7 @@
   "dependencies": {
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
+    "axios": "^0.27.2",
     "cors": "^2.8.5",
     "formik": "^2.2.9",
     "jsonwebtoken": "^8.5.1",

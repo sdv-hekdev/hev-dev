@@ -1,20 +1,15 @@
-import { useState, useContext, useCallback } from "react"
-
-import Page from "@/web/components/Page"
-// import { AppContext } from "@/web/context/AppContext"
-import { Formik } from "formik"
-import { credentialSchema } from "@/db/validator/validator"
-import FormField from "@/web/components/FormField"
 import Button from "@/web/components/Button"
 import BannerMessage from "@/web/components/Error"
+import FormField from "@/web/components/FormField"
+import Page from "@/web/components/Page"
+import { Formik } from "formik"
+import { useState, useCallback } from "react"
 
 const initialValues = { email: "" }
+const credentialSchema = ""
 
 const UpdateEmailPage = () => {
   const [error, setError] = useState(null)
-  // const {
-  //   context: { updateCurrentEmail },
-  // } = useContext(AppContext)
 
   const handleFormSubmit = useCallback(async () => {
     console.log("toto")

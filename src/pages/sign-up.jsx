@@ -1,39 +1,34 @@
 import { useCallback, useState, useContext } from "react"
 import { Formik } from "formik"
 import Link from "next/link"
-
-import { credentialSchema } from "@/db/validator/validator"
-import { AppContext } from "@/web/context/AppContext"
-import FormField from "@/web/components/FormField"
-import Button from "@/web/components/Button"
+import { object } from "yup"
+import { emailValidator, passwordValidator } from "@/db/validator/validator"
+import makeApiClient from "@/web/services/makeApiClient"
 import Page from "@/web/components/Page"
 import BannerMessage from "@/web/components/Error"
+import EmailFormField from "@/web/components/EmailFormField"
+import PasswordFormField from "@/web/components/PasswordFormField"
+import Button from "@/web/components/Button"
+
+const credentialSchema = object().shape({
+  email: emailValidator.required("Must be a valid e-mail."),
+  password: passwordValidator.required("No password provided."),
+})
 
 const initialValues = { email: "toto@toto.fr", password: "12345678" }
 
-const SignUpPage = () => {
-  const [error, setError] = useState(null)
-  const {
-    context: { signUp, router },
-  } = useContext(AppContext)
+const SignUpPage = (props) => {
+  const { router } = props
 
-  const handleFormSubmit = useCallback(
-    async ({ email, password }) => {
-      try {
-        await signUp(email, password)
+  const handleFormSubmit = useCallback(async ({ email, password }) => {
+    const api = makeApiClient()
 
-        if (email) {
-          throw new Error("Email already used")
-        }
-
-        router.push("/")
-      } catch (e) {
-        console.log(e.message)
-        setError("Something went wrong")
-      }
-    },
-    [signUp, router, setError]
-  )
+    try {
+      const { data } = await api.post("/sign-up", { email, password })
+    } catch (err) {
+      console.log(err)
+    }
+  }, [])
 
   return (
     <Page title="Let's create an account">
@@ -53,20 +48,8 @@ const SignUpPage = () => {
             {({ handleSubmit, isValid, isSubmitting }) => (
               <form onSubmit={handleSubmit}>
                 {error ? <BannerMessage message={error} /> : null}
-                <FormField
-                  name="email"
-                  type="text"
-                  label="Email"
-                  placeholder="Enter your email address"
-                  autoComplete="email"
-                />
-                <FormField
-                  name="password"
-                  type="password"
-                  label="Password"
-                  placeholder="Enter your password"
-                  autoComplete="password"
-                />
+                <EmailFormField />
+                <PasswordFormField />
                 <Button
                   type="submit"
                   disabled={!isValid || isSubmitting}

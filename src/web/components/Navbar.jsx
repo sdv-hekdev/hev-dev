@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react"
 import { MenuIcon } from "@heroicons/react/outline"
 
-import navigation from "mock/navigation"
+import navigation from "@/mock/navigation"
 import Link from "next/link"
 
 const Navbar = () => {

@@ -6,7 +6,6 @@ import {
   QuestionMarkCircleIcon,
   XIcon,
 } from "@heroicons/react/solid"
-
 import Page from "@/web/components/Page"
 import products from "@/mock/products"
 
