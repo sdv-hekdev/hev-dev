@@ -3,10 +3,7 @@ const typography = require("@tailwindcss/typography")
 const aspectRatio = require("@tailwindcss/aspect-ratio")
 
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./src/web/components/**/*.{js,jsx}",
-  ],
+  content: ["./web/**/*.{js,jsx}"],
   theme: {
     extend: {},
     screens: {

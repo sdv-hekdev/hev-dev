@@ -1,4 +1,4 @@
-import { useCallback, useState, useContext } from "react"
+import { useCallback, useState } from "react"
 import {
   ArrowCircleLeftIcon,
   MenuIcon,
@@ -9,10 +9,10 @@ import {
 } from "@heroicons/react/outline"
 import Link from "next/link"
 
+import { useAppContext } from "@/web/context/AppContext"
 import Button from "@/web/components/Button"
 import Navbar from "@/web/components/Navbar"
 import Input from "@/web/components/Input"
-import { AppContext } from "@/web/context/AppContext"
 
 const BackButton = (props) => {
   const handleClick = useCallback(() => {}, [])
@@ -28,15 +28,15 @@ const BackButton = (props) => {
 
 const Header = (props) => {
   const { title, counter, noBack, noMenu } = props
-  const {
-    context: { user },
-  } = useContext(AppContext)
+  // const {
+  //   context: { user },
+  // } = useAppContext()
 
   const [open, setOpen] = useState(false)
 
   const handleClick = useCallback(() => setOpen(!open), [open])
 
-  const signOut = useCallback(() => {}, [])
+  // const signOut = useCallback(() => {}, [])
 
   return (
     <div className="bg-white top-0">
@@ -45,7 +45,7 @@ const Header = (props) => {
         <h1 className="font-light text-white text-2xl lg:text-center">
           {title}
         </h1>
-        <div
+        {/* <div
           className="flex
          items-center justify-end space-x-2"
         >
@@ -65,7 +65,7 @@ const Header = (props) => {
               </a>
             </Link>
           )}
-        </div>
+        </div> */}
       </div>
 
       <div className="flex items-center justify-between">
