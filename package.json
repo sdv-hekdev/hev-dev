@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "rm -rf .next && next dev",
     "serve": "nodemon ./src/db/server.js",
     "lint": "next lint",
     "build": "next build",
@@ -14,6 +14,7 @@
     "@heroicons/react": "^1.0.5",
     "axios": "^0.27.2",
     "cors": "^2.8.5",
+    "deepmerge": "^4.2.2",
     "formik": "^2.2.9",
     "jsonwebtoken": "^8.5.1",
     "next": "^12.1.6",

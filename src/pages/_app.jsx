@@ -2,10 +2,10 @@ import { AppContextProvider } from "@/web/context/AppContext"
 
 import "@/web/styles/tailwind.css"
 
-const App = ({ Component, pageProps, ...otherProps }) => {
+const App = ({ Component, pageProps, router, ...otherProps }) => {
   return (
-    <AppContextProvider>
-      <Component {...pageProps} {...otherProps} />
+    <AppContextProvider router={router} page={Component}>
+      <Component {...pageProps} router={router} {...otherProps} />
     </AppContextProvider>
   )
 }

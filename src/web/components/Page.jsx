@@ -13,7 +13,6 @@ const Page = (props) => {
 
         <section>{children}</section>
       </main>
-
       {noFooter ? null : (
         <footer className="w-full bg-gray-100 mt-5">
           <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 md:flex md:items-center md:justify-between lg:px-2">

@@ -28,5 +28,6 @@ const LandingPage = () => {
     </Page>
   )
 }
+LandingPage.isPubluc = true
 
 export default LandingPage

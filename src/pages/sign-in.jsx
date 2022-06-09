@@ -1,38 +1,40 @@
-import { useCallback, useState, useContext } from "react"
+import { useCallback, useState } from "react"
 import { Formik } from "formik"
 import Link from "next/link"
-import { AppContext } from "@/web/context/AppContext"
+import { object } from "yup"
+import { emailValidator, passwordValidator } from "@/db/validator/validator"
 import Page from "@/web/components/Page"
-import FormField from "@/web/components/FormField"
+import EmailFormField from "@/web/components/EmailFormField"
+import PasswordFormField from "@/web/components/PasswordFormField"
 import Button from "@/web/components/Button"
+import { useAppContext } from "@/web/context/AppContext"
+import FormErrorMessage from "@/web/components/FormFieldError"
+
+const credentialSchema = object().shape({
+  email: emailValidator.required("Must be a valid e-mail."),
+  password: passwordValidator.required("No password provided."),
+})
 
 const initialValues = { email: "toto@toto.fr", password: "12345678" }
 
-const SignInPage = () => {
-  const [error, setError] = useState(null)
-  const {
-    context: { signIn, router },
-  } = useContext(AppContext)
+const SignInPage = (props) => {
+  const { router } = props
+  const { signIn } = useAppContext
+  const [error, setError] = useState("")
 
   const handleFormSubmit = useCallback(
     async ({ email, password }) => {
-      try {
-        await signIn(email, password)
+      const error = await signIn({ email, password })
 
-        if (!email) {
-          throw new Error("User not found")
-        }
-
-        router.push("/")
-      } catch (e) {
-        console.log("ERROR")
+      if (error) {
+        setError(error)
       }
     },
-    [signIn, router]
+    [signIn]
   )
 
   return (
-    <Page title="Let's sign">
+    <Page title="Let's create an account">
       <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-md space-y-8">
           <div>
@@ -40,6 +42,7 @@ const SignInPage = () => {
               Sign to your account
             </h2>
           </div>
+
           <Formik
             onSubmit={handleFormSubmit}
             initialValues={initialValues}
@@ -47,60 +50,18 @@ const SignInPage = () => {
           >
             {({ handleSubmit, isValid, isSubmitting }) => (
               <form onSubmit={handleSubmit}>
-                {error ? (
-                  <p className="bg-red-600 px-4 py-2 font-bold text-white rounded-md">
-                    {error}
-                  </p>
-                ) : null}
-                <FormField
-                  name="email"
-                  type="text"
-                  label="Email"
-                  placeholder="Enter your email address"
-                  autoComplete="email"
-                />
-                <FormField
-                  name="password"
-                  type="password"
-                  label="Password"
-                  placeholder="Enter your password"
-                  autoComplete="password"
-                />
-                <div className="flex items-center justify-between my-4">
-                  <div className="flex items-center">
-                    <input
-                      id="remember-me"
-                      name="remember-me"
-                      type="checkbox"
-                      className="h-4 w-4 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500"
-                      autoComplete="remember-me"
-                    />
-                    <label
-                      htmlFor="remember-me"
-                      className="ml-2 block text-sm text-gray-900"
-                    >
-                      Remember me
-                    </label>
-                  </div>
-
-                  <div className="text-sm">
-                    <Link href="/change-password">
-                      <a className="font-medium text-emerald-600 hover:text-emerald-500">
-                        Forgot your password?
-                      </a>
-                    </Link>
-                  </div>
-                </div>
-
+                <FormErrorMessage>{error}</FormErrorMessage>
+                <EmailFormField />
+                <PasswordFormField />
                 <Button
                   type="submit"
                   disabled={!isValid || isSubmitting}
-                  title="Sign-in"
-                  className="w-full"
+                  title="Create an account"
+                  className="mt-4 w-full"
                 />
-                <Link href="/sign-up" passHref>
+                <Link href="/sign-in" passHref>
                   <a className="block text-center text-sm font-medium text-emerald-600 hover:text-emerald-500 active:text-blue-500">
-                    Create an account
+                    forget your password?
                   </a>
                 </Link>
               </form>
@@ -111,5 +72,6 @@ const SignInPage = () => {
     </Page>
   )
 }
+SignInPage.isPubluc = true
 
 export default SignInPage
