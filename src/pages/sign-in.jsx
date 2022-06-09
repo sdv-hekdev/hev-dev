@@ -1,8 +1,7 @@
 import { useCallback, useState } from "react"
 import { Formik } from "formik"
 import Link from "next/link"
-import { object } from "yup"
-import { emailValidator, passwordValidator } from "@/db/validator/validator"
+import { credentialSchema } from "@/db/validator/validator"
 import Page from "@/web/components/Page"
 import EmailFormField from "@/web/components/EmailFormField"
 import PasswordFormField from "@/web/components/PasswordFormField"
@@ -10,20 +9,16 @@ import Button from "@/web/components/Button"
 import { useAppContext } from "@/web/context/AppContext"
 import FormErrorMessage from "@/web/components/FormFieldError"
 
-const credentialSchema = object().shape({
-  email: emailValidator.required("Must be a valid e-mail."),
-  password: passwordValidator.required("No password provided."),
-})
-
 const initialValues = { email: "toto@toto.fr", password: "12345678" }
 
-const SignInPage = (props) => {
-  const { router } = props
-  const { signIn } = useAppContext
-  const [error, setError] = useState("")
+const SignInPage = () => {
+  const { signIn } = useAppContext()
+  const [error, setError] = useState(null)
 
   const handleFormSubmit = useCallback(
     async ({ email, password }) => {
+      setError(null)
+
       const error = await signIn({ email, password })
 
       if (error) {
@@ -56,14 +51,21 @@ const SignInPage = (props) => {
                 <Button
                   type="submit"
                   disabled={!isValid || isSubmitting}
-                  title="Create an account"
+                  title="sign in"
                   className="mt-4 w-full"
                 />
-                <Link href="/sign-in" passHref>
-                  <a className="block text-center text-sm font-medium text-emerald-600 hover:text-emerald-500 active:text-blue-500">
-                    forget your password?
-                  </a>
-                </Link>
+                <div className="flex justify-between">
+                  <Link href="/sign-up" passHref>
+                    <a className="block text-center text-sm font-medium text-emerald-600 hover:text-emerald-500 active:text-blue-500">
+                      Create account?
+                    </a>
+                  </Link>
+                  <Link href="/sign-in" passHref>
+                    <a className="block text-center text-sm font-medium text-emerald-600 hover:text-emerald-500 active:text-blue-500">
+                      forget your password?
+                    </a>
+                  </Link>
+                </div>
               </form>
             )}
           </Formik>
@@ -72,6 +74,6 @@ const SignInPage = (props) => {
     </Page>
   )
 }
-SignInPage.isPubluc = true
+SignInPage.isPublic = true
 
 export default SignInPage

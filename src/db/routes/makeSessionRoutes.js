@@ -48,6 +48,8 @@ const makeSessionRoutes = ({ app }) => {
 
     if (!user || !hash || user.passwordHash !== hash) {
       res.status(HTTP_UNAUTHORIZED).send({ error: "Invalid credentials." })
+
+      return
     }
 
     const jwt = jsonwebtoken.sign(

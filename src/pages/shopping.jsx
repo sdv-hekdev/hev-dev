@@ -74,4 +74,6 @@ const ShoppingPage = () => {
   )
 }
 
+ShoppingPage.isPublic = true
+
 export default ShoppingPage

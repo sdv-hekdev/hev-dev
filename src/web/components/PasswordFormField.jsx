@@ -6,7 +6,6 @@ const PasswordFormField = (props) => (
     type="password"
     label="Password"
     placeholder="Enter your password"
-    autoComplete="password"
     {...props}
   />
 )

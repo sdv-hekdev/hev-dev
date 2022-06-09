@@ -280,7 +280,6 @@ const CheckoutPage = () => {
                       type="email"
                       id="email-address"
                       name="email-address"
-                      autoComplete="email"
                       className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
@@ -298,7 +297,6 @@ const CheckoutPage = () => {
                       type="text"
                       id="name-on-card"
                       name="name-on-card"
-                      autoComplete="cc-name"
                       className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
@@ -316,7 +314,6 @@ const CheckoutPage = () => {
                       type="text"
                       id="card-number"
                       name="card-number"
-                      autoComplete="cc-number"
                       className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
@@ -334,7 +331,6 @@ const CheckoutPage = () => {
                       type="text"
                       name="expiration-date"
                       id="expiration-date"
-                      autoComplete="cc-exp"
                       className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
@@ -352,7 +348,6 @@ const CheckoutPage = () => {
                       type="text"
                       name="cvc"
                       id="cvc"
-                      autoComplete="csc"
                       className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
@@ -370,7 +365,6 @@ const CheckoutPage = () => {
                       type="text"
                       id="address"
                       name="address"
-                      autoComplete="street-address"
                       className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
@@ -388,7 +382,6 @@ const CheckoutPage = () => {
                       type="text"
                       id="city"
                       name="city"
-                      autoComplete="address-level2"
                       className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
@@ -406,7 +399,6 @@ const CheckoutPage = () => {
                       type="text"
                       id="region"
                       name="region"
-                      autoComplete="address-level1"
                       className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
@@ -424,7 +416,6 @@ const CheckoutPage = () => {
                       type="text"
                       id="postal-code"
                       name="postal-code"
-                      autoComplete="postal-code"
                       className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>

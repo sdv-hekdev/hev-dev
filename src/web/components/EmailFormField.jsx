@@ -6,7 +6,6 @@ const EmailFormField = (props) => (
     type="text"
     label="Email"
     placeholder="Enter your email address"
-    autoComplete="email"
     {...props}
   />
 )

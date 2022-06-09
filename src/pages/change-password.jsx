@@ -45,7 +45,6 @@ const ChangePasswordPage = () => {
               label={message}
               placeholder="New password"
               className="w-full lg:w-1/3 my-2"
-              autoComplete="password"
             />
             <Button
               type="submit"

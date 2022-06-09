@@ -19,18 +19,22 @@ const initialValues = { email: "toto@toto.fr", password: "12345678" }
 
 const SignUpPage = (props) => {
   const { router } = props
-  const { signUp } = useAppContext
-  const [error, setError] = useState("")
+  const { signUp } = useAppContext()
+  const [error, setError] = useState(null)
 
   const handleFormSubmit = useCallback(
     async ({ email, password }) => {
+      setError(null)
+
       const error = await signUp({ email, password })
 
       if (error) {
         setError(error)
       }
+
+      router.push("/")
     },
-    [signUp]
+    [signUp, router]
   )
 
   return (
@@ -56,7 +60,7 @@ const SignUpPage = (props) => {
                 <Button
                   type="submit"
                   disabled={!isValid || isSubmitting}
-                  title="Create an account"
+                  title="create account"
                   className="mt-4 w-full"
                 />
                 <Link href="/sign-in" passHref>
@@ -72,5 +76,7 @@ const SignUpPage = (props) => {
     </Page>
   )
 }
+
+SignUpPage.isPublic = true
 
 export default SignUpPage

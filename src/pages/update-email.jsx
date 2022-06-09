@@ -31,7 +31,6 @@ const UpdateEmailPage = () => {
               type="text"
               label="New email"
               placeholder="Type your new email"
-              autoComplete="email"
             />
             <Button
               type="submit"
