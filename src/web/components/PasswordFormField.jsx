@@ -1,4 +1,4 @@
-import FormField from "@/components/FormField"
+import FormField from "@/web/components/FormField"
 
 const PasswordFormField = (props) => (
   <FormField

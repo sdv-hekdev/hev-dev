@@ -1,5 +1,3 @@
-import Page from "@/web/components/Page"
-
-const AddItemPage = () => <Page title="Add a new item?" />
+const AddItemPage = () => {}
 
 export default AddItemPage

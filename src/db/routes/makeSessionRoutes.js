@@ -51,7 +51,11 @@ const makeSessionRoutes = ({ app }) => {
     }
 
     const jwt = jsonwebtoken.sign(
-      { payload: { user: user.id } },
+      {
+        payload: {
+          user: user.id,
+        },
+      },
       config.security.session.jwtSecret,
       { expiresIn: config.security.session.expiresIn }
     )

@@ -4,7 +4,7 @@ import "@/web/styles/tailwind.css"
 
 const App = ({ Component, pageProps, router, ...otherProps }) => {
   return (
-    <AppContextProvider>
+    <AppContextProvider router={router} page={Component}>
       <Component {...pageProps} router={router} {...otherProps} />
     </AppContextProvider>
   )

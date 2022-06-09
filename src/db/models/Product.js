@@ -1,13 +1,13 @@
 const UserModel = require("@/db/Model/User")
-const { Model } = require("objection")
+const BaseModel = require("@/db/models/BaseModel")
 
-module.exports = class ProductModel extends Model {
+class ProductModel extends BaseModel {
   static tableName = "products"
 
   static relationMappings() {
     return {
       users: {
-        relation: Model.HasOneRelation,
+        relation: BaseModel.BelongsToOneRelation,
         modelClass: UserModel,
         join: {
           from: "posts.userId",
@@ -17,3 +17,5 @@ module.exports = class ProductModel extends Model {
     }
   }
 }
+
+module.exports = ProductModel
