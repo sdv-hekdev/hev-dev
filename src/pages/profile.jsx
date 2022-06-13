@@ -1,15 +1,11 @@
 import Page from "@/web/components/Page"
-import { useAppContext } from "@/web/context/AppContext"
+// import { useAppContext } from "@/web/context/AppContext"
 import Link from "next/link"
 
 const ProfilePage = () => {
-  const {
-    state: { session },
-  } = useAppContext()
-
   return (
     <Page title="Check your profile">
-      <h1>Welcome {session.email}</h1>
+      <h1>Welcome </h1>
       <ul className="flex flex-col justify-between mt-5 md:flex-row md:justify-center ">
         <li className="my-5">
           <Link href="/update-email">
@@ -41,5 +37,6 @@ const ProfilePage = () => {
     </Page>
   )
 }
+ProfilePage.isPublic = false
 
 export default ProfilePage

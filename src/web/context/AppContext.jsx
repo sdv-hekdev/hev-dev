@@ -11,28 +11,32 @@ import deepmerge from "deepmerge"
 const AppContext = createContext()
 export const useAppContext = () => useContext(AppContext)
 
-const api = makeApiClient()
 const tokenSession = "hekdev_jwt_session"
 
-const getSessionFromJwt = (jwt) => {
-  jwt ? JSON.parse(atob(jwt.split(".")[1])).payload : null
-}
+const getSessionFromJWT = (jwt) =>
+  jwt
+    ? JSON.parse(Buffer.from(jwt.split(".")[1], "base64").toString("utf-8"))
+        .payload
+    : null
 
 const initialState = {
   session:
     typeof localStorage !== "undefined"
-      ? getSessionFromJwt(localStorage.getItem(tokenSession))
+      ? getSessionFromJWT(localStorage.getItem(tokenSession))
       : null,
 }
+
+const api = makeApiClient()
 
 export const AppContextProvider = (props) => {
   const { router, page } = props
   const [state, setState] = useState(initialState)
   const { session } = state
 
-  const updateState = useCallback((newstate) => {
-    setState((prevState) => deepmerge(prevState, newstate))
-  }, [])
+  const updateState = useCallback(
+    (newstate) => setState((prevState) => deepmerge(prevState, newstate)),
+    []
+  )
 
   const signUp = useCallback(
     async ({ email, password }) => {
@@ -40,8 +44,7 @@ export const AppContextProvider = (props) => {
         const { data } = await api.post("/sign-up", { email, password })
 
         if (data.status !== API_STATUS_OK) {
-          //console.log()
-          throw new Error("Something went wrong")
+          throw new Error("Something went wrong.")
         }
 
         router.push("/sign-in")
@@ -60,20 +63,19 @@ export const AppContextProvider = (props) => {
         const { data } = await api.post("/sign-in", { email, password })
 
         if (data.status !== API_STATUS_OK || !data.data) {
-          //if problem:
           throw new Error("Something went wrong.")
         }
 
-        localStorage.setItem(tokenSession, data.data)
+        const { payload } = JSON.parse(
+          Buffer.from(data.data.split(".")[1], "base64").toString("utf-8")
+        )
 
-        const { payload } = getSessionFromJwt(data.data)
+        localStorage.setItem(tokenSession, data.data)
 
         updateState({ session: payload })
 
         router.push("/")
       } catch (err) {
-        console.error(err)
-
         const error = err?.response?.data?.error
 
         return error || "Something went wrong."
@@ -85,8 +87,7 @@ export const AppContextProvider = (props) => {
   // Redirect if no session.
   // Keep session open on refresh.
   useEffect(() => {
-    const session = getSessionFromJwt(localStorage.getItem(tokenSession))
-
+    const session = getSessionFromJWT(localStorage.getItem(tokenSession))
     updateState({ session })
 
     if (!session && !page.isPublic) {
@@ -94,7 +95,7 @@ export const AppContextProvider = (props) => {
     }
   }, [router, page, updateState])
 
-  const context = { signUp, signIn, state }
+  const context = { signUp, signIn, state, session }
 
   if (!session || page.isPublic) {
     return <AppContext.Provider {...props} value={context} />

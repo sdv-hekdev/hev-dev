@@ -10,7 +10,6 @@ import {
 import Link from "next/link"
 
 import { useAppContext } from "@/web/context/AppContext"
-import Button from "@/web/components/Button"
 import Navbar from "@/web/components/Navbar"
 import Input from "@/web/components/Input"
 
@@ -28,16 +27,13 @@ const BackButton = (props) => {
 
 const Header = (props) => {
   const { title, counter, noBack, noMenu } = props
-  const { user } = useAppContext()
-
+  const { session } = useAppContext()
   const [open, setOpen] = useState(false)
 
   const handleClick = useCallback(() => setOpen(!open), [open])
 
-  const signOut = useCallback(() => {}, [])
-
   return (
-    <div className="bg-white top-0">
+    <div className="bg-white top-0 items-center ">
       <div className="flex w-full items-center justify-between bg-gradient-to-r from-emerald-600 to-emerald-900 py-2 px-4">
         {noBack ? null : <BackButton />}
         <h1 className="font-light text-white text-2xl lg:text-center">
@@ -47,33 +43,35 @@ const Header = (props) => {
           className="flex
          items-center justify-end space-x-2"
         >
-          {!user ? null : (
-            <Button title="Sign out" variant="danger" onClick={signOut} />
-          )}
-          {user ? (
+          {session ? (
             <Link href="/profile" passHref>
-              <a>
-                <UserCircleIcon className="h-8 w-8 text-white" />
-              </a>
+              <UserCircleIcon className="h-8 w-8 text-white" />
             </Link>
           ) : (
-            <Link href="/sign-up" passHref>
-              <a>
-                <UserCircleIcon className="h-8 w-8 text-white" />
-              </a>
-            </Link>
+            <div className="flex gap-2 text-sm  underline text-white">
+              <Link href="/sign-up">
+                <a>
+                  <p>Create an account</p>
+                </a>
+              </Link>
+              <Link href="/sign-in">
+                <a>Access your account</a>
+              </Link>
+            </div>
           )}
         </div>
       </div>
 
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <Link href="/" passHref>
-            <img
-              className="h-20 w-25 cursor-pointer"
-              src="/assets/logo-header.png"
-              alt="logo-md"
-            />
+          <Link href="/">
+            <a>
+              <img
+                className="h-20 w-25 cursor-pointer"
+                src="/assets/logo-header.png"
+                alt="logo-md"
+              />
+            </a>
           </Link>
           {noMenu ? null : (
             <div>

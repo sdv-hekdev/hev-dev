@@ -28,6 +28,6 @@ const LandingPage = () => {
     </Page>
   )
 }
-// LandingPage.isPublic = true
+LandingPage.isPublic = true
 
 export default LandingPage

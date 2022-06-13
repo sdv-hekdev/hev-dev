@@ -32,7 +32,7 @@ const SignUpPage = (props) => {
         setError(error)
       }
 
-      router.push("/")
+      router.push("/sign-in")
     },
     [signUp, router]
   )
