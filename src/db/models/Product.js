@@ -1,5 +1,5 @@
-const UserModel = require("@/db/Model/User")
-const BaseModel = require("@/db/models/BaseModel")
+const UserModel = require("./User")
+const BaseModel = require("./BaseModel")
 
 class ProductModel extends BaseModel {
   static tableName = "products"

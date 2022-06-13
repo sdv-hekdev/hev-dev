@@ -15,7 +15,8 @@ exports.up = async (knex) => {
     table.text("description").notNullable()
     table.integer("quantity").unsigned()
     table.integer("rate").unsigned()
-    table.integer("price").unsigned().notNullable()
+    table.float("price").unsigned().notNullable()
+
     table.timestamps(true, true, true)
 
     table.integer("userId").unsigned().notNullable()
@@ -24,11 +25,14 @@ exports.up = async (knex) => {
   await knex.schema.createTable("addresses", (table) => {
     table.increments("id")
     table.integer("number").unsigned().notNullable()
-    table.integer("street").notNullable()
+    table.text("streetName").notNullable()
     table.integer("unit")
     table.text("city").notNullable()
+    table.text("country").notNullable()
     table.text("district").notNullable()
-    table.integer("postcode").unsigned().notNullable()
+    table.text("zipCode").unsigned().notNullable()
+
+    table.timestamps(true, true, true)
 
     table.integer("userId").unsigned().notNullable()
     table.foreign("userId").references("id").inTable("users")

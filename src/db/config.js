@@ -13,6 +13,9 @@ const config = {
       tableName: "knex_migrations",
       stub: "./src/db/migrations.stub",
     },
+    seeds: {
+      directory: "./src/db/seeds",
+    },
   },
   security: {
     session: {
