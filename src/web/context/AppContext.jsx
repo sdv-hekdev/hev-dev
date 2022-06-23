@@ -1,81 +1,103 @@
-import { useRouter } from "next/router"
-import { createContext, useState, useEffect } from "react"
 import {
-  createUserWithEmailAndPassword,
-  deleteUser,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signOut,
-  updateEmail,
-  updatePassword,
-} from "firebase/auth"
+  createContext,
+  useCallback,
+  useContext,
+  useState,
+  useEffect,
+} from "react"
+import makeApiClient, { API_STATUS_OK } from "@/web/services/makeApiClient"
+import deepmerge from "deepmerge"
 
-import { auth } from "@/back/config/firebase"
+const AppContext = createContext()
+export const useAppContext = () => useContext(AppContext)
 
-export const AppContext = createContext()
+const tokenSession = "hekdev_jwt_session"
+
+const getSessionFromJWT = (jwt) =>
+  jwt
+    ? JSON.parse(Buffer.from(jwt.split(".")[1], "base64").toString("utf-8"))
+        .payload
+    : null
+
+const initialState = {
+  session:
+    typeof localStorage !== "undefined"
+      ? getSessionFromJWT(localStorage.getItem(tokenSession))
+      : null,
+}
+
+const api = makeApiClient()
 
 export const AppContextProvider = (props) => {
-  const { ...otherProps } = props
-  const router = useRouter()
-  const [user, setUser] = useState(null)
+  const { router, page } = props
+  const [state, setState] = useState(initialState)
+  const { session } = state
 
-  // const stripePromise = loadStripe(process.env.STRIPE_PUBLISHAPE_KEY)
-  const currentUser = auth.currentUser
+  const updateState = useCallback(
+    (newstate) => setState((prevState) => deepmerge(prevState, newstate)),
+    []
+  )
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser({
-          uid: user.uid,
-          email: user.email,
-        })
-      } else {
-        setUser(null)
+  const signUp = useCallback(
+    async ({ email, password }) => {
+      try {
+        const { data } = await api.post("/sign-up", { email, password })
+
+        if (data.status !== API_STATUS_OK) {
+          throw new Error("Something went wrong.")
+        }
+
+        router.push("/sign-in")
+      } catch (err) {
+        const error = err?.response?.data?.error
+
+        return error || "Something went wrong."
       }
-    })
+    },
+    [router]
+  )
 
-    return () => unsubscribe()
-  }, [])
+  const signIn = useCallback(
+    async ({ email, password }) => {
+      try {
+        const { data } = await api.post("/sign-in", { email, password })
 
-  const signIn = async (email, password) => {
-    setUser(user)
-    await signInWithEmailAndPassword(auth, email, password)
+        if (data.status !== API_STATUS_OK || !data.data) {
+          throw new Error("Something went wrong.")
+        }
+
+        const { payload } = JSON.parse(
+          Buffer.from(data.data.split(".")[1], "base64").toString("utf-8")
+        )
+
+        localStorage.setItem(tokenSession, data.data)
+
+        updateState({ session: payload })
+
+        router.push("/")
+      } catch (err) {
+        const error = err?.response?.data?.error
+
+        return error || "Something went wrong."
+      }
+    },
+    [router, updateState]
+  )
+
+  // Redirect if no session.
+  // Keep session open on refresh.
+  useEffect(() => {
+    const session = getSessionFromJWT(localStorage.getItem(tokenSession))
+    updateState({ session })
+
+    if (!session && !page.isPublic) {
+      router.push("/sign-in")
+    }
+  }, [router, page, updateState])
+
+  const context = { signUp, signIn, state, session }
+
+  if (!session || page.isPublic) {
+    return <AppContext.Provider {...props} value={context} />
   }
-
-  const signUp = async (email, password) => {
-    setUser(user)
-    await createUserWithEmailAndPassword(auth, email, password)
-  }
-
-  const logout = async () => {
-    setUser(null)
-    await signOut(auth)
-  }
-
-  const deleteAccount = async () => {
-    await deleteUser(currentUser)
-  }
-
-  const updateCurrentEmail = async (email) => {
-    await updateEmail(currentUser, email)
-  }
-
-  const updateCurrentPassword = async (password) => {
-    updatePassword(currentUser, password)
-  }
-
-  const context = {
-    router,
-    user,
-    currentUser,
-    signIn,
-    signUp,
-    logout,
-    deleteAccount,
-    updateCurrentEmail,
-    updateCurrentPassword,
-    // stripePromise,
-  }
-
-  return <AppContext.Provider {...otherProps} value={{ context }} />
 }

@@ -11,7 +11,7 @@ const Card = (props) => {
       <img src={src} alt={alt} className="h-1/2 w-full" />
       <div className="my-2 mx-2 flex flex-col">
         <div className="text-lg font-bold uppercase">{name}</div>
-        <div>{price}$</div>
+        <div>${price}</div>
         <div className="flex justify-between">
           <div>{color}</div>
           <div className="mx-2 self-end">{rate}</div>

@@ -13,7 +13,6 @@ const Page = (props) => {
 
         <section>{children}</section>
       </main>
-
       {noFooter ? null : (
         <footer className="w-full bg-gray-100 mt-5">
           <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 md:flex md:items-center md:justify-between lg:px-2">
@@ -22,6 +21,8 @@ const Page = (props) => {
                 <a
                   key={item.name}
                   href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
                   className="text-gray-400 hover:text-gray-500"
                 >
                   <item.icon className="h-6 w-6" />

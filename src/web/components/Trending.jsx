@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 import Card from "@/web/components/Card"
-import trendingProducts from "mock/trendingProducts"
+import trendingProducts from "@/mock/trendingProducts"
 
 const Trending = () => {
   return (
@@ -13,15 +13,17 @@ const Trending = () => {
         <div className="flex flex-wrap justify-center gap-5 ">
           {trendingProducts.map(
             ({ id, imageAlt, imageSrc, name, price, color, rate }) => (
-              <Link key={id} href="/product-page" passHref>
-                <Card
-                  src={imageSrc}
-                  alt={imageAlt}
-                  name={name}
-                  price={price}
-                  color={color}
-                  rate={rate}
-                />
+              <Link key={id} href="/product">
+                <a>
+                  <Card
+                    src={imageSrc}
+                    alt={imageAlt}
+                    name={name}
+                    price={price}
+                    color={color}
+                    rate={rate}
+                  />
+                </a>
               </Link>
             )
           )}
