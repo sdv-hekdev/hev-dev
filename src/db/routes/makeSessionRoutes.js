@@ -1,3 +1,4 @@
+const { EMAIL_ALREADY_USED, INVALID_CREDENTIALS } = require("./ErrorMessage")
 const { randomBytes } = require("crypto")
 const jsonwebtoken = require("jsonwebtoken")
 const config = require("../config")
@@ -17,9 +18,7 @@ const makeSessionRoutes = ({ app }) => {
     const existingUSer = await User.query().findOne({ email })
 
     if (existingUSer) {
-      res
-        .status(HTTP_USER_INVALID_INPUT)
-        .send({ error: "E-mail already used." })
+      res.status(HTTP_USER_INVALID_INPUT).send({ error: EMAIL_ALREADY_USED })
 
       return
     }
@@ -47,7 +46,7 @@ const makeSessionRoutes = ({ app }) => {
     const hash = user ? hashPassword(password, user.passwordSalt) : null
 
     if (!user || !hash || user.passwordHash !== hash) {
-      res.status(HTTP_UNAUTHORIZED).send({ error: "Invalid credentials." })
+      res.status(HTTP_UNAUTHORIZED).send({ error: INVALID_CREDENTIALS })
 
       return
     }
