@@ -8,7 +8,7 @@ import EmailFormField from "@/web/components/EmailFormField"
 import PasswordFormField from "@/web/components/PasswordFormField"
 import Button from "@/web/components/Button"
 import { useAppContext } from "@/web/context/AppContext"
-import FormErrorMessage from "@/web/components/FormFieldError"
+import FormErrorMessage from "@/web/components/FormErrorMessage"
 
 const credentialSchema = object().shape({
   email: emailValidator.required("Must be a valid e-mail."),

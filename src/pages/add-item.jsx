@@ -1,20 +1,24 @@
 import { credentialSchema } from "@/db/validator/validator"
 import Button from "@/web/components/Button"
-import FormField from "@/web/components/FormField"
+import DescriptionFormField from "@/web/components/DescriptionFormField"
+import FormErrorMessage from "@/web/components/FormErrorMessage"
 import Page from "@/web/components/Page"
+import TitleFormField from "@/web/components/TitleFormField"
+import { useAppContext } from "@/web/context/AppContext"
 import { Formik } from "formik"
+import { useCallback } from "react"
 
-const initialValues = { title: "", description: "", quantity: "", price: "" }
+const initialValues = {}
 
 const AddItemPage = () => {
-  const handleFormSubmit = () => {}
+  const { error } = useAppContext()
+  const handleFormSubmit = useCallback(() => {}, [])
 
   return (
     <Page title="Add new item">
       <h2 className="mt-6 text-center text-3xl font-extrabold text-black">
-        Sign to your account
+        Add a new item
       </h2>
-
       <Formik
         onSubmit={handleFormSubmit}
         initialValues={initialValues}
@@ -22,14 +26,14 @@ const AddItemPage = () => {
       >
         {({ handleSubmit, isValid, isSubmitting }) => (
           <form onSubmit={handleSubmit}>
-            <FormField title="item's title" />
-            <FormField title="description" />
-            <FormField title="quantity" type="number" />
-            <FormField title="price" type="number" />
+            <FormErrorMessage>{error}</FormErrorMessage>
+            <TitleFormField />
+            <DescriptionFormField />
             <Button
-              title="add to list"
               type="submit"
               disabled={!isValid || isSubmitting}
+              title="add to list"
+              className="flex justify-center mt-4 w-full md:w-fit"
             />
           </form>
         )}
@@ -37,7 +41,5 @@ const AddItemPage = () => {
     </Page>
   )
 }
-
-AddItemPage.isPublic = false
 
 export default AddItemPage

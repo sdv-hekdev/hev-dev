@@ -18,6 +18,15 @@ const makeProductRoutes = ({ app }) => {
       res.status(HTTP_INTERNAL_ERROR).send({ error: "Something went wrong" })
     }
   })
+
+  app.post("/products", async (req, res) => {
+    const {
+      body: { title, description },
+    } = req
+
+    try {
+    } catch (error) {}
+  })
 }
 
 module.exports = makeProductRoutes

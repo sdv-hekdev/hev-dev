@@ -1,5 +1,4 @@
 import { AppContextProvider } from "@/web/context/AppContext"
-
 import "@/web/styles/tailwind.css"
 
 const App = ({ Component, pageProps, router, ...otherProps }) => {

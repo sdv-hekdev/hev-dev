@@ -1,6 +1,7 @@
+import { StarIcon } from "@heroicons/react/solid"
+
 import cn from "@/web/cn"
 import Page from "@/web/components/Page"
-import { StarIcon } from "@heroicons/react/solid"
 import products from "@/mock/products"
 
 const ShoppingPage = () => {

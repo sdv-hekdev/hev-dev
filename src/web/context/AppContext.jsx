@@ -20,10 +20,7 @@ const getSessionFromJWT = (jwt) =>
     : null
 
 const initialState = {
-  session:
-    typeof localStorage !== "undefined"
-      ? getSessionFromJWT(localStorage.getItem(tokenSession))
-      : null,
+  session: null,
 }
 
 const api = makeApiClient()
@@ -83,7 +80,6 @@ export const AppContextProvider = (props) => {
     },
     [router, updateState]
   )
-
   // Redirect if no session.
   // Keep session open on refresh.
   useEffect(() => {
@@ -97,7 +93,9 @@ export const AppContextProvider = (props) => {
 
   const context = { signUp, signIn, state, session }
 
-  if (!session || page.isPublic) {
-    return <AppContext.Provider {...props} value={context} />
+  if (!session && !page.isPublic) {
+    return null
   }
+
+  return <AppContext.Provider {...props} value={context} />
 }
