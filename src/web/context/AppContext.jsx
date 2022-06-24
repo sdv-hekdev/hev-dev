@@ -7,7 +7,10 @@ import {
 } from "react"
 import makeApiClient, { API_STATUS_OK } from "@/web/services/makeApiClient"
 import deepmerge from "deepmerge"
-import { SOMETHING_WENT_WRONG } from "@/db/routes/ErrorMessage"
+import {
+  NO_DATA_RETRIEVED,
+  SOMETHING_WENT_WRONG,
+} from "@/db/routes/ErrorMessage"
 
 const AppContext = createContext()
 export const useAppContext = () => useContext(AppContext)
@@ -99,6 +102,22 @@ export const AppContextProvider = (props) => {
   }, [router, page, updateState])
 
   //HANDLE PRODUCTS
+  const getProducts = useCallback(async () => {
+    try {
+      const { data } = await api.get("/products")
+
+      if (!data) {
+        throw new Error(NO_DATA_RETRIEVED)
+      }
+
+      return data
+    } catch (err) {
+      const error = err?.response?.data?.error
+
+      return error || SOMETHING_WENT_WRONG
+    }
+  }, [])
+
   const addProduct = useCallback(async ({ title, description, price }) => {
     try {
       const { data } = await api.post(`/products`, {
@@ -119,7 +138,16 @@ export const AppContextProvider = (props) => {
     }
   }, [])
 
-  const context = { signUp, signIn, signOut, state, session, addProduct }
+  //TO DO REORGANIZE CONTEXT
+  const context = {
+    signUp,
+    signIn,
+    signOut,
+    state,
+    session,
+    addProduct,
+    getProducts,
+  }
 
   if (!session && !page.isPublic) {
     //TO DO ADD LOADER

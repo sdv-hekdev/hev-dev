@@ -37,10 +37,12 @@ const makeProductRoutes = ({ app }) => {
 
       res.send({ status: "Ok" })
     } catch (error) {
-      console.log(error)
+      // console.log(error)
       res.status(HTTP_INTERNAL_ERROR).send({ error: SOMETHING_WENT_WRONG })
     }
   })
+
+  app.put("/products/:productId", async (req, res) => {})
 }
 
 module.exports = makeProductRoutes
