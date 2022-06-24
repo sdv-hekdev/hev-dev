@@ -23,25 +23,21 @@ const makeProductRoutes = ({ app }) => {
     }
   })
 
-  app.post("/users/:userId/products", async (req, res) => {
+  app.post("/products", async (req, res) => {
     const {
-      params: { userId },
       body: { title, description, price },
     } = req
 
     try {
-      await ProductModel.query()
-        .insertAndFetch({
-          userId,
-          title,
-          description,
-          price,
-        })
-        .returning("*")
+      await ProductModel.query().insertAndFetch({
+        title,
+        description,
+        price,
+      })
 
       res.send({ status: "Ok" })
     } catch (error) {
-      // console.log(error)
+      console.log(error)
       res.status(HTTP_INTERNAL_ERROR).send({ error: SOMETHING_WENT_WRONG })
     }
   })

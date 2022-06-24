@@ -5,7 +5,7 @@ const DescriptionFormField = (props) => (
     name="description"
     type="text"
     label="Description"
-    placeholder="Describe your item"
+    placeholder="Describe your product"
     {...props}
   />
 )

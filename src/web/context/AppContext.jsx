@@ -7,6 +7,7 @@ import {
 } from "react"
 import makeApiClient, { API_STATUS_OK } from "@/web/services/makeApiClient"
 import deepmerge from "deepmerge"
+import { SOMETHING_WENT_WRONG } from "@/db/routes/ErrorMessage"
 
 const AppContext = createContext()
 export const useAppContext = () => useContext(AppContext)
@@ -35,20 +36,21 @@ export const AppContextProvider = (props) => {
     []
   )
 
+  //HANDLE SESSION
   const signUp = useCallback(
     async ({ email, password }) => {
       try {
         const { data } = await api.post("/sign-up", { email, password })
 
         if (data.status !== API_STATUS_OK) {
-          throw new Error("Something went wrong.")
+          throw new Error(SOMETHING_WENT_WRONG)
         }
 
         router.push("/sign-in")
       } catch (err) {
         const error = err?.response?.data?.error
 
-        return error || "Something went wrong."
+        return error || SOMETHING_WENT_WRONG
       }
     },
     [router]
@@ -60,7 +62,7 @@ export const AppContextProvider = (props) => {
         const { data } = await api.post("/sign-in", { email, password })
 
         if (data.status !== API_STATUS_OK || !data.data) {
-          throw new Error("Something went wrong.")
+          throw new Error(SOMETHING_WENT_WRONG)
         }
 
         const { payload } = JSON.parse(
@@ -75,11 +77,16 @@ export const AppContextProvider = (props) => {
       } catch (err) {
         const error = err?.response?.data?.error
 
-        return error || "Something went wrong."
+        return error || SOMETHING_WENT_WRONG
       }
     },
     [router, updateState]
   )
+
+  const signOut = useCallback(() => {
+    localStorage.removeItem(tokenSession)
+  }, [])
+
   // Redirect if no session.
   // Keep session open on refresh.
   useEffect(() => {
@@ -91,9 +98,31 @@ export const AppContextProvider = (props) => {
     }
   }, [router, page, updateState])
 
-  const context = { signUp, signIn, state, session }
+  //HANDLE PRODUCTS
+  const addProduct = useCallback(async ({ title, description, price }) => {
+    try {
+      const { data } = await api.post(`/products`, {
+        title,
+        description,
+        price,
+      })
+
+      if (data.status !== API_STATUS_OK) {
+        throw new Error(SOMETHING_WENT_WRONG)
+      }
+
+      return API_STATUS_OK
+    } catch (err) {
+      const error = err?.response?.data?.error
+
+      return error || SOMETHING_WENT_WRONG
+    }
+  }, [])
+
+  const context = { signUp, signIn, signOut, state, session, addProduct }
 
   if (!session && !page.isPublic) {
+    //TO DO ADD LOADER
     return null
   }
 

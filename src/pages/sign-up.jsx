@@ -2,6 +2,7 @@ import { useCallback, useState } from "react"
 import { Formik } from "formik"
 import Link from "next/link"
 import { object } from "yup"
+
 import { emailValidator, passwordValidator } from "@/db/validator/validator"
 import Page from "@/web/components/Page"
 import EmailFormField from "@/web/components/EmailFormField"

@@ -6,6 +6,7 @@ const TitleFormField = (props) => (
     type="type"
     label="Title"
     placeholder="Enter title"
+    className="h-10"
     {...props}
   />
 )

@@ -23,4 +23,4 @@ makeSessionRoutes({ app })
 makeProductRoutes({ app })
 
 // eslint-disable-next-line no-console
-app.listen(PORT, () => console.log(`Listning on port: ${PORT}`))
+app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))

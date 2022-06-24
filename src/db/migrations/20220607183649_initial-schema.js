@@ -18,9 +18,6 @@ exports.up = async (knex) => {
     table.float("price").unsigned().notNullable()
 
     table.timestamps(true, true, true)
-
-    table.integer("userId").unsigned().notNullable()
-    table.foreign("userId").references("id").inTable("users")
   })
   await knex.schema.createTable("addresses", (table) => {
     table.increments("id")

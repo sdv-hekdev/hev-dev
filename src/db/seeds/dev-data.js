@@ -3,6 +3,7 @@ const { faker } = require("@faker-js/faker")
 const rand = (min, max) => Math.floor(Math.random() * (max - min) + min)
 
 exports.seed = async (knex) => {
+  await knex("addresses").delete()
   await knex("products").delete()
   await knex("users").delete()
 
@@ -24,17 +25,17 @@ exports.seed = async (knex) => {
     [...new Array(200)].map(() => ({
       title: faker.commerce.productName(),
       description: faker.commerce.productDescription(),
+      rate: rand(1, 5),
       price: faker.commerce.price(1, 500),
       quantity: rand(1, 5),
-      userId: rand(minUserId, maxUserId),
     }))
   )
-
+  //TO DO STREETNAME() IS DEPRECATED in V8 => REPLACE BY STREET()
   await knex("addresses").insert(
     [...new Array(10)].map(() => ({
       number: rand(1, 100),
       streetName: faker.address.streetName(),
-      unit: rand(1, 5),
+      unit: rand(1, 99),
       city: faker.address.cityName(),
       country: faker.address.country(),
       district: faker.address.county(),
