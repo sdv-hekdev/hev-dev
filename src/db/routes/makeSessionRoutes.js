@@ -63,13 +63,6 @@ const makeSessionRoutes = ({ app }) => {
 
     res.send({ status: "Ok", data: jwt })
   })
-
-  app.delete("/sign-out", async (req, res) => {
-    const session = User.query().findOne({})
-    await session.$query.delete()
-
-    res.send({ status: "Ok" })
-  })
 }
 
 module.exports = makeSessionRoutes
