@@ -1,3 +1,8 @@
+const {
+  EMAIL_ALREADY_USED,
+  INVALID_CREDENTIALS,
+  SOMETHING_WENT_WRONG,
+} = require("./ErrorMessage")
 const { randomBytes } = require("crypto")
 const jsonwebtoken = require("jsonwebtoken")
 const config = require("../config")
@@ -6,6 +11,8 @@ const User = require("../models/User")
 const {
   HTTP_USER_INVALID_INPUT,
   HTTP_UNAUTHORIZED,
+  HTTP_INTERNAL_ERROR,
+  HTTP_OK,
 } = require("../routes/httpStatusCode")
 
 const makeSessionRoutes = ({ app }) => {
@@ -17,9 +24,7 @@ const makeSessionRoutes = ({ app }) => {
     const existingUSer = await User.query().findOne({ email })
 
     if (existingUSer) {
-      res
-        .status(HTTP_USER_INVALID_INPUT)
-        .send({ error: "E-mail already used." })
+      res.status(HTTP_USER_INVALID_INPUT).send({ error: EMAIL_ALREADY_USED })
 
       return
     }
@@ -47,7 +52,7 @@ const makeSessionRoutes = ({ app }) => {
     const hash = user ? hashPassword(password, user.passwordSalt) : null
 
     if (!user || !hash || user.passwordHash !== hash) {
-      res.status(HTTP_UNAUTHORIZED).send({ error: "Invalid credentials." })
+      res.status(HTTP_UNAUTHORIZED).send({ error: INVALID_CREDENTIALS })
 
       return
     }
@@ -63,6 +68,18 @@ const makeSessionRoutes = ({ app }) => {
     )
 
     res.send({ status: "Ok", data: jwt })
+  })
+  app.delete("/delete-user/:userId", async (req, res) => {
+    const {
+      params: { userId },
+    } = req
+
+    try {
+      await User.query().where({ id: userId }).delete()
+      res.send({ status: HTTP_OK })
+    } catch (error) {
+      res.status(HTTP_INTERNAL_ERROR).send({ error: SOMETHING_WENT_WRONG })
+    }
   })
 }
 

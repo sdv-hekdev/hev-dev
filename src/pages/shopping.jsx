@@ -1,23 +1,26 @@
+import { StarIcon } from "@heroicons/react/solid"
+import { useEffect, useState } from "react"
+
 import cn from "@/web/cn"
 import Page from "@/web/components/Page"
-import { StarIcon } from "@heroicons/react/solid"
-import products from "@/mock/products"
+import { useAppContext } from "@/web/context/AppContext"
 
 const ShoppingPage = () => {
+  const [products, setProducts] = useState([])
+  const { getProducts } = useAppContext()
+
+  useEffect(() => {
+    ;(async () => {
+      const products = await getProducts()
+      setProducts(products)
+    })()
+  }, [getProducts])
+
   return (
     <Page title="What do you need?">
       <div className="grid grid-cols-2 border-l border-gray-200 sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
         {products.map(
-          ({
-            id,
-            imageSrc,
-            imageAlt,
-            name,
-            rating,
-            reviewCount,
-            price,
-            inStock,
-          }) => (
+          ({ id, imageSrc, imageAlt, title, reviewCount, price, inStock }) => (
             <div
               key={id}
               className="group border-r border-b border-gray-200 p-4 sm:p-6"
@@ -31,19 +34,15 @@ const ShoppingPage = () => {
               </div>
               <div className="pt-10 pb-4 text-center">
                 <h3 className="text-sm font-medium text-gray-900">
-                  <a href="product">
-                    <span aria-hidden="true" className="absolute inset-0" />
-                    {name}
-                  </a>
+                  <a href="product">{title}</a>
                 </h3>
                 <div className="mt-3 flex flex-col items-center">
-                  <p>{rating} out of 5 stars</p>
                   <div className="flex items-center">
-                    {[0, 1, 2, 3, 4].map((rating) => (
+                    {[0, 1, 2, 3, 4].map((rate) => (
                       <StarIcon
-                        key={rating}
+                        key={rate}
                         className={cn(
-                          rating > rating ? "text-yellow-400" : "text-gray-200",
+                          rate > rate ? "text-yellow-400" : "text-gray-200",
                           "h-5 w-5 flex-shrink-0"
                         )}
                       />
@@ -54,7 +53,7 @@ const ShoppingPage = () => {
                   </p>
                 </div>
                 <p className="mt-4 text-base font-medium text-gray-900">
-                  {price}
+                  {price} $
                 </p>
                 {inStock ? (
                   <p className="mt-4 text-base font-medium text-emerald-600">

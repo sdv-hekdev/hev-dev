@@ -1,7 +1,7 @@
 import classNames from "classnames"
 
 const btn =
-  "uppercase justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium text-white"
+  "uppercase justify-center rounded-md border py-2 px-4 text-sm font-medium text-white hover:ring"
 
 const variants = {
   primary: "bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700",

@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <>
       <MenuIcon
-        className="flex h-8 w-8 text-gray-400 md:hidden"
+        className="flex h-8 w-8 text-gray-400 md:hidden hover:cursor-pointer"
         onClick={handleClick}
       />
       <div className="hidden md:flex">

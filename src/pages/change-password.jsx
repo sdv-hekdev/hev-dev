@@ -1,37 +1,23 @@
-import { useCallback, useContext, useState } from "react"
+import { useCallback } from "react"
 import { Formik } from "formik"
-import { AppContext } from "@/web/context/AppContext"
+
 import FormField from "@/web/components/FormField"
 import Button from "@/web/components/Button"
 import Page from "@/web/components/Page"
+import { useAppContext } from "@/web/context/AppContext"
+import FormErrorMessage from "@/web/components/FormErrorMessage"
 
 const message = "Type your new password"
 const initialValues = { password: "87654321" }
 const credentialSchema = ""
 
 const ChangePasswordPage = () => {
-  const [error, setError] = useState(null)
-  const {
-    context: { router, updateCurrentPassword },
-  } = useContext(AppContext)
-
-  const handleFormSubmit = useCallback(async () => {
-    try {
-      await updateCurrentPassword()
-
-      router.push("/profile")
-    } catch (err) {
-      setError("Something went wrong")
-    }
-  }, [updateCurrentPassword, setError, router])
+  const { error } = useAppContext()
+  const handleFormSubmit = useCallback(async () => {}, [])
 
   return (
     <Page title="Did you forget your password">
-      {error ? (
-        <p className="bg-red-500 px-4 py-2 mb-3 font-bold text-white rounded-md">
-          {error}
-        </p>
-      ) : null}
+      {error ? <FormErrorMessage message={error} /> : null}
       <Formik
         onSubmit={handleFormSubmit}
         initialValues={initialValues}

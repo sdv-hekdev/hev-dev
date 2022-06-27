@@ -7,9 +7,7 @@ const Page = (props) => {
   return (
     <div className="flex h-full flex-col">
       <main className="flex-grow scroll-auto">
-        <Header {...otherProps} title={title}>
-          {title}
-        </Header>
+        <Header {...otherProps} title={title} />
 
         <section>{children}</section>
       </main>

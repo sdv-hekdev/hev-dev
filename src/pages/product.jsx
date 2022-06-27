@@ -1,12 +1,11 @@
 import Button from "@/web/components/Button"
 import Page from "@/web/components/Page"
-import getRandomNumber from "@/web/helper/getRandomNumber"
 
-const ProductPage = () => {
+const ProductDetailPage = () => {
   return (
     <Page title="Let's check this product">
+      <h2 className="text-2xl text-center mb-5">Living-room Set </h2>
       <div>
-        <h2 className="text-2xl text-center mb-5">Living-room Set </h2>
         <div className="flex justify-around">
           <div className="w-1/3">
             <img src="./assets/sets/livingroom-set-1.jpg" alt="living room" />
@@ -29,8 +28,9 @@ const ProductPage = () => {
             perferendis ea soluta distinctio, possimus recusandae nisi? Possimus
             nesciunt quibusdam nihil eligendi doloremque libero.
           </p>
-          <p className="mt-5 font-bold">Price: {getRandomNumber(20, 100)} $</p>
-          <p> rate: ⭐️⭐️⭐️⭐️⭐️ ({getRandomNumber(1, 1000)})</p>
+          <p className="mt-5 font-bold">Price: 50$</p>
+          <p> rate: ⭐️⭐️⭐️⭐️⭐️ </p>
+
           <div className="flex flex-col mt-2 md:flex-row justify-between">
             <Button
               title="Add to cart"
@@ -48,4 +48,4 @@ const ProductPage = () => {
   )
 }
 
-export default ProductPage
+export default ProductDetailPage

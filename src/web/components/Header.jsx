@@ -12,13 +12,15 @@ import Link from "next/link"
 import { useAppContext } from "@/web/context/AppContext"
 import Navbar from "@/web/components/Navbar"
 import Input from "@/web/components/Input"
+import { useRouter } from "next/router"
 
 const BackButton = (props) => {
-  const handleClick = useCallback(() => {}, [])
+  const router = useRouter()
+  const handleClick = useCallback(() => router.back(), [router])
 
   return (
     <ArrowCircleLeftIcon
-      className="h-8 w-8 text-white"
+      className="h-8 w-8 text-white hover:cursor-pointer"
       onClick={handleClick}
       {...props}
     />
@@ -44,8 +46,8 @@ const Header = (props) => {
          items-center justify-end space-x-2"
         >
           {session ? (
-            <Link href="/profile" passHref>
-              <UserCircleIcon className="h-8 w-8 text-white" />
+            <Link href="/profile">
+              <UserCircleIcon className="h-8 w-8 text-white hover:cursor-pointer" />
             </Link>
           ) : (
             <div className="flex gap-2 text-sm  underline text-white">
@@ -55,7 +57,7 @@ const Header = (props) => {
                 </a>
               </Link>
               <Link href="/sign-in">
-                <a>Access your account</a>
+                <a>Access my account</a>
               </Link>
             </div>
           )}
@@ -77,7 +79,7 @@ const Header = (props) => {
             <div>
               {open ? (
                 <MenuIcon
-                  className="flex h-8 w-8 text-gray-400"
+                  className="flex h-8 w-8 text-gray-400 hover:cursor-pointer"
                   onClick={handleClick}
                 />
               ) : (
@@ -93,7 +95,7 @@ const Header = (props) => {
           {open === false ? null : <Input />}
           {open === false ? (
             <SearchIcon
-              className="h-8 w-8 text-gray-400"
+              className="h-8 w-8 text-gray-400 hover:cursor-pointer"
               onClick={handleClick}
             />
           ) : (
