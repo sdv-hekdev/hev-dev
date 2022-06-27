@@ -10,7 +10,7 @@ import Button from "@/web/components/Button"
 import { useAppContext } from "@/web/context/AppContext"
 import FormErrorMessage from "@/web/components/FormErrorMessage"
 
-const initialValues = { email: "toto@toto.fr", password: "12345678" }
+const initialValues = { email: "", password: "" }
 
 const SignInPage = () => {
   const { signIn } = useAppContext()

@@ -16,7 +16,7 @@ const credentialSchema = object().shape({
   password: passwordValidator.required("No password provided."),
 })
 
-const initialValues = { email: "toto@toto.fr", password: "12345678" }
+const initialValues = { email: "", password: "" }
 
 const SignUpPage = (props) => {
   const { router } = props

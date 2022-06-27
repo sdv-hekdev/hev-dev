@@ -57,7 +57,7 @@ const Header = (props) => {
                 </a>
               </Link>
               <Link href="/sign-in">
-                <a>Access your account</a>
+                <a>Access my account</a>
               </Link>
             </div>
           )}
