@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_add_product"
+        android:icon="@drawable/ic_vector_add_product"
+        android:title="@string/title_product"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/title"
+        android:title="@string/sort_title"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/pc"
+        android:title="@string/asc_price"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/pdc"
+        android:title="@string/dsc_price"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/Furniture"
+        android:title="@string/furniture"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/Bed"
+        android:title="@string/bed"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/Chair"
+        android:title="@string/chair"
+        app:showAsAction="never"/>
+
+</menu>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="type_product_array">
+        <item>Select the product type</item>
+        <item>Furniture</item>
+        <item>Bed</item>
+        <item>Chair</item>
+    </string-array>
+</resources>

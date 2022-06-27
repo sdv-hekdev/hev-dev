@@ -1,0 +1,590 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="hekdev.compagny.hekdev_ecommerce"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+8-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+12-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:6:5-80
+12-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:6:22-77
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:24:5-79
+13-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:24:22-76
+14    <uses-permission android:name="android.permission.WAKE_LOCK" />
+14-->[com.google.android.gms:play-services-measurement-api:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\89011c8ac1f26123d0b577827b9a8d99\transformed\jetified-play-services-measurement-api-20.1.2\AndroidManifest.xml:24:5-68
+14-->[com.google.android.gms:play-services-measurement-api:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\89011c8ac1f26123d0b577827b9a8d99\transformed\jetified-play-services-measurement-api-20.1.2\AndroidManifest.xml:24:22-65
+15    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+15-->[com.google.android.gms:play-services-measurement-api:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\89011c8ac1f26123d0b577827b9a8d99\transformed\jetified-play-services-measurement-api-20.1.2\AndroidManifest.xml:25:5-79
+15-->[com.google.android.gms:play-services-measurement-api:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\89011c8ac1f26123d0b577827b9a8d99\transformed\jetified-play-services-measurement-api-20.1.2\AndroidManifest.xml:25:22-76
+16    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+16-->[com.google.android.gms:play-services-measurement:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\879f2fe4fc0885f44f1fcc2efb1a3339\transformed\jetified-play-services-measurement-20.1.2\AndroidManifest.xml:26:5-110
+16-->[com.google.android.gms:play-services-measurement:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\879f2fe4fc0885f44f1fcc2efb1a3339\transformed\jetified-play-services-measurement-20.1.2\AndroidManifest.xml:26:22-107
+17
+18    <queries>
+18-->[com.google.androidbrowserhelper:androidbrowserhelper:2.2.0] C:\Users\kerwa\.gradle\caches\transforms-3\0dbcdaa99bd44f8c169ef4c38bf2b6e6\transformed\jetified-androidbrowserhelper-2.2.0\AndroidManifest.xml:26:5-34:15
+19        <intent>
+19-->[com.google.androidbrowserhelper:androidbrowserhelper:2.2.0] C:\Users\kerwa\.gradle\caches\transforms-3\0dbcdaa99bd44f8c169ef4c38bf2b6e6\transformed\jetified-androidbrowserhelper-2.2.0\AndroidManifest.xml:27:9-33:18
+20            <action android:name="android.intent.action.VIEW" />
+20-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:34:17-69
+20-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:34:25-66
+21
+22            <category android:name="android.intent.category.BROWSABLE" />
+22-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:37:17-78
+22-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:37:27-75
+23
+24            <data android:scheme="https" />
+24-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:39:17-42:51
+24-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:42:21-48
+25        </intent>
+26    </queries>
+27
+28    <uses-permission android:name="com.android.vending.BILLING" />
+28-->[com.android.billingclient:billing:3.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\76329ee4a48c45fd487fa0242d2ea9b8\transformed\jetified-billing-3.0.1\AndroidManifest.xml:10:5-67
+28-->[com.android.billingclient:billing:3.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\76329ee4a48c45fd487fa0242d2ea9b8\transformed\jetified-billing-3.0.1\AndroidManifest.xml:10:22-64
+29    <uses-permission android:name="android.permission.CAMERA" />
+29-->[io.card:android-sdk:5.3.4] C:\Users\kerwa\.gradle\caches\transforms-3\bb93c5446979da9175a9be024e4ecd05\transformed\jetified-android-sdk-5.3.4\AndroidManifest.xml:11:5-65
+29-->[io.card:android-sdk:5.3.4] C:\Users\kerwa\.gradle\caches\transforms-3\bb93c5446979da9175a9be024e4ecd05\transformed\jetified-android-sdk-5.3.4\AndroidManifest.xml:11:22-62
+30    <uses-permission android:name="android.permission.VIBRATE" />
+30-->[io.card:android-sdk:5.3.4] C:\Users\kerwa\.gradle\caches\transforms-3\bb93c5446979da9175a9be024e4ecd05\transformed\jetified-android-sdk-5.3.4\AndroidManifest.xml:12:5-66
+30-->[io.card:android-sdk:5.3.4] C:\Users\kerwa\.gradle\caches\transforms-3\bb93c5446979da9175a9be024e4ecd05\transformed\jetified-android-sdk-5.3.4\AndroidManifest.xml:12:22-63
+31
+32    <uses-feature
+32-->[io.card:android-sdk:5.3.4] C:\Users\kerwa\.gradle\caches\transforms-3\bb93c5446979da9175a9be024e4ecd05\transformed\jetified-android-sdk-5.3.4\AndroidManifest.xml:14:5-16:36
+33        android:name="android.hardware.camera"
+33-->[io.card:android-sdk:5.3.4] C:\Users\kerwa\.gradle\caches\transforms-3\bb93c5446979da9175a9be024e4ecd05\transformed\jetified-android-sdk-5.3.4\AndroidManifest.xml:15:9-47
+34        android:required="false" />
+34-->[io.card:android-sdk:5.3.4] C:\Users\kerwa\.gradle\caches\transforms-3\bb93c5446979da9175a9be024e4ecd05\transformed\jetified-android-sdk-5.3.4\AndroidManifest.xml:16:9-33
+35    <uses-feature
+35-->[io.card:android-sdk:5.3.4] C:\Users\kerwa\.gradle\caches\transforms-3\bb93c5446979da9175a9be024e4ecd05\transformed\jetified-android-sdk-5.3.4\AndroidManifest.xml:17:5-19:36
+36        android:name="android.hardware.camera.autofocus"
+36-->[io.card:android-sdk:5.3.4] C:\Users\kerwa\.gradle\caches\transforms-3\bb93c5446979da9175a9be024e4ecd05\transformed\jetified-android-sdk-5.3.4\AndroidManifest.xml:18:9-57
+37        android:required="false" />
+37-->[io.card:android-sdk:5.3.4] C:\Users\kerwa\.gradle\caches\transforms-3\bb93c5446979da9175a9be024e4ecd05\transformed\jetified-android-sdk-5.3.4\AndroidManifest.xml:19:9-33
+38
+39    <application
+39-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:8:5-106:19
+40        android:allowBackup="true"
+40-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:9:9-35
+41        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+41-->[androidx.core:core:1.7.0] C:\Users\kerwa\.gradle\caches\transforms-3\cb96c4ca748e404272842399af61a491\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+42        android:debuggable="true"
+43        android:extractNativeLibs="false"
+44        android:icon="@mipmap/ic_launcher_logo"
+44-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:10:9-48
+45        android:label="@string/app_name"
+45-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:11:9-41
+46        android:roundIcon="@mipmap/ic_launcher_logo_round"
+46-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:12:9-59
+47        android:supportsRtl="true"
+47-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:13:9-35
+48        android:testOnly="true"
+49        android:theme="@style/Theme.HekDevEcommerce"
+49-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:14:9-53
+50        android:usesCleartextTraffic="true" >
+50-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:15:9-44
+51        <activity
+51-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:17:9-21:63
+52            android:name="com.paypal.android.sdk.payments.PaymentActivity"
+52-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:18:13-75
+53            android:exported="false"
+53-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:19:13-37
+54            android:screenOrientation="portrait"
+54-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:20:13-49
+55            android:theme="@style/Theme.Design.NoActionBar" />
+55-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:21:13-60
+56        <activity
+56-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:22:9-26:63
+57            android:name="hekdev.compagny.hekdev_ecommerce.OrderDetailsActivity"
+57-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:23:13-49
+58            android:exported="false"
+58-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:24:13-37
+59            android:screenOrientation="portrait"
+59-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:25:13-49
+60            android:theme="@style/Theme.Design.NoActionBar" />
+60-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:26:13-60
+61        <activity
+61-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:27:9-31:63
+62            android:name="hekdev.compagny.hekdev_ecommerce.CheckoutActivity"
+62-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:28:13-45
+63            android:exported="false"
+63-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:29:13-37
+64            android:screenOrientation="portrait"
+64-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:30:13-49
+65            android:theme="@style/Theme.Design.NoActionBar" />
+65-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:31:13-60
+66        <activity
+66-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:32:9-36:63
+67            android:name="hekdev.compagny.hekdev_ecommerce.AddressListActivity"
+67-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:33:13-48
+68            android:exported="false"
+68-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:34:13-37
+69            android:screenOrientation="portrait"
+69-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:35:13-49
+70            android:theme="@style/Theme.Design.NoActionBar" />
+70-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:36:13-60
+71        <activity
+71-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:37:9-41:63
+72            android:name="hekdev.compagny.hekdev_ecommerce.AddEditAddressActivity"
+72-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:38:13-51
+73            android:exported="false"
+73-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:39:13-37
+74            android:screenOrientation="portrait"
+74-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:40:13-49
+75            android:theme="@style/Theme.Design.NoActionBar" />
+75-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:41:13-60
+76        <activity
+76-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:42:9-46:63
+77            android:name="hekdev.compagny.hekdev_ecommerce.CardListActivity"
+77-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:43:13-45
+78            android:exported="false"
+78-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:44:13-37
+79            android:screenOrientation="portrait"
+79-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:45:13-49
+80            android:theme="@style/Theme.Design.NoActionBar" />
+80-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:46:13-60
+81        <activity
+81-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:47:9-51:63
+82            android:name="hekdev.compagny.hekdev_ecommerce.ProductDetailsActivity"
+82-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:48:13-51
+83            android:exported="false"
+83-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:49:13-37
+84            android:screenOrientation="portrait"
+84-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:50:13-49
+85            android:theme="@style/Theme.Design.NoActionBar" />
+85-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:51:13-60
+86        <activity
+86-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:52:9-56:63
+87            android:name="hekdev.compagny.hekdev_ecommerce.AddProductActivity"
+87-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:53:13-47
+88            android:exported="false"
+88-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:54:13-37
+89            android:screenOrientation="portrait"
+89-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:55:13-49
+90            android:theme="@style/Theme.Design.NoActionBar" />
+90-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:56:13-60
+91        <activity
+91-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:57:9-61:63
+92            android:name="hekdev.compagny.hekdev_ecommerce.SettingActivity"
+92-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:58:13-44
+93            android:exported="false"
+93-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:59:13-37
+94            android:screenOrientation="portrait"
+94-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:60:13-49
+95            android:theme="@style/Theme.Design.NoActionBar" />
+95-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:61:13-60
+96        <activity
+96-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:62:9-66:52
+97            android:name="hekdev.compagny.hekdev_ecommerce.NavActivity"
+97-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:63:13-40
+98            android:exported="false"
+98-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:64:13-37
+99            android:label="@string/title_activity_nav"
+99-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:65:13-55
+100            android:screenOrientation="portrait" />
+100-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:66:13-49
+101        <activity
+101-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:67:9-71:63
+102            android:name="hekdev.compagny.hekdev_ecommerce.ProfileActivity"
+102-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:68:13-44
+103            android:exported="false"
+103-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:69:13-37
+104            android:screenOrientation="portrait"
+104-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:70:13-49
+105            android:theme="@style/Theme.Design.NoActionBar" />
+105-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:71:13-60
+106        <activity
+106-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:72:9-76:52
+107            android:name="hekdev.compagny.hekdev_ecommerce.ForgotPasswordActivity"
+107-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:73:13-51
+108            android:exported="false"
+108-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:74:13-37
+109            android:parentActivityName="hekdev.compagny.hekdev_ecommerce.LoginActivity"
+109-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:75:13-56
+110            android:screenOrientation="portrait" />
+110-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:76:13-49
+111        <activity
+111-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:77:9-79:40
+112            android:name="hekdev.compagny.hekdev_ecommerce.ErrorActivity"
+112-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:78:13-42
+113            android:exported="false" />
+113-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:79:13-37
+114        <activity
+114-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:80:9-85:63
+115            android:name="hekdev.compagny.hekdev_ecommerce.RegisterActivity"
+115-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:81:13-45
+116            android:exported="false"
+116-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:82:13-37
+117            android:parentActivityName="hekdev.compagny.hekdev_ecommerce.LoginActivity"
+117-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:83:13-56
+118            android:screenOrientation="portrait"
+118-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:84:13-49
+119            android:theme="@style/Theme.Design.NoActionBar" />
+119-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:85:13-60
+120        <activity
+120-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:86:9-90:63
+121            android:name="hekdev.compagny.hekdev_ecommerce.LoginActivity"
+121-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:87:13-42
+122            android:exported="false"
+122-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:88:13-37
+123            android:screenOrientation="portrait"
+123-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:89:13-49
+124            android:theme="@style/Theme.Design.NoActionBar" />
+124-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:90:13-60
+125        <activity
+125-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:91:9-101:20
+126            android:name="hekdev.compagny.hekdev_ecommerce.PreLoadActivity"
+126-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:92:13-44
+127            android:exported="true"
+127-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:93:13-36
+128            android:screenOrientation="portrait"
+128-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:94:13-49
+129            android:theme="@style/Theme.Design.NoActionBar" >
+129-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:95:13-60
+130            <intent-filter>
+130-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:96:13-100:29
+131                <action android:name="android.intent.action.MAIN" />
+131-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:97:17-69
+131-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:97:25-66
+132
+133                <category android:name="android.intent.category.LAUNCHER" />
+133-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:99:17-77
+133-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:99:27-74
+134            </intent-filter>
+135        </activity>
+136        <activity
+136-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:102:9-105:52
+137            android:name="hekdev.compagny.hekdev_ecommerce.MainActivity"
+137-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:103:13-41
+138            android:exported="true"
+138-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:104:13-36
+139            android:screenOrientation="portrait" />
+139-->C:\Users\kerwa\code\Mobile_Dev\app\src\main\AndroidManifest.xml:105:13-49
+140
+141        <uses-library
+141-->[androidx.window:window:1.0.0] C:\Users\kerwa\.gradle\caches\transforms-3\322273b555411c1596e5a82722f40b5d\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
+142            android:name="androidx.window.extensions"
+142-->[androidx.window:window:1.0.0] C:\Users\kerwa\.gradle\caches\transforms-3\322273b555411c1596e5a82722f40b5d\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
+143            android:required="false" />
+143-->[androidx.window:window:1.0.0] C:\Users\kerwa\.gradle\caches\transforms-3\322273b555411c1596e5a82722f40b5d\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
+144        <uses-library
+144-->[androidx.window:window:1.0.0] C:\Users\kerwa\.gradle\caches\transforms-3\322273b555411c1596e5a82722f40b5d\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
+145            android:name="androidx.window.sidecar"
+145-->[androidx.window:window:1.0.0] C:\Users\kerwa\.gradle\caches\transforms-3\322273b555411c1596e5a82722f40b5d\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
+146            android:required="false" />
+146-->[androidx.window:window:1.0.0] C:\Users\kerwa\.gradle\caches\transforms-3\322273b555411c1596e5a82722f40b5d\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
+147
+148        <service
+148-->[com.google.firebase:firebase-analytics-ktx:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\2601a6381c86b2af661df30687ff5f61\transformed\jetified-firebase-analytics-ktx-20.1.2\AndroidManifest.xml:8:9-14:19
+149            android:name="com.google.firebase.components.ComponentDiscoveryService"
+149-->[com.google.firebase:firebase-analytics-ktx:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\2601a6381c86b2af661df30687ff5f61\transformed\jetified-firebase-analytics-ktx-20.1.2\AndroidManifest.xml:9:13-84
+150            android:directBootAware="true"
+150-->[com.google.firebase:firebase-common:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\0cb7483ff351ec77cc610f1867fef670\transformed\jetified-firebase-common-20.1.0\AndroidManifest.xml:35:13-43
+151            android:exported="false" >
+151-->[com.google.firebase:firebase-analytics-ktx:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\2601a6381c86b2af661df30687ff5f61\transformed\jetified-firebase-analytics-ktx-20.1.2\AndroidManifest.xml:10:13-37
+152            <meta-data
+152-->[com.google.firebase:firebase-analytics-ktx:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\2601a6381c86b2af661df30687ff5f61\transformed\jetified-firebase-analytics-ktx-20.1.2\AndroidManifest.xml:11:13-13:85
+153                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar"
+153-->[com.google.firebase:firebase-analytics-ktx:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\2601a6381c86b2af661df30687ff5f61\transformed\jetified-firebase-analytics-ktx-20.1.2\AndroidManifest.xml:12:17-126
+154                android:value="com.google.firebase.components.ComponentRegistrar" />
+154-->[com.google.firebase:firebase-analytics-ktx:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\2601a6381c86b2af661df30687ff5f61\transformed\jetified-firebase-analytics-ktx-20.1.2\AndroidManifest.xml:13:17-82
+155            <meta-data
+155-->[com.google.firebase:firebase-storage-ktx:20.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\93733cb4a47dd20390b53458ca76b8f0\transformed\jetified-firebase-storage-ktx-20.0.1\AndroidManifest.xml:15:13-17:85
+156                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
+156-->[com.google.firebase:firebase-storage-ktx:20.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\93733cb4a47dd20390b53458ca76b8f0\transformed\jetified-firebase-storage-ktx-20.0.1\AndroidManifest.xml:16:17-122
+157                android:value="com.google.firebase.components.ComponentRegistrar" />
+157-->[com.google.firebase:firebase-storage-ktx:20.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\93733cb4a47dd20390b53458ca76b8f0\transformed\jetified-firebase-storage-ktx-20.0.1\AndroidManifest.xml:17:17-82
+158            <meta-data
+158-->[com.google.firebase:firebase-auth-ktx:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\5140b6e2379d44ef40d7dee390410f53\transformed\jetified-firebase-auth-ktx-21.0.3\AndroidManifest.xml:11:13-13:85
+159                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
+159-->[com.google.firebase:firebase-auth-ktx:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\5140b6e2379d44ef40d7dee390410f53\transformed\jetified-firebase-auth-ktx-21.0.3\AndroidManifest.xml:12:17-116
+160                android:value="com.google.firebase.components.ComponentRegistrar" />
+160-->[com.google.firebase:firebase-auth-ktx:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\5140b6e2379d44ef40d7dee390410f53\transformed\jetified-firebase-auth-ktx-21.0.3\AndroidManifest.xml:13:17-82
+161            <meta-data
+161-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:67:13-69:85
+162                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+162-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:68:17-109
+163                android:value="com.google.firebase.components.ComponentRegistrar" />
+163-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:69:17-82
+164            <meta-data
+164-->[com.google.firebase:firebase-storage:20.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\a096c906453befade22e31530b453115\transformed\jetified-firebase-storage-20.0.1\AndroidManifest.xml:33:13-35:85
+165                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+165-->[com.google.firebase:firebase-storage:20.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\a096c906453befade22e31530b453115\transformed\jetified-firebase-storage-20.0.1\AndroidManifest.xml:34:17-107
+166                android:value="com.google.firebase.components.ComponentRegistrar" />
+166-->[com.google.firebase:firebase-storage:20.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\a096c906453befade22e31530b453115\transformed\jetified-firebase-storage-20.0.1\AndroidManifest.xml:35:17-82
+167            <meta-data
+167-->[com.google.firebase:firebase-firestore-ktx:24.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\4c373dea30eb23622cf85332ef912e19\transformed\jetified-firebase-firestore-ktx-24.1.0\AndroidManifest.xml:15:13-17:85
+168                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
+168-->[com.google.firebase:firebase-firestore-ktx:24.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\4c373dea30eb23622cf85332ef912e19\transformed\jetified-firebase-firestore-ktx-24.1.0\AndroidManifest.xml:16:17-126
+169                android:value="com.google.firebase.components.ComponentRegistrar" />
+169-->[com.google.firebase:firebase-firestore-ktx:24.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\4c373dea30eb23622cf85332ef912e19\transformed\jetified-firebase-firestore-ktx-24.1.0\AndroidManifest.xml:17:17-82
+170            <meta-data
+170-->[com.google.firebase:firebase-firestore:24.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\e41ff48086433bcc745524caad792737\transformed\jetified-firebase-firestore-24.1.0\AndroidManifest.xml:20:13-22:85
+171                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+171-->[com.google.firebase:firebase-firestore:24.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\e41ff48086433bcc745524caad792737\transformed\jetified-firebase-firestore-24.1.0\AndroidManifest.xml:21:17-111
+172                android:value="com.google.firebase.components.ComponentRegistrar" />
+172-->[com.google.firebase:firebase-firestore:24.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\e41ff48086433bcc745524caad792737\transformed\jetified-firebase-firestore-24.1.0\AndroidManifest.xml:22:17-82
+173            <meta-data
+173-->[com.google.firebase:firebase-common-ktx:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\ce3ac88e297bce43de887c4abd911caa\transformed\jetified-firebase-common-ktx-20.1.0\AndroidManifest.xml:15:13-17:85
+174                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+174-->[com.google.firebase:firebase-common-ktx:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\ce3ac88e297bce43de887c4abd911caa\transformed\jetified-firebase-common-ktx-20.1.0\AndroidManifest.xml:16:17-113
+175                android:value="com.google.firebase.components.ComponentRegistrar" />
+175-->[com.google.firebase:firebase-common-ktx:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\ce3ac88e297bce43de887c4abd911caa\transformed\jetified-firebase-common-ktx-20.1.0\AndroidManifest.xml:17:17-82
+176            <meta-data
+176-->[com.google.android.gms:play-services-measurement-api:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\89011c8ac1f26123d0b577827b9a8d99\transformed\jetified-play-services-measurement-api-20.1.2\AndroidManifest.xml:31:13-33:85
+177                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+177-->[com.google.android.gms:play-services-measurement-api:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\89011c8ac1f26123d0b577827b9a8d99\transformed\jetified-play-services-measurement-api-20.1.2\AndroidManifest.xml:32:17-139
+178                android:value="com.google.firebase.components.ComponentRegistrar" />
+178-->[com.google.android.gms:play-services-measurement-api:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\89011c8ac1f26123d0b577827b9a8d99\transformed\jetified-play-services-measurement-api-20.1.2\AndroidManifest.xml:33:17-82
+179            <meta-data
+179-->[com.google.firebase:firebase-installations:17.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\df6b0d3878df7db56b38af6466b16bbe\transformed\jetified-firebase-installations-17.0.1\AndroidManifest.xml:18:13-20:85
+180                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+180-->[com.google.firebase:firebase-installations:17.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\df6b0d3878df7db56b38af6466b16bbe\transformed\jetified-firebase-installations-17.0.1\AndroidManifest.xml:19:17-127
+181                android:value="com.google.firebase.components.ComponentRegistrar" />
+181-->[com.google.firebase:firebase-installations:17.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\df6b0d3878df7db56b38af6466b16bbe\transformed\jetified-firebase-installations-17.0.1\AndroidManifest.xml:20:17-82
+182        </service>
+183
+184        <activity
+184-->[com.google.android.gms:play-services-auth:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\5e305c204dca7d3f2506e972a2bc8065\transformed\jetified-play-services-auth-20.1.0\AndroidManifest.xml:23:9-27:75
+185            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+185-->[com.google.android.gms:play-services-auth:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\5e305c204dca7d3f2506e972a2bc8065\transformed\jetified-play-services-auth-20.1.0\AndroidManifest.xml:24:13-93
+186            android:excludeFromRecents="true"
+186-->[com.google.android.gms:play-services-auth:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\5e305c204dca7d3f2506e972a2bc8065\transformed\jetified-play-services-auth-20.1.0\AndroidManifest.xml:25:13-46
+187            android:exported="false"
+187-->[com.google.android.gms:play-services-auth:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\5e305c204dca7d3f2506e972a2bc8065\transformed\jetified-play-services-auth-20.1.0\AndroidManifest.xml:26:13-37
+188            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+188-->[com.google.android.gms:play-services-auth:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\5e305c204dca7d3f2506e972a2bc8065\transformed\jetified-play-services-auth-20.1.0\AndroidManifest.xml:27:13-72
+189        <!--
+190            Service handling Google Sign-In user revocation. For apps that do not integrate with
+191            Google Sign-In, this service will never be started.
+192        -->
+193        <service
+193-->[com.google.android.gms:play-services-auth:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\5e305c204dca7d3f2506e972a2bc8065\transformed\jetified-play-services-auth-20.1.0\AndroidManifest.xml:33:9-37:51
+194            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+194-->[com.google.android.gms:play-services-auth:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\5e305c204dca7d3f2506e972a2bc8065\transformed\jetified-play-services-auth-20.1.0\AndroidManifest.xml:34:13-89
+195            android:exported="true"
+195-->[com.google.android.gms:play-services-auth:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\5e305c204dca7d3f2506e972a2bc8065\transformed\jetified-play-services-auth-20.1.0\AndroidManifest.xml:35:13-36
+196            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+196-->[com.google.android.gms:play-services-auth:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\5e305c204dca7d3f2506e972a2bc8065\transformed\jetified-play-services-auth-20.1.0\AndroidManifest.xml:36:13-107
+197            android:visibleToInstantApps="true" />
+197-->[com.google.android.gms:play-services-auth:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\5e305c204dca7d3f2506e972a2bc8065\transformed\jetified-play-services-auth-20.1.0\AndroidManifest.xml:37:13-48
+198
+199        <activity
+199-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:27:9-44:20
+200            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+200-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:28:13-80
+201            android:excludeFromRecents="true"
+201-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:29:13-46
+202            android:exported="true"
+202-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:30:13-36
+203            android:launchMode="singleTask"
+203-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:31:13-44
+204            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+204-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:32:13-72
+205            <intent-filter>
+205-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:33:13-43:29
+206                <action android:name="android.intent.action.VIEW" />
+206-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:34:17-69
+206-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:34:25-66
+207
+208                <category android:name="android.intent.category.DEFAULT" />
+208-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:36:17-76
+208-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:36:27-73
+209                <category android:name="android.intent.category.BROWSABLE" />
+209-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:37:17-78
+209-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:37:27-75
+210
+211                <data
+211-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:39:17-42:51
+212                    android:host="firebase.auth"
+212-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:40:21-49
+213                    android:path="/"
+213-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:41:21-37
+214                    android:scheme="genericidp" />
+214-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:42:21-48
+215            </intent-filter>
+216        </activity>
+217        <activity
+217-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:45:9-62:20
+218            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+218-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:46:13-79
+219            android:excludeFromRecents="true"
+219-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:47:13-46
+220            android:exported="true"
+220-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:48:13-36
+221            android:launchMode="singleTask"
+221-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:49:13-44
+222            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+222-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:50:13-72
+223            <intent-filter>
+223-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:51:13-61:29
+224                <action android:name="android.intent.action.VIEW" />
+224-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:34:17-69
+224-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:34:25-66
+225
+226                <category android:name="android.intent.category.DEFAULT" />
+226-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:36:17-76
+226-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:36:27-73
+227                <category android:name="android.intent.category.BROWSABLE" />
+227-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:37:17-78
+227-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:37:27-75
+228
+229                <data
+229-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:39:17-42:51
+230                    android:host="firebase.auth"
+230-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:40:21-49
+231                    android:path="/"
+231-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:41:21-37
+232                    android:scheme="recaptcha" />
+232-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\kerwa\.gradle\caches\transforms-3\20b833fcbbd31b1a342c71515b18812b\transformed\jetified-firebase-auth-21.0.3\AndroidManifest.xml:42:21-48
+233            </intent-filter>
+234        </activity>
+235        <activity
+235-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\bf48f90076a8dd7be22374982733e63f\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+236            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+236-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\bf48f90076a8dd7be22374982733e63f\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+237            android:exported="false"
+237-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\bf48f90076a8dd7be22374982733e63f\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+238            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+238-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\bf48f90076a8dd7be22374982733e63f\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+239
+240        <provider
+240-->[com.google.firebase:firebase-common:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\0cb7483ff351ec77cc610f1867fef670\transformed\jetified-firebase-common-20.1.0\AndroidManifest.xml:26:9-31:39
+241            android:name="com.google.firebase.provider.FirebaseInitProvider"
+241-->[com.google.firebase:firebase-common:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\0cb7483ff351ec77cc610f1867fef670\transformed\jetified-firebase-common-20.1.0\AndroidManifest.xml:27:13-77
+242            android:authorities="hekdev.compagny.hekdev_ecommerce.firebaseinitprovider"
+242-->[com.google.firebase:firebase-common:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\0cb7483ff351ec77cc610f1867fef670\transformed\jetified-firebase-common-20.1.0\AndroidManifest.xml:28:13-72
+243            android:directBootAware="true"
+243-->[com.google.firebase:firebase-common:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\0cb7483ff351ec77cc610f1867fef670\transformed\jetified-firebase-common-20.1.0\AndroidManifest.xml:29:13-43
+244            android:exported="false"
+244-->[com.google.firebase:firebase-common:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\0cb7483ff351ec77cc610f1867fef670\transformed\jetified-firebase-common-20.1.0\AndroidManifest.xml:30:13-37
+245            android:initOrder="100" />
+245-->[com.google.firebase:firebase-common:20.1.0] C:\Users\kerwa\.gradle\caches\transforms-3\0cb7483ff351ec77cc610f1867fef670\transformed\jetified-firebase-common-20.1.0\AndroidManifest.xml:31:13-36
+246
+247        <receiver
+247-->[com.google.android.gms:play-services-measurement:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\879f2fe4fc0885f44f1fcc2efb1a3339\transformed\jetified-play-services-measurement-20.1.2\AndroidManifest.xml:29:9-33:20
+248            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+248-->[com.google.android.gms:play-services-measurement:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\879f2fe4fc0885f44f1fcc2efb1a3339\transformed\jetified-play-services-measurement-20.1.2\AndroidManifest.xml:30:13-85
+249            android:enabled="true"
+249-->[com.google.android.gms:play-services-measurement:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\879f2fe4fc0885f44f1fcc2efb1a3339\transformed\jetified-play-services-measurement-20.1.2\AndroidManifest.xml:31:13-35
+250            android:exported="false" >
+250-->[com.google.android.gms:play-services-measurement:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\879f2fe4fc0885f44f1fcc2efb1a3339\transformed\jetified-play-services-measurement-20.1.2\AndroidManifest.xml:32:13-37
+251        </receiver>
+252
+253        <service
+253-->[com.google.android.gms:play-services-measurement:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\879f2fe4fc0885f44f1fcc2efb1a3339\transformed\jetified-play-services-measurement-20.1.2\AndroidManifest.xml:35:9-38:40
+254            android:name="com.google.android.gms.measurement.AppMeasurementService"
+254-->[com.google.android.gms:play-services-measurement:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\879f2fe4fc0885f44f1fcc2efb1a3339\transformed\jetified-play-services-measurement-20.1.2\AndroidManifest.xml:36:13-84
+255            android:enabled="true"
+255-->[com.google.android.gms:play-services-measurement:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\879f2fe4fc0885f44f1fcc2efb1a3339\transformed\jetified-play-services-measurement-20.1.2\AndroidManifest.xml:37:13-35
+256            android:exported="false" />
+256-->[com.google.android.gms:play-services-measurement:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\879f2fe4fc0885f44f1fcc2efb1a3339\transformed\jetified-play-services-measurement-20.1.2\AndroidManifest.xml:38:13-37
+257        <service
+257-->[com.google.android.gms:play-services-measurement:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\879f2fe4fc0885f44f1fcc2efb1a3339\transformed\jetified-play-services-measurement-20.1.2\AndroidManifest.xml:39:9-43:72
+258            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+258-->[com.google.android.gms:play-services-measurement:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\879f2fe4fc0885f44f1fcc2efb1a3339\transformed\jetified-play-services-measurement-20.1.2\AndroidManifest.xml:40:13-87
+259            android:enabled="true"
+259-->[com.google.android.gms:play-services-measurement:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\879f2fe4fc0885f44f1fcc2efb1a3339\transformed\jetified-play-services-measurement-20.1.2\AndroidManifest.xml:41:13-35
+260            android:exported="false"
+260-->[com.google.android.gms:play-services-measurement:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\879f2fe4fc0885f44f1fcc2efb1a3339\transformed\jetified-play-services-measurement-20.1.2\AndroidManifest.xml:42:13-37
+261            android:permission="android.permission.BIND_JOB_SERVICE" />
+261-->[com.google.android.gms:play-services-measurement:20.1.2] C:\Users\kerwa\.gradle\caches\transforms-3\879f2fe4fc0885f44f1fcc2efb1a3339\transformed\jetified-play-services-measurement-20.1.2\AndroidManifest.xml:43:13-69
+262
+263        <meta-data
+263-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\kerwa\.gradle\caches\transforms-3\9e6dc4771e82fdf629f25dbb9182ec5a\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
+264            android:name="com.google.android.gms.version"
+264-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\kerwa\.gradle\caches\transforms-3\9e6dc4771e82fdf629f25dbb9182ec5a\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
+265            android:value="@integer/google_play_services_version" />
+265-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\kerwa\.gradle\caches\transforms-3\9e6dc4771e82fdf629f25dbb9182ec5a\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
+266
+267        <activity android:name="com.paypal.android.sdk.payments.PaymentMethodActivity" />
+267-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:14:9-90
+267-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:14:19-87
+268        <activity android:name="com.paypal.android.sdk.payments.PaymentConfirmActivity" />
+268-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:15:9-91
+268-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:15:19-88
+269        <activity android:name="com.paypal.android.sdk.payments.LoginActivity" />
+269-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:16:9-82
+269-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:16:19-79
+270        <activity android:name="com.paypal.android.sdk.payments.PayPalFuturePaymentActivity" />
+270-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:17:9-96
+270-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:17:19-93
+271        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentConsentActivity" />
+271-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:18:9-97
+271-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:18:19-94
+272        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentInfoActivity" />
+272-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:19:9-94
+272-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:19:19-91
+273        <activity android:name="com.paypal.android.sdk.payments.PayPalProfileSharingActivity" />
+273-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:20:9-97
+273-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:20:19-94
+274        <activity android:name="com.paypal.android.sdk.payments.ProfileSharingConsentActivity" />
+274-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:21:9-98
+274-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:21:19-95
+275
+276        <service
+276-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:23:9-25:40
+277            android:name="com.paypal.android.sdk.payments.PayPalService"
+277-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:24:13-73
+278            android:exported="false" />
+278-->[com.paypal.sdk:paypal-android-sdk:2.14.2] C:\Users\kerwa\.gradle\caches\transforms-3\f66182f155ad51c06ef8081d0e005cb0\transformed\jetified-paypal-android-sdk-2.14.2\AndroidManifest.xml:25:13-37
+279
+280        <provider
+280-->[androidx.emoji2:emoji2:1.0.0] C:\Users\kerwa\.gradle\caches\transforms-3\2bbcc5b07222540c2b4bb4c8e396fd05\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+281            android:name="androidx.startup.InitializationProvider"
+281-->[androidx.emoji2:emoji2:1.0.0] C:\Users\kerwa\.gradle\caches\transforms-3\2bbcc5b07222540c2b4bb4c8e396fd05\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+282            android:authorities="hekdev.compagny.hekdev_ecommerce.androidx-startup"
+282-->[androidx.emoji2:emoji2:1.0.0] C:\Users\kerwa\.gradle\caches\transforms-3\2bbcc5b07222540c2b4bb4c8e396fd05\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+283            android:exported="false" >
+283-->[androidx.emoji2:emoji2:1.0.0] C:\Users\kerwa\.gradle\caches\transforms-3\2bbcc5b07222540c2b4bb4c8e396fd05\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+284            <meta-data
+284-->[androidx.emoji2:emoji2:1.0.0] C:\Users\kerwa\.gradle\caches\transforms-3\2bbcc5b07222540c2b4bb4c8e396fd05\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+285                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+285-->[androidx.emoji2:emoji2:1.0.0] C:\Users\kerwa\.gradle\caches\transforms-3\2bbcc5b07222540c2b4bb4c8e396fd05\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+286                android:value="androidx.startup" />
+286-->[androidx.emoji2:emoji2:1.0.0] C:\Users\kerwa\.gradle\caches\transforms-3\2bbcc5b07222540c2b4bb4c8e396fd05\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+287            <meta-data
+287-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\kerwa\.gradle\caches\transforms-3\b09ee5964d5d14803bd61ba052a7c97c\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+288                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+288-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\kerwa\.gradle\caches\transforms-3\b09ee5964d5d14803bd61ba052a7c97c\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+289                android:value="androidx.startup" />
+289-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\kerwa\.gradle\caches\transforms-3\b09ee5964d5d14803bd61ba052a7c97c\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+290        </provider>
+291
+292        <meta-data
+292-->[com.android.billingclient:billing:3.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\76329ee4a48c45fd487fa0242d2ea9b8\transformed\jetified-billing-3.0.1\AndroidManifest.xml:13:9-15:37
+293            android:name="com.google.android.play.billingclient.version"
+293-->[com.android.billingclient:billing:3.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\76329ee4a48c45fd487fa0242d2ea9b8\transformed\jetified-billing-3.0.1\AndroidManifest.xml:14:13-73
+294            android:value="3.0.1" />
+294-->[com.android.billingclient:billing:3.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\76329ee4a48c45fd487fa0242d2ea9b8\transformed\jetified-billing-3.0.1\AndroidManifest.xml:15:13-34
+295
+296        <activity
+296-->[com.android.billingclient:billing:3.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\76329ee4a48c45fd487fa0242d2ea9b8\transformed\jetified-billing-3.0.1\AndroidManifest.xml:17:9-21:75
+297            android:name="com.android.billingclient.api.ProxyBillingActivity"
+297-->[com.android.billingclient:billing:3.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\76329ee4a48c45fd487fa0242d2ea9b8\transformed\jetified-billing-3.0.1\AndroidManifest.xml:18:13-78
+298            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+298-->[com.android.billingclient:billing:3.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\76329ee4a48c45fd487fa0242d2ea9b8\transformed\jetified-billing-3.0.1\AndroidManifest.xml:19:13-96
+299            android:exported="false"
+299-->[com.android.billingclient:billing:3.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\76329ee4a48c45fd487fa0242d2ea9b8\transformed\jetified-billing-3.0.1\AndroidManifest.xml:20:13-37
+300            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+300-->[com.android.billingclient:billing:3.0.1] C:\Users\kerwa\.gradle\caches\transforms-3\76329ee4a48c45fd487fa0242d2ea9b8\transformed\jetified-billing-3.0.1\AndroidManifest.xml:21:13-72
+301        <activity
+301-->[io.card:android-sdk:5.3.4] C:\Users\kerwa\.gradle\caches\transforms-3\bb93c5446979da9175a9be024e4ecd05\transformed\jetified-android-sdk-5.3.4\AndroidManifest.xml:22:9-24:66
+302            android:name="io.card.payment.CardIOActivity"
+302-->[io.card:android-sdk:5.3.4] C:\Users\kerwa\.gradle\caches\transforms-3\bb93c5446979da9175a9be024e4ecd05\transformed\jetified-android-sdk-5.3.4\AndroidManifest.xml:23:13-58
+303            android:configChanges="keyboardHidden|orientation" />
+303-->[io.card:android-sdk:5.3.4] C:\Users\kerwa\.gradle\caches\transforms-3\bb93c5446979da9175a9be024e4ecd05\transformed\jetified-android-sdk-5.3.4\AndroidManifest.xml:24:13-63
+304        <activity android:name="io.card.payment.DataEntryActivity" />
+304-->[io.card:android-sdk:5.3.4] C:\Users\kerwa\.gradle\caches\transforms-3\bb93c5446979da9175a9be024e4ecd05\transformed\jetified-android-sdk-5.3.4\AndroidManifest.xml:25:9-70
+304-->[io.card:android-sdk:5.3.4] C:\Users\kerwa\.gradle\caches\transforms-3\bb93c5446979da9175a9be024e4ecd05\transformed\jetified-android-sdk-5.3.4\AndroidManifest.xml:25:19-67
+305    </application>
+306
+307</manifest>
