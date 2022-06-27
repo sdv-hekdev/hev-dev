@@ -18,8 +18,8 @@ const Modal = () => {
   const confirmDeletion = useCallback(() => {
     try {
       deleteAccount()
-    } catch (e) {
-      setError("Something went wront")
+    } catch (err) {
+      setError("Something went wrong")
     }
   }, [deleteAccount, setError])
 

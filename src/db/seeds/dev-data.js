@@ -30,7 +30,7 @@ exports.seed = async (knex) => {
       quantity: rand(1, 5),
     }))
   )
-  //TO DO STREETNAME() IS DEPRECATED in V8 => REPLACE BY STREET()
+  //TO DO: STREETNAME() IS DEPRECATED in V8 => REPLACE BY STREET()
   await knex("addresses").insert(
     [...new Array(10)].map(() => ({
       number: rand(1, 100),

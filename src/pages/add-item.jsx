@@ -34,16 +34,19 @@ const AddItemPage = () => {
       </h2>
       <Formik onSubmit={handleFormSubmit} initialValues={initialValues}>
         {({ handleSubmit, isValid, isSubmitting }) => (
-          <form onSubmit={handleSubmit}>
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col justify-center"
+          >
             <FormErrorMessage>{error}</FormErrorMessage>
-            <TitleFormField />
-            <DescriptionFormField />
+            <TitleFormField className="md:w-3/6 h-10" />
+            <DescriptionFormField className="md:w-3/6 h-10" />
             <PriceFormField />
             <Button
               type="submit"
               disabled={!isValid || isSubmitting}
               title="add to list"
-              className="mt-4 w-full md:w-fit"
+              className="block mt-4 w-full md:w-fit"
             />
           </form>
         )}
