@@ -16,3 +16,34 @@ NEXT_PUBLIC_API_BASE_URL=
 STRIPE_API_KEY_TEST=
 STRIPE_API_KEY_LIVE=
 ```
+
+### ** Install project**
+
+```
+npm install
+```
+
+or
+
+```
+npm i
+```
+
+### ** Create migration**
+
+```
+npx knex migration:latest
+```
+
+### ** Create fake data**
+
+```
+npx knex seed:run
+```
+
+### ** Run project**
+
+```
+npm run dev
+npm run serve
+```

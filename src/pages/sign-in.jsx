@@ -35,7 +35,7 @@ const SignInPage = () => {
         <div className="w-full max-w-md space-y-8">
           <div>
             <h2 className="mt-6 text-center text-3xl font-extrabold text-black">
-              Sign to your account
+              Connect to my account
             </h2>
           </div>
 
